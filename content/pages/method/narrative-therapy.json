@@ -1,0 +1,66 @@
+{
+ "slug": "narrative-therapy",
+ "type": "method",
+ "title": "Narrative Therapy",
+ "subheads": [],
+ "heroImage": "/images/library/A-nice-girl-psychologist-is-receiving-a-client-sitting-on-the-floor-with-a-diary.jpg",
+ "heroImageAlt": "Narrative Therapy",
+ "heroButton": {
+  "text": "Start Your Journey",
+  "href": "/consultation"
+ },
+ "intro": {
+  "heading": "Discover Your Story's Power with Narrative Therapy",
+  "body": "<p>Narrative therapy is a respectful and empowering approach to counseling and psychotherapy that views individuals as the experts of their own lives. Central to its philosophy is the belief that our identities are shaped by the narratives or stories we construct about our experiences. Instead of being passive victims of our circumstances, narrative therapy encourages individuals to actively rewrite these narratives, highlighting their skills, values, and the knowledge they possess to face life’s challenges. This therapeutic method fosters a collaborative partnership between the therapist and the individual, where the focus is on discovering and nurturing the person’s abilities and resources. By re-authoring the stories that define us, narrative therapy helps individuals to view their lives through a lens of empowerment and possibility, paving the way for transformation and healing.</p>",
+  "image": ""
+ },
+ "features": [
+  {
+   "title": "Separating Person from Problem",
+   "desc": "Narrative Therapy emphasizes that individuals are not defined by their problems, but rather possess unique skills, values, and beliefs that can help them change their life stories."
+  },
+  {
+   "title": "Rewriting the Narrative",
+   "desc": "Therapy focuses on identifying and altering unhelpful stories that individuals have about themselves and their experiences."
+  },
+  {
+   "title": "Externalizing Conversations",
+   "desc": "This approach encourages people to view their issues as separate from themselves, reducing the influence of these issues on their identity and self-esteem."
+  },
+  {
+   "title": "Recognizing and Building on Strengths",
+   "desc": "Narrative Therapy helps individuals identify their abilities, values, and commitments to navigate life challenges and reshape their narratives."
+  },
+  {
+   "title": "Empowers Personal Agency",
+   "desc": "This therapy helps individuals take control of their stories and, by extension, their lives."
+  },
+  {
+   "title": "Redefines Life Narratives",
+   "desc": "It assists in creating new, more positive and empowering narratives about oneself."
+  },
+  {
+   "title": "Enhances Self-Reflection",
+   "desc": "Encourages deeper understanding and introspection about one’s life story and its impact."
+  },
+  {
+   "title": "Promotes Positive Change",
+   "desc": "By rewriting their narratives, individuals can bring about meaningful and lasting changes in their lives."
+  },
+  {
+   "title": "Gain Insight",
+   "desc": "Working with you own story can help you gain powerful revelations and moments of discovery"
+  }
+ ],
+ "cta": {
+  "heading": "Narrative Therapy is particularly beneficial for individuals who feel overwhelmed by their problems or defined by their past. It is suitable for anyone looking to gain a new perspective on their life, those struggling with identity issues, or individuals who want to create a more positive future narrative.",
+  "body": "Your therapist will carefully explain and tailor treatment methods in your plan, ensuring they align with your specific needs and therapeutic goals.",
+  "button": {
+   "text": "Get Started",
+   "href": "/consultation"
+  },
+  "image": ""
+ },
+ "excerpt": "You are the author of your own story, and narrative therapy helps you rewrite it with strength, hope, and possibility.",
+ "seoDescription": "Narrative therapy in Philadelphia helps you separate yourself from your problems and re-author your life story toward empowerment, growth, and lasting change."
+}

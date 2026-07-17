@@ -1,0 +1,142 @@
+{
+ "slug": "couples-counseling",
+ "type": "specialty",
+ "title": "Couples Counseling",
+ "subheads": [
+  "Strengthening Relationships Your Journey Together"
+ ],
+ "heroImage": "/images/library/couple-therapy.jpg",
+ "heroImageAlt": "Couples Therapy",
+ "heroButton": null,
+ "intro": {
+  "heading": "Your Relationship Matters!",
+  "body": "",
+  "image": ""
+ },
+ "features": [
+  {
+   "title": "Cultural Differences and assimilation pressure",
+   "desc": ""
+  },
+  {
+   "title": "Stress from financial uncertainties and job insecurities",
+   "desc": ""
+  },
+  {
+   "title": "Communication barriers due to language differences",
+   "desc": ""
+  },
+  {
+   "title": "Navigating family expectations and traditions in a new context",
+   "desc": ""
+  },
+  {
+   "title": "Dealing with isolation and lack of a support system",
+   "desc": ""
+  },
+  {
+   "title": "Lack of social and peer support that can relate to you",
+   "desc": ""
+  },
+  {
+   "title": "Family separation and pressure",
+   "desc": ""
+  },
+  {
+   "title": "Conflicts with coworkers, friends, and family",
+   "desc": ""
+  },
+  {
+   "title": "Shifts in roles due to a variety of issues like job, culture, and circumstance",
+   "desc": ""
+  }
+ ],
+ "cta": null,
+ "excerpt": "Culturally-affirming couples therapy in Philadelphia, helping partners grow together, bridge cultural gaps, and build a stronger relationship.",
+ "seoDescription": "Couples therapy in Philadelphia for immigrant and BIPOC partners. Bridge cultural gaps, improve communication, and grow together with culturally-affirming care.",
+ "blocks": [
+  {
+   "type": "hero",
+   "title": "Couples Therapy",
+   "subheads": [
+    "Strengthening Relationships Your Journey Together"
+   ],
+   "button": {
+    "text": "Begin the Journey",
+    "href": "/consultation"
+   },
+   "image": "/images/library/couple-therapy.jpg"
+  },
+  {
+   "type": "text",
+   "heading": "Your Relationship Matters!",
+   "body": "",
+   "headerOnly": true
+  },
+  {
+   "type": "image-text",
+   "image": "/images/library/Understanding-Immigrant-Couple-Challenges.jpg",
+   "imageSide": "left",
+   "heading": "Understanding Immigrant Couple Challenges",
+   "body": "<p>Couples therapy is a form of counseling that helps couples navigate through issues and conflicts within their relationship. It is a beneficial tool for all couples, regardless of their background or cultural differences. However, for immigrants, couples therapy can have an even deeper impact and can greatly improve their relationships. Immigrating to a new country can be a challenging experience, and it can have a significant impact on a couple’s relationship.</p><p>Couples may face language barriers, cultural clashes, and conflicting expectations, all of which can result in misunderstandings and conflicts. This is where couples therapy can play a crucial role in helping immigrant couples overcome these challenges and build a stronger relationship. One of the most significant benefits of couples therapy for immigrants is its ability to bridge cultural gaps. All couples face challenges in their relationship but the challenges faced by immigrant couples can compound other problems.</p>"
+  },
+  {
+   "type": "text",
+   "heading": "Unique Issues",
+   "body": "",
+   "headerOnly": true
+  },
+  {
+   "type": "cards",
+   "columns": 3,
+   "hasDesc": false,
+   "cards": [
+    {
+     "title": "Cultural Differences and assimilation pressure",
+     "desc": ""
+    },
+    {
+     "title": "Stress from financial uncertainties and job insecurities",
+     "desc": ""
+    },
+    {
+     "title": "Communication barriers due to language differences",
+     "desc": ""
+    },
+    {
+     "title": "Navigating family expectations and traditions in a new context",
+     "desc": ""
+    },
+    {
+     "title": "Dealing with isolation and lack of a support system",
+     "desc": ""
+    },
+    {
+     "title": "Lack of social and peer support that can relate to you",
+     "desc": ""
+    },
+    {
+     "title": "Family separation and pressure",
+     "desc": ""
+    },
+    {
+     "title": "Conflicts with coworkers, friends, and family",
+     "desc": ""
+    },
+    {
+     "title": "Shifts in roles due to a variety of issues like job, culture, and circumstance",
+     "desc": ""
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "heading": "Grow Together – Not Apart",
+   "body": "<p>Your therapist will carefully explain and tailor treatment methods in your plan, ensuring they align with your specific needs and therapeutic goals.</p>",
+   "button": {
+    "text": "Get Started",
+    "href": "/consultation"
+   }
+  }
+ ]
+}

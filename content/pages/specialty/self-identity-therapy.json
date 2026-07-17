@@ -1,0 +1,103 @@
+{
+ "slug": "self-identity-therapy",
+ "type": "specialty",
+ "title": "Self-Identity Therapy",
+ "subheads": [],
+ "heroImage": "/images/library/Self-Identity-Therapy.jpg",
+ "heroImageAlt": "Self-Identity",
+ "heroButton": null,
+ "intro": {
+  "heading": "Maintaining Your Identity and Adapting",
+  "body": "<p><span>At Growth Journey Therapy, we understand the complex journey of self-identity, especially for immigrants. The process of integrating into American society while maintaining one’s own cultural identity, beliefs, and traditions can be challenging. Our Self-Identity Therapy is tailored to support immigrants in this unique journey of self-discovery and integration.</span></p>",
+  "image": ""
+ },
+ "features": [
+  {
+   "title": "Enhancing Self-Esteem and Confidence",
+   "desc": "We use secure HIPAA-compliant platforms to ensure your privacy and confidentiality."
+  },
+  {
+   "title": "Coping with Cultural Dissonance",
+   "desc": "Addressing the challenges and stress that may arise from navigating two different cultures."
+  },
+  {
+   "title": "Family and Community Dynamics",
+   "desc": "Exploring how changes in self-identity affect family relationships and community connections"
+  }
+ ],
+ "cta": null,
+ "excerpt": "Compassionate support for immigrants navigating the journey of self-discovery, honoring your cultural heritage while building a new life in America.",
+ "seoDescription": "Self-Identity Therapy in Philadelphia for immigrants balancing cultural heritage and life in America. Explore, honor, and build a bicultural identity.",
+ "bodyMarkdown": "## Maintaining Your Identity and Adapting\n\nAt Growth Journey Therapy, we understand the complex journey of self-identity, especially for immigrants. The process of integrating into American society while maintaining one's own cultural identity, beliefs, and traditions can be challenging. Our Self-Identity Therapy is tailored to support immigrants in this unique journey of self-discovery and integration.\n\n## The Immigrant Experience of Self-Identity\n\nMoving to a new country often means balancing two worlds: the rich cultural heritage of your homeland and the new practices and values of American society. This can raise questions about self-identity, such as:\n\n- How do I maintain my cultural identity in a new environment?\n- How can I integrate into American society without losing my roots?\n- How do I navigate the expectations of both my native and new cultures?\n- What does it mean to be true to myself in this dual landscape?\n- What if people make fun of me for becoming \"too American\"?\n\n## Our Approach to Self-Identity Therapy\n\n#### Take the Steps Towards Balancing Your Life and Your Well-Being\n\n### Enhancing Self-Esteem and Confidence\n\nWe use secure HIPAA-compliant platforms to ensure your privacy and confidentiality.\n\n### Coping with Cultural Dissonance\n\nAddressing the challenges and stress that may arise from navigating two different cultures.\n\n### Family and Community Dynamics\n\nExploring how changes in self-identity affect family relationships and community connections.\n\n### Exploration of Cultural Identity\n\nWe provide a space for you to explore and articulate your cultural identity and how it intersects with your new life in America.\n\n### Building a Bicultural Identity\n\nAssisting you in finding a balance that honors both your cultural heritage and your experiences in American society.\n\n## Establishing Your Dual Identity\n\nMaintaining your self-identity, cultural identity, and family connections can be difficult when you move to a new city or country. We can help you through the process of establishing your dual identity without sacrificing any part of yourself and maintaining your cultural heritage.\n\nYour therapist will carefully explain and tailor treatment methods in your plan, ensuring they align with your specific needs and therapeutic goals.",
+ "blocks": [
+  {
+   "type": "hero",
+   "title": "Self-Identity Therapy",
+   "subheads": [],
+   "button": {
+    "text": "Begin The Journey",
+    "href": "/consultation"
+   },
+   "image": "/images/library/Self-Identity-Therapy.jpg"
+  },
+  {
+   "type": "text",
+   "heading": "Maintaining Your Identity and Adapting",
+   "body": "<p><span>At Growth Journey Therapy, we understand the complex journey of self-identity, especially for immigrants. The process of integrating into American society while maintaining one’s own cultural identity, beliefs, and traditions can be challenging. Our Self-Identity Therapy is tailored to support immigrants in this unique journey of self-discovery and integration.</span></p>",
+   "headerOnly": false
+  },
+  {
+   "type": "image-text",
+   "image": "/images/library/Self-Identity-Therapy-body.jpg",
+   "imageSide": "left",
+   "heading": "The Immigrant Experience of Self-Identity",
+   "body": "<p><span>Moving to a new country often means balancing two worlds: the rich cultural heritage of your homeland and the new practices and values of American society. This can raise questions about self-identity, such as</span></p>"
+  },
+  {
+   "type": "text",
+   "heading": "Our Approach to Self-Identity Therapy",
+   "body": "",
+   "headerOnly": true
+  },
+  {
+   "type": "cards",
+   "columns": 3,
+   "hasDesc": true,
+   "cards": [
+    {
+     "title": "Enhancing Self-Esteem and Confidence",
+     "desc": "We use secure HIPAA-compliant platforms to ensure your privacy and confidentiality."
+    },
+    {
+     "title": "Coping with Cultural Dissonance",
+     "desc": "Addressing the challenges and stress that may arise from navigating two different cultures."
+    },
+    {
+     "title": "Family and Community Dynamics",
+     "desc": "Exploring how changes in self-identity affect family relationships and community connections"
+    }
+   ]
+  },
+  {
+   "type": "cards",
+   "columns": 2,
+   "hasDesc": true,
+   "cards": [
+    {
+     "title": "Exploration of Cultural Identity",
+     "desc": "We provide a space for you to explore and articulate your cultural identity and how it intersects with your new life in America."
+    },
+    {
+     "title": "Building a Bicultural Identity",
+     "desc": "Assisting you in finding a balance that honors both your cultural heritage and your experiences in American society."
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Maintaining your self-identity, cultural identity, and family onnections can be difficult when you move to a new city or country. We can help you through the process of establishing your dual identity without sacrificing any part of your self and maintaining your cultural heritage.",
+   "body": "",
+   "headerOnly": true
+  }
+ ]
+}

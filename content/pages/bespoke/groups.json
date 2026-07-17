@@ -1,0 +1,65 @@
+{
+ "slug": "groups",
+ "type": "bespoke",
+ "title": "Support Groups in Philadelphia",
+ "subheads": [],
+ "heroImage": "",
+ "heroImageAlt": "",
+ "heroButton": null,
+ "intro": null,
+ "features": [],
+ "cta": null,
+ "blocks": [
+  {
+   "type": "text",
+   "heading": "Support Groups in Philadelphia",
+   "eyebrow": "Free virtual and in-person groups for caregivers and children designed to build connection, support emotional well-being, and strengthen families.",
+   "body": "",
+   "button": null,
+   "headerOnly": true
+  },
+  {
+   "type": "rows",
+   "rows": [
+    {
+     "image": "/images/library/hand-heart.jpg",
+     "heading": "English Caregiver Group",
+     "body": "<p>Growth Journey is offering a <strong>free Spanish-speaking virtual caregiver support group</strong> for pregnant caregivers, postpartum caregivers, and parents or caregivers of children ages 0–8. This group is designed to provide parenting guidance, emotional support, stress management tools, and practical help around child behavior, routines, communication, and healthy technology boundaries.</p><p><strong>Tuesdays from 7:00–9:00 pm on Zoom</strong> facilitated by a bilingual therapist.</p>",
+     "button": {
+      "text": "Learn More",
+      "href": "/groups/free-spanish-speaking-caregiver-support-group-for-caregivers-of-children-0-8-years-old-includes-prenatal"
+     }
+    },
+    {
+     "image": "/images/library/hand-heart.jpg",
+     "heading": "Spanish Caregiver Group",
+     "body": "<p>Growth Journey ofrece un <strong>grupo virtual gratis de apoyo para cuidadores en español</strong> para personas embarazadas, en posparto y cuidadores de niños de 0 a 8 años. Este grupo brinda apoyo emocional, orientación para la crianza, manejo del estrés y herramientas prácticas para entender el comportamiento infantil, mejorar la comunicación y establecer límites saludables con la tecnología en el hogar</p><p><strong>Los Martes de 7:00 a 9:00 pm por Zoom </strong>con una terapeuta bilingüe.</p>",
+     "button": {
+      "text": "Learn More",
+      "href": "/groups/grupo-gratis-de-apoyo-para-cuidadores-en-espanol-para-cuidadores-de-ninos-de-0-8-anos-incluye-personas-embarazadas"
+     }
+    },
+    {
+     "image": "/images/library/hands-holding-child.jpg",
+     "heading": "English Children’s Group",
+     "body": "<p>Growth Journey is offering a <strong>free Spanish-speaking children’s engagement group in Philadelphia</strong> for children age 8 and under. This in-person group helps children build social skills, communication, confidence, emotional regulation, early learning skills, and peer interaction through guided play and structured activities in a supportive environment.</p><p><strong>Fridays from 5:00–6:30 pm at Growth Journey</strong> and are led by a bilingual therapist.</p>",
+     "button": {
+      "text": "Learn More",
+      "href": "/groups/free-spanish-speaking-childrens-engagement-group-children-8-years-old-and-younger"
+     }
+    },
+    {
+     "image": "/images/library/hands-holding-child.jpg",
+     "heading": "Spanish Children’s Group",
+     "body": "<p>Growth Journey ofrece un <strong>grupo gratis en español para niños en Filadelfia</strong> para niños de 8 años o menores. Este grupo en persona apoya el desarrollo de habilidades sociales, comunicación, confianza, regulación emocional, juego guiado y aprendizaje temprano en un ambiente seguro, inclusivo y acogedor</p><p><strong>Los Viernes de 5:00 a 6:30 pm en Growth Journey</strong> con una terapeuta bilingüe.</p>",
+     "button": {
+      "text": "Learn More",
+      "href": "/groups/grupo-gratis-en-espanol-para-ninos-de-8-anos-o-menores-en-filadelfia-apoyo-con-habilidades-sociales-emociones-comunicacion-y-juego-en-grupo"
+     }
+    }
+   ]
+  }
+ ],
+ "excerpt": "Free virtual and in-person groups for caregivers and children, designed to build connection, support emotional well-being, and strengthen families.",
+ "seoDescription": "Free virtual and in-person support groups in Philadelphia for caregivers and children, led by bilingual therapists to build connection and emotional well-being."
+}

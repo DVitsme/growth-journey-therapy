@@ -1,0 +1,71 @@
+{
+ "slug": "dialectal-behavior-therapy",
+ "type": "method",
+ "title": "Dialectal Behavior Therapy",
+ "subheads": [
+  "Enhances Emotional Regulation",
+  "Reduces Self Harm",
+  "Improves Relationships",
+  "Builds Resilience"
+ ],
+ "heroImage": "/images/library/Dialectal-Behavior-Therapyv3.jpg",
+ "heroImageAlt": "Dialectal Behavior Therapy",
+ "heroButton": {
+  "text": "Start Your Journey",
+  "href": "/consultation"
+ },
+ "intro": {
+  "heading": "Understanding DBT and Its Effectiveness",
+  "body": "Dialectical Behavior Therapy (DBT) is a highly effective psychotherapeutic approach initially developed to treat Borderline Personality Disorder (BPD). However, its success has led to its application in treating a variety of mental health issues, including depression, bipolar disorder, PTSD, and substance abuse disorders. DBT combines cognitive-behavioral techniques with mindfulness practices derived from Buddhist meditative disciplines, creating a unique treatment that emphasizes balancing acceptance and change.",
+  "image": ""
+ },
+ "features": [
+  {
+   "title": "Mindfulness",
+   "desc": "At the heart of DBT is mindfulness, which teaches individuals to be fully present in the moment. This skill helps in recognizing and coping with intense emotions without being overwhelmed."
+  },
+  {
+   "title": "Emotion Regulation",
+   "desc": "DBT teaches skills to manage and change intense emotions that are causing problems in a person’s life."
+  },
+  {
+   "title": "Interpersonal Effectiveness",
+   "desc": "This component involves techniques that enable individuals to communicate with others in a way that is assertive, maintains self-respect, and strengthens relationships."
+  },
+  {
+   "title": "Distress Tolerance",
+   "desc": "This aspect focuses on increasing a person’s tolerance of negative emotion, rather than trying to escape from it. It includes coping strategies like distraction, self-soothing, and improving the moment."
+  },
+  {
+   "title": "Reducing Risky Behavior",
+   "desc": "DBT has been proven particularly effective in reducing self-harming behaviors and suicidal thoughts, which are often associated with BPD."
+  },
+  {
+   "title": "Decreases Interfering Behaviors",
+   "desc": "DBT addresses issues like missing sessions or being unengaged in therapy, making the therapeutic process more effective."
+  },
+  {
+   "title": "Building Life Skills",
+   "desc": "Beyond treating specific disorders, DBT imparts valuable life skills that contribute to overall well-being and resilience."
+  },
+  {
+   "title": "Adaptive",
+   "desc": "DBT's versatility makes it effective for a wide range of disorders and age groups, including adolescents."
+  },
+  {
+   "title": "Growth Tools",
+   "desc": "DBT has a structure and can be intensive. It requires learning new skills as part of therapy."
+  }
+ ],
+ "cta": {
+  "heading": "DBT is a structured, intensive form of therapy that requires a commitment to learning and applying new skills. Its effectiveness is supported by a substantial body of research, making it a trusted choice for both therapists and individuals seeking to overcome complex emotional and behavioral issues. Through DBT, individuals can learn to manage their emotions more effectively, navigate interpersonal relationships skillfully, and build a life worth living.",
+  "body": "Your therapist will carefully explain and tailor treatment methods in your plan, ensuring they align with your specific needs and therapeutic goals.",
+  "button": {
+   "text": "Get Started",
+   "href": "/consultation"
+  },
+  "image": ""
+ },
+ "excerpt": "A structured, evidence-based approach that helps you regulate emotions, build resilience, and create a life worth living.",
+ "seoDescription": "Dialectical Behavior Therapy (DBT) in Philadelphia — build mindfulness, emotional regulation, and healthier relationships with culturally-affirming care."
+}

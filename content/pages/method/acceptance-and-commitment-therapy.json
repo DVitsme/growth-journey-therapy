@@ -1,0 +1,71 @@
+{
+ "slug": "acceptance-and-commitment-therapy",
+ "type": "method",
+ "title": "Acceptance and Commitment Therapy",
+ "subheads": [
+  "A Mindfulness Based Approach",
+  "Reduces Distress",
+  "Better Quality of Life",
+  "Lasting Change"
+ ],
+ "heroImage": "/images/library/friends.jpg",
+ "heroImageAlt": "Acceptance and Commitment Therapy",
+ "heroButton": {
+  "text": "Start Your Journey",
+  "href": "/consultation"
+ },
+ "intro": {
+  "heading": "Understanding ACT and Its Effectiveness",
+  "body": "<p>Acceptance and Commitment Therapy (ACT) is a form of psychotherapy that uses acceptance and mindfulness strategies mixed in different ways with commitment and behavior-change strategies, to increase psychological flexibility. Developed within a context of Relational Frame Theory, ACT is unique in its approach to psychological issues, offering a path for individuals to embrace their thoughts and feelings rather than fighting or feeling guilty for them.</p>",
+  "image": ""
+ },
+ "features": [
+  {
+   "title": "Cognitive Diffusion",
+   "desc": "Techniques to alter undesirable functions of thoughts and other private events, rather than trying to eliminate or alter their form or frequency."
+  },
+  {
+   "title": "Acceptance",
+   "desc": "Allowing thoughts to occur without the struggle to change them. It’s learning to make room for painful feelings, sensations, and urges, instead of resisting them."
+  },
+  {
+   "title": "Mindfulness",
+   "desc": "Interacting with others in the group setting helps improve communication skills, empathy, and relationship-building."
+  },
+  {
+   "title": "Self as Context",
+   "desc": "Being present in the current moment in a non-judgmental way, allowing a deeper connection with oneself."
+  },
+  {
+   "title": "Values Clarification",
+   "desc": "Helping individuals identify and connect with the things that are truly important and meaningful to them in their lives."
+  },
+  {
+   "title": "Skill Development",
+   "desc": "Setting goals according to one’s values and carrying them out responsibly, leading to a more fulfilled life."
+  },
+  {
+   "title": "Flexibility",
+   "desc": "ACT improves the ability to contact the present moment and change or persist in behavior that serves one’s personally chosen values."
+  },
+  {
+   "title": "Reduces Distress",
+   "desc": "It is effective in reducing the impact of unpleasant thoughts and feelings, helping with various aspects of mental health, including anxiety, depression, and stress."
+  },
+  {
+   "title": "Adaptable",
+   "desc": "ACT can be applied to a wide range of psychological issues and is suitable for diverse age groups and cultural backgrounds."
+  }
+ ],
+ "cta": {
+  "heading": "ACT is particularly valuable for those who have struggled with traditional change-based treatments. It encourages an accepting relationship with oneself and promotes a commitment to positive change, leading to a richer, more meaningful existence, even in the face of difficulty.",
+  "body": "Your therapist will carefully explain and tailor treatment methods in your plan, ensuring they align with your specific needs and therapeutic goals.",
+  "button": {
+   "text": "Get Started",
+   "href": "/consultation"
+  },
+  "image": ""
+ },
+ "excerpt": "A mindfulness-based approach that helps you make room for difficult thoughts and feelings while committing to the life you value.",
+ "seoDescription": "Acceptance and Commitment Therapy (ACT) in Philadelphia — a mindfulness-based approach to build psychological flexibility, reduce distress, and create lasting change."
+}

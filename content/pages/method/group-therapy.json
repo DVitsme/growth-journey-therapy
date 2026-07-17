@@ -1,0 +1,59 @@
+{
+ "slug": "group-therapy",
+ "type": "method",
+ "title": "Group Therapy",
+ "subheads": [
+  "Shares Experiences",
+  "Diverse Perspectives",
+  "Peer Support",
+  "Cost Effective"
+ ],
+ "heroImage": "/images/library/Group-Therapy.jpg",
+ "heroImageAlt": "Group Therapy",
+ "heroButton": {
+  "text": "Start Your Journey",
+  "href": "/consultation"
+ },
+ "intro": {
+  "heading": "Discover The Transformative Power Of Group",
+  "body": "<p>Group Therapy offers a unique and dynamic environment for personal growth and healing. In these sessions, individuals come together under the guidance of a trained therapist to share experiences, offer support, and work through common challenges. This form of therapy is effective for a wide range of issues, including anxiety, depression, stress, and interpersonal difficulties.</p>",
+  "image": ""
+ },
+ "features": [
+  {
+   "title": "Collective Support",
+   "desc": "Group therapy provides a strong sense of community and belonging, where members support and learn from each other."
+  },
+  {
+   "title": "Diverse Insights",
+   "desc": "Hearing different viewpoints and stories offers new perspectives and insights into one’s own challenges and coping strategies."
+  },
+  {
+   "title": "Enhanced Social Skills",
+   "desc": "Interacting with others in the group setting helps improve communication skills, empathy, and relationship-building."
+  },
+  {
+   "title": "Safe & Confidential",
+   "desc": "Sessions are conducted in a confidential setting, where respect and discretion are paramount."
+  },
+  {
+   "title": "Guided Discussions",
+   "desc": "The therapist facilitates discussions, ensuring that the group remains a safe and supportive space for all members."
+  },
+  {
+   "title": "Skill Development",
+   "desc": "Members learn and practice new skills within the group, which can be applied in their daily lives."
+  }
+ ],
+ "cta": {
+  "heading": "We are excited to be part of your journey",
+  "body": "<p>If your are interested in joining a group session or any of our individual or couples therapy.</p> <p>Click below to start your journey.</p>",
+  "button": {
+   "text": "Get Started",
+   "href": "/consultation"
+  },
+  "image": ""
+ },
+ "excerpt": "Discover the transformative power of group therapy — connection, shared growth, and healing alongside others who understand.",
+ "seoDescription": "Group therapy at Growth Journey Therapy in Philadelphia — a supportive, culturally-affirming space to heal and grow alongside others."
+}

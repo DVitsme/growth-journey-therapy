@@ -1,0 +1,71 @@
+{
+ "slug": "insurance-and-payment",
+ "type": "bespoke",
+ "title": "Pricing and Insurance",
+ "subheads": [],
+ "heroImage": "/images/library/Pricing-and-Insurance.jpg",
+ "heroImageAlt": "Pricing and Insurance",
+ "heroButton": null,
+ "intro": null,
+ "features": [],
+ "cta": null,
+ "blocks": [
+  {
+   "type": "hero",
+   "title": "Pricing and Insurance",
+   "subheads": [
+    "Your Journey Starts Today!"
+   ],
+   "button": {
+    "text": "Schedule Your Consultation",
+    "href": "/consultation"
+   },
+   "image": "/images/library/Pricing-and-Insurance.jpg"
+  },
+  {
+   "type": "text",
+   "heading": "We Accept Most Insurance for Mental Health Services",
+   "body": "<p><span>Navigating the financial aspects of therapy can often feel overwhelming, but at Growth Journey Therapy, we strive to make this process as seamless and straightforward as possible. We believe that financial concerns should never stand in the way of accessing quality mental health care. That’s why we’re committed to providing clear information about insurance coverage and payment options, ensuring you can focus on your therapy journey without undue stress about costs.</span></p>",
+   "button": null,
+   "headerOnly": false,
+   "align": "left"
+  },
+  {
+   "type": "text",
+   "heading": "Accepting Major Insurance Programs",
+   "body": "<p style=\"text-align: left;\"><span>Growth Journey Therapy is proud to accept most major insurance programs available in Pennsylvania. Our goal is to make our services accessible to as many individuals as possible by working with a wide range of insurance providers. Currently, we accept plans from: United Healthcare optum Oscar Healh Cigna Evernorth Aetna By accepting these insurance providers, we hope to accommodate a broad spectrum of clients, facilitating their access to our specialized therapy services. We understand the importance of utilizing your insurance benefits, and our staff is here to assist you in navigating your coverage details. We encourage you to reach out to us with any questions you may have regarding your specific plan and coverage. We also offer very limited sliding scale services on a case by case basis.</span></p><h3 style=\"text-align: left;\">Exclusions: Medicare and Medicaid</h3><p style=\"text-align: left;\"><small>It’s important to note that at this time, Growth Journey Therapy does not accept Medicare or Medicaid. We understand this may be a concern for some potential clients, and we are continuously evaluating our insurance partnerships to expand our accessibility. For those who are on Medicare or Medicaid, we encourage you to contact us for recommendations to other resources or providers who may be able to assist you.</small></p>",
+   "button": null,
+   "sideHeading": true
+  },
+  {
+   "type": "text",
+   "heading": "Personalized Therapist Placement",
+   "body": "<p style=\"text-align: left;\">Understanding that each individual’s concerns are unique, we take great care in matching you with a therapist who specializes in your specific area of need. Our team comprises compassionate, skilled professionals with expertise in a wide range of therapeutic areas, including stress, anxiety, depression, immigration anxiety, and the impacts of generational trauma. This personalized therapist placement ensures that you receive the most effective and specialized care possible, fostering an environment of healing and growth.</p>",
+   "button": null,
+   "sideHeading": true
+  },
+  {
+   "type": "text",
+   "heading": "Bilingual Support in English and Spanish",
+   "body": "<p style=\"text-align: left;\">Recognizing the diverse backgrounds of our clients, we are proud to offer services in both English and Spanish. This bilingual support ensures that language barriers do not stand in the way of accessing quality therapy. We believe in creating an inclusive space where all individuals feel understood and valued, and providing therapy in your preferred language is an integral part of this commitment.</p>",
+   "button": null,
+   "sideHeading": true
+  },
+  {
+   "type": "text",
+   "heading": "Flexible Therapy Options: In-Person and Remote",
+   "body": "<p style=\"text-align: left;\">Recognizing the diverse backgrounds of our clients, we are proud to offer services in both English and Spanish. This bilingual support ensures that language barriers do not stand in the way of accessing quality therapy. We believe in creating an inclusive space where all individuals feel understood and valued, and providing therapy in your preferred language is an integral part of this commitment.</p>",
+   "button": null,
+   "sideHeading": true
+  },
+  {
+   "type": "text",
+   "heading": "Embark on Your Growth Journey",
+   "body": "<p style=\"text-align: left;\">Taking the first step toward healing is a sign of strength, and at Growth Journey Therapy, we’re honored to accompany you on this path. Our commitment to personalized care, specialized therapist matching, bilingual support, and flexible therapy options are all designed to facilitate your growth journey. Start today by scheduling your free 20-minute consultation, and take the first step towards a more fulfilling, balanced life. Together, we can navigate the challenges and celebrate the victories on your path to well-being.</p>",
+   "button": null,
+   "sideHeading": true
+  }
+ ],
+ "excerpt": "Financial concerns should never stand in the way of quality mental health care — here's how we make insurance and payment simple and clear.",
+ "seoDescription": "Growth Journey Therapy accepts most major insurance plans in Pennsylvania and offers clear, accessible pricing so you can focus on your therapy journey."
+}

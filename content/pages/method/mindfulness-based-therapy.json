@@ -1,0 +1,71 @@
+{
+ "slug": "mindfulness-based-therapy",
+ "type": "method",
+ "title": "Mindfulness Based Therapy",
+ "subheads": [
+  "Enhances Self Understanding",
+  "Resolves Inner Conflicts",
+  "Increases Peace",
+  "Increases Self-Awareness"
+ ],
+ "heroImage": "/images/library/A-nice-girl-psychologist-is-receiving-a-client-sitting-on-the-floor-with-a-diary.jpg",
+ "heroImageAlt": "Mindfulness Based Therapy",
+ "heroButton": {
+  "text": "Start Your Journey",
+  "href": "/consultation"
+ },
+ "intro": {
+  "heading": "Embrace a Calmer more Focused Life with MBT",
+  "body": "Mindfulness-Based Therapy is a therapeutic approach that combines traditional cognitive therapy with mindfulness strategies. This form of therapy focuses on being intensely aware of what you’re sensing and feeling in the moment, without interpretation or judgment. It is particularly effective in managing stress, anxiety, and depression by helping individuals change their relationship with their thoughts and emotions.",
+  "image": ""
+ },
+ "features": [
+  {
+   "title": "Present Moment Awareness",
+   "desc": "This therapy encourages focusing on the current moment, fostering a deeper sense of presence and awareness."
+  },
+  {
+   "title": "Non-Judgmental Acceptance",
+   "desc": "It teaches the practice of observing thoughts and feelings without judgment, helping individuals to detach from negative patterns."
+  },
+  {
+   "title": "Mind-Body Connection",
+   "desc": "Emphasizing the connection between mental and physical health, this approach uses techniques like meditation and breathing exercises."
+  },
+  {
+   "title": "Emotional Regulation",
+   "desc": "By recognizing and accepting their emotional states, individuals can better manage and respond to their feelings."
+  },
+  {
+   "title": "Reduces Stress Levels",
+   "desc": "Mindfulness techniques are highly effective in reducing stress and promoting relaxation."
+  },
+  {
+   "title": "Enhances Emotional Regulation",
+   "desc": "This therapy helps in managing and responding to emotions in a healthier way."
+  },
+  {
+   "title": "Focus and Clarity",
+   "desc": "Regular mindfulness practice enhances concentration and decision-making."
+  },
+  {
+   "title": "Increases Self-Awareness",
+   "desc": "It encourages a deeper understanding of oneself, leading to personal growth and development."
+  },
+  {
+   "title": "Complimentary",
+   "desc": "MBT works well with other forms of self-care to increase effectiveness like meditation"
+  }
+ ],
+ "cta": {
+  "heading": "Mindfulness-Based Therapy is beneficial for anyone seeking to reduce stress, anxiety, and depression. It is also suitable for those looking to enhance their overall well-being, increase their awareness, and gain greater control over their emotional responses.",
+  "body": "Your therapist will carefully explain and tailor treatment methods in your plan, ensuring they align with your specific needs and therapeutic goals.",
+  "button": {
+   "text": "Get Started",
+   "href": "/consultation"
+  },
+  "image": ""
+ },
+ "excerpt": "Mindfulness-Based Therapy helps you meet each moment with awareness and compassion, easing stress, anxiety, and depression along the way.",
+ "seoDescription": "Mindfulness-Based Therapy in Philadelphia blends cognitive therapy with mindfulness to ease stress, anxiety, and depression and deepen self-awareness."
+}

@@ -1,0 +1,71 @@
+{
+ "slug": "cognitive-behavioral-therapy",
+ "type": "method",
+ "title": "Cognitive Behavioral Therapy",
+ "subheads": [
+  "Improves Coping Strategies",
+  "Reduces Negative Thinking",
+  "Enhances Problem-Solving Skills",
+  "Lasting Behavioral Change"
+ ],
+ "heroImage": "/images/library/mid-age-man-having-one-counseling-meeting-with-psy.jpg",
+ "heroImageAlt": "Cognitive Behavioral Therapy",
+ "heroButton": {
+  "text": "Start Your Journey",
+  "href": "/consultation"
+ },
+ "intro": {
+  "heading": "Understanding CBT and Its Effectiveness",
+  "body": "<p>Cognitive Behavioral Therapy (CBT) is a widely used form of psychotherapy that focuses on identifying and challenging negative thought patterns and behaviors, and replacing them with healthier, more effective ones. Developed by Dr. Aaron T. Beck in the 1960s, CBT is based on the concept that our thoughts, feelings, and behaviors are interconnected, and that changing negative thought patterns can lead to significant improvements in our emotional and mental well-being.</p>",
+  "image": ""
+ },
+ "features": [
+  {
+   "title": "Identifying Negative Thoughts",
+   "desc": "Learning to recognize and assess problematic thought patterns that influence behavior and emotions"
+  },
+  {
+   "title": "Challenging Cognitive Distortions",
+   "desc": "Techniques to challenge and reframe irrational or unhelpful thoughts, beliefs, and attitudes."
+  },
+  {
+   "title": "Behavioral Modification",
+   "desc": "Being present in the current moment in a non-judgmental way, allowing a deeper connection with oneself."
+  },
+  {
+   "title": "Problem -Solving",
+   "desc": "Enhancing the ability to face challenges effectively and make sound decisions."
+  },
+  {
+   "title": "Goal Setting",
+   "desc": "Setting achievable, realistic goals to help guide therapy and track progress."
+  },
+  {
+   "title": "Skill Development",
+   "desc": "Learning coping and emotional regulation skills to handle life’s stressors and challenges"
+  },
+  {
+   "title": "Evidence -Based",
+   "desc": "CBT is effective for a wide range of mental health issues, including depression, anxiety, PTSD, eating disorders, and substance abuse."
+  },
+  {
+   "title": "Short-Term and Focused",
+   "desc": "CBT is typically more focused and shorter in duration than other types of psychotherapy."
+  },
+  {
+   "title": "Empowers the Individual",
+   "desc": "It provides tools and strategies that clients can use throughout their lives, promoting long-term mental health."
+  }
+ ],
+ "cta": {
+  "heading": "CBT is renowned for its practicality and effectiveness, offering a structured, hands-on approach to problem-solving. Its versatility makes it suitable for individuals, groups, and diverse age ranges, and it can be adapted to fit the unique needs of each client. By equipping individuals with the skills to modify their thinking and behavior, CBT paves the way for lasting change and improved mental health.",
+  "body": "Your therapist will carefully explain and tailor treatment methods in your plan, ensuring they align with your specific needs and therapeutic goals.",
+  "button": {
+   "text": "Get Started",
+   "href": "/consultation"
+  },
+  "image": ""
+ },
+ "excerpt": "Cognitive Behavioral Therapy helps you recognize and reshape negative thought patterns, building practical skills for lasting change and improved mental health.",
+ "seoDescription": "Cognitive Behavioral Therapy (CBT) in Philadelphia: identify and reframe negative thoughts, build coping skills, and create lasting, evidence-based change."
+}

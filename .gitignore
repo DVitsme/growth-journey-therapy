@@ -39,3 +39,29 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# rescue SSH key — never commit
+ssh/
+
+# breach evidence recovered from the hacked WordPress — never commit
+_recovery/
+
+# OpenNext/wrangler build + state outputs
+.open-next/
+.wrangler/
+
+# raw team headshots (originals live outside the deployed site)
+source-images/
+
+# large recovery/extraction staging
+/home/nero/Clients/gjt-extraction/
+
+# local render/screenshot scratch
+_*.mjs
+docs/design-reference/BUILT-*.png
+
+# content-generation pipeline (scripts + original-HTML references) — kept locally
+_pipeline/
+
+# session resume notes (contains SSH details)
+.claude-resume.md

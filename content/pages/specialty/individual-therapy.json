@@ -1,0 +1,90 @@
+{
+ "slug": "individual-therapy",
+ "type": "specialty",
+ "title": "Individual Therapy",
+ "subheads": [],
+ "heroImage": "/images/library/Individual-Therapy-via-Telehealth-and-in-Person.jpg",
+ "heroImageAlt": "Individual Therapy",
+ "heroButton": null,
+ "intro": {
+  "heading": "Connecting With You Where You Are",
+  "body": "<p><span>At Growth Journey Therapy, we understand the importance of accessibility and convenience in seeking mental health support. That’s why we offer individual therapy via telehealth – a flexible and effective way to receive personalized counseling, regardless of your location or schedule constraints. We provide this service in both English and Spanish.</span></p>",
+  "image": ""
+ },
+ "features": [
+  {
+   "title": "Confidential & Safe",
+   "desc": ""
+  },
+  {
+   "title": "Culturally Sensitive",
+   "desc": ""
+  },
+  {
+   "title": "Flexibility",
+   "desc": ""
+  }
+ ],
+ "cta": null,
+ "excerpt": "Accessible, confidential, and personalized individual therapy in English and Spanish, meeting you wherever you are.",
+ "seoDescription": "Individual therapy via telehealth and in person in English and Spanish. Accessible, confidential, culturally informed care with insurance accepted.",
+ "bodyMarkdown": "Accessible, confidential, personalized care available in English and Spanish. Insurance accepted.\n\n## Connecting With You Where You Are\n\nAt Growth Journey Therapy, we understand the importance of accessibility and convenience in seeking mental health support. That's why we offer individual therapy via telehealth – a flexible and effective way to receive personalized counseling, regardless of your location or schedule constraints. We provide this service in both English and Spanish.\n\n## Is Telehealth Therapy Right for You or are You a Face to Face Person? Or Both?\n\nTelehealth therapy is suitable for most individuals seeking mental health support. It's especially beneficial if you:\n\n- Have a busy work or family schedule\n- Prefer the privacy of home-based sessions\n- Live far from mental health services\n- Need culturally informed care that is unavailable to you locally\n\nEmbrace the convenience and effectiveness of telehealth therapy. Whether you're dealing with life's everyday stresses or more complex mental health issues, our team at Growth Journey Therapy is here to provide the support and guidance you need, right where you are.\n\nYour therapist will carefully explain and tailor treatment methods in your plan, ensuring they align with your specific needs and therapeutic goals.\n\n## Embracing the Benefits\n\n### Accessibility\n\nIdeal for those with mobility issues, busy schedules, or living in remote areas.\n\n### Convenience\n\nAttend sessions from the comfort of your own home or any private space.\n\n### Flexibility\n\nEasier scheduling and no commute time.\n\n### Privacy\n\nEnsures confidentiality and reduces the stigma some may feel about visiting a therapist's office.\n\n## The Benefits of Telehealth Therapy\n\n### Confidential & Safe\n\nWe use secure HIPAA-compliant platforms to ensure your privacy and confidentiality.\n\n### Culturally Sensitive\n\nOur therapists are trained to provide culturally informed care, respecting and integrating your cultural background.\n\n### Flexibility\n\nYou may participate in your sessions while you are traveling, from the comfort of your home or office, and at a time that works for you.",
+ "blocks": [
+  {
+   "type": "hero",
+   "title": "Individual Therapy",
+   "subheads": [
+    "via Telehealth and in Person"
+   ],
+   "button": {
+    "text": "Individual Therapy",
+    "href": "/consultation"
+   },
+   "image": "/images/library/Individual-Therapy-via-Telehealth-and-in-Person.jpg"
+  },
+  {
+   "type": "text",
+   "heading": "Connecting With You Where You Are",
+   "body": "<p><span>At Growth Journey Therapy, we understand the importance of accessibility and convenience in seeking mental health support. That’s why we offer individual therapy via telehealth – a flexible and effective way to receive personalized counseling, regardless of your location or schedule constraints. We provide this service in both English and Spanish.</span></p>",
+   "headerOnly": false
+  },
+  {
+   "type": "image-text",
+   "image": "/images/library/individual-therapy-via-telehealth-body.jpg",
+   "imageSide": "left",
+   "heading": "Is Telehealth Therapy Right for You or are You a Face to Face Person? Or Both?",
+   "body": "<p style=\"text-align: left;\">Telehealth therapy is suitable for most individuals seeking mental health support. It’s especially beneficial if you:</p><p>Embrace the convenience and effectiveness of telehealth therapy. Whether you’re dealing with life’s everyday stresses or more complex mental health issues, our team at Growth Journey Therapy is here to provide the support and guidance you need, right where you are.</p><p>Your therapist will carefully explain and tailor treatment methods in your plan, ensuring they align with your specific needs and therapeutic goals.</p>"
+  },
+  {
+   "type": "text",
+   "heading": "Embracing the Benefits",
+   "body": "",
+   "headerOnly": true
+  },
+  {
+   "type": "text",
+   "heading": "The Benefits of Telehealth Therapy",
+   "body": "",
+   "headerOnly": true
+  },
+  {
+   "type": "cards",
+   "columns": 3,
+   "hasDesc": true,
+   "cards": [
+    {
+     "title": "Confidential & Safe",
+     "desc": "We use secure HIPAA-compliant platforms to ensure your privacy and confidentiality."
+    },
+    {
+     "title": "Culturally Sensitive",
+     "desc": "Our therapists are trained to provide culturally informed care, respecting and integrating your cultural background."
+    },
+    {
+     "title": "Flexibility",
+     "desc": "You may participate in your sessions while you are traveling, from the comfort of your home or office, and at a time that works for you."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,71 @@
+{
+ "slug": "person-centered-therapy",
+ "type": "method",
+ "title": "Person Centered",
+ "subheads": [
+  "Enhances Self-Understanding",
+  "Fosters Self-Acceptance",
+  "Promotes Autonomy",
+  "Encourages Emotional Growth"
+ ],
+ "heroImage": "/images/library/mindfulness.jpg",
+ "heroImageAlt": "Person Centered",
+ "heroButton": {
+  "text": "Start Your Journey",
+  "href": "/consultation"
+ },
+ "intro": {
+  "heading": "Empower Your Journey with PCT",
+  "body": "<p>Person-Centered Therapy, developed by Carl Rogers, is a therapeutic approach grounded in the belief that each individual has the innate potential for personal growth and change. This approach offers a non-directive, empathetic, and accepting environment, encouraging clients to explore and understand their own feelings and experiences. Our Person-Centered Therapy services are designed to empower you in your journey towards self-discovery and personal development.</p>",
+  "image": ""
+ },
+ "features": [
+  {
+   "title": "Unconditional Positive Regard",
+   "desc": "Our therapists provide a non-judgmental, accepting environment, where you are valued and respected regardless of your issues or behaviors."
+  },
+  {
+   "title": "Empathetic Understanding",
+   "desc": "We strive to deeply understand your experiences from your perspective, helping you to feel heard and understood."
+  },
+  {
+   "title": "Genuineness and Congruence",
+   "desc": "Therapists are authentic and transparent, creating a trustworthy and safe space for exploration and healing."
+  },
+  {
+   "title": "Client Autonomy",
+   "desc": "You are the expert on your life, and our role is to support you in finding your own solutions and paths to growth."
+  },
+  {
+   "title": "Promotes Autonomy",
+   "desc": "Supports the development of personal responsibility and self-directed growth."
+  },
+  {
+   "title": "Encourages Emotional Growth",
+   "desc": "Facilitates emotional healing and growth, leading to more fulfilling relationships and life experiences."
+  },
+  {
+   "title": "Fosters Self-Acceptance",
+   "desc": "Helps individuals accept themselves, building self-esteem and confidence."
+  },
+  {
+   "title": "Enhances Self-Understanding",
+   "desc": "Encourages a deeper understanding of one's own thoughts, feelings, and behaviors."
+  },
+  {
+   "title": "Humanistic Approach",
+   "desc": "PCT encourages you to find your own solutions and we help you discover them"
+  }
+ ],
+ "cta": {
+  "heading": "Person-Centered Therapy is effective for individuals seeking to improve self-awareness, cope with negative feelings, and address personal challenges. It is particularly beneficial for those who wish to explore their feelings in a supportive, non-judgmental environment.",
+  "body": "<p>We offer a warm, empathetic, and accepting space where you can freely express yourself and explore your inner world. Our experienced therapists are dedicated to supporting your unique journey, helping you unlock your potential and move towards a more authentic and fulfilling life. If you are looking to embark on a path of self-discovery and personal growth, we invite you to explore Person-Centered Therapy with us. Contact us to begin your journey towards a more self-aware and empowered life.</p>",
+  "button": {
+   "text": "Get Started",
+   "href": "/consultation"
+  },
+  "image": ""
+ },
+ "excerpt": "A warm, non-judgmental space where you set the pace and rediscover your own capacity for growth and healing.",
+ "seoDescription": "Person-Centered Therapy in Philadelphia: an empathetic, non-directive approach that supports self-discovery, self-acceptance, and personal growth."
+}

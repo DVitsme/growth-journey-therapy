@@ -1,0 +1,60 @@
+{
+ "slug": "frequently-asked-questions",
+ "type": "bespoke",
+ "title": "Frequently Asked Questions",
+ "subheads": [],
+ "heroImage": "",
+ "heroImageAlt": "Frequently Asked Questions",
+ "heroButton": null,
+ "intro": null,
+ "features": [],
+ "cta": null,
+ "blocks": [
+  {
+   "type": "faq",
+   "heading": "Frequently Asked Questions & Answers",
+   "groups": [
+    {
+     "title": "Insurance",
+     "items": [
+      {
+       "q": "What Insurance Do You Take",
+       "a": "<div aria-labelledby=\"elementor-tab-title-3131\" class=\"elementor-tab-content elementor-clearfix elementor-active\" data-tab=\"1\" id=\"elementor-tab-content-3131\" role=\"region\">\n<p>Growth Journey Therapy is proud to accept most major insurance programs available in Pennsylvania. Our goal is to make our services accessible to as many individuals as possible by working with a wide range of insurance providers. Currently, we accept plans from:</p>\n<p>UnitedHealthcare<br/>Optum<br/>Oscar Health<br/>Cigna<br/>Evernorth<br/>Aetna</p>\n</div>"
+      },
+      {
+       "q": "Do You Take Medicare or Medicaid?",
+       "a": "<p>It’s important to note that at this time, Growth Journey Therapy does not accept Medicare or Medicaid. We understand this may be a concern for some potential clients, and we are continuously evaluating our insurance partnerships to expand our accessibility.</p>\n<p>For those who are on Medicare or Medicaid, we encourage you to contact us for recommendations to other resources or providers who may be able to assist you.</p>"
+      },
+      {
+       "q": "What if I am uninsured?",
+       "a": "<span>We recognize that not everyone has insurance coverage through the providers we partner with, or you may prefer to engage in therapy without utilizing insurance. For uninsured clients or those with out-of-network plans, Growth Journey Therapy offers a variety of payment options to ensure you can still access our services. \n<p>We provide transparent pricing for our therapy sessions and accept several forms of payment, including credit cards and health savings account (HSA) cards. </p>\n<p>Our team is happy to discuss these options with you, helping to find a solution that accommodates your financial situation.</p></span>"
+      }
+     ]
+    },
+    {
+     "title": "CARE",
+     "items": [
+      {
+       "q": "Do you offer care in Spanish?",
+       "a": "<p><span>Yes, we offer care in both English and Spanish.</span></p>"
+      },
+      {
+       "q": "Do You Offer In-Person Care?",
+       "a": "<div aria-labelledby=\"elementor-tab-title-3131\" class=\"elementor-tab-content elementor-clearfix elementor-active\" data-tab=\"1\" id=\"elementor-tab-content-3131\" role=\"region\">\n<p>Yes. We Offer In-Person Care, as well as telehealth care to patients in Philadelphia, Pennsylvania. Telehealth care is available to all of PA.</p>\n<p> </p>\n</div>"
+      },
+      {
+       "q": "Do You Offer Virtual Care?",
+       "a": "We offer virtual telehealth online care to anyone in PA."
+      },
+      {
+       "q": "Do You Offer Couples Counseling?",
+       "a": "<p><span>We offer couples counseling both in person and online.</span></p>"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "excerpt": "Answers to common questions about insurance, care options, and getting started with Growth Journey Therapy.",
+ "seoDescription": "Frequently asked questions about insurance, payment, in-person and virtual care, Spanish-language therapy, and couples counseling at Growth Journey Therapy."
+}

@@ -1,0 +1,33 @@
+{
+ "slug": "community-resources",
+ "type": "bespoke",
+ "title": "Community Resources",
+ "subheads": [],
+ "heroImage": "/images/library/consolation.jpg",
+ "heroImageAlt": "Community Resources",
+ "heroButton": null,
+ "intro": null,
+ "features": [],
+ "cta": null,
+ "blocks": [
+  {
+   "type": "hero",
+   "title": "Community Resources",
+   "subheads": [
+    "Your Journey Starts Today!"
+   ],
+   "button": {
+    "text": "Schedule Your Consultation",
+    "href": "/consultation"
+   },
+   "image": "/images/library/consolation.jpg"
+  },
+  {
+   "type": "table",
+   "heading": "",
+   "html": "<table border=\"1\">\n<tbody><tr>\n<th>Category</th>\n<th>Name</th>\n<th>Website</th>\n<th>Description</th>\n</tr>\n<tr>\n<td>Legal Assistance</td>\n<td>Pennsylvania Immigration Resource Center (PIRC)</td>\n<td><a href=\"http://www.pirclaw.org\" rel=\"noopener\" target=\"_blank\">www.pirclaw.org</a></td>\n<td>Offers legal services, education, and advocacy to assist immigrants in securing their legal rights in the U.S.</td>\n</tr>\n<tr>\n<td>Education</td>\n<td>Welcoming Center for New Pennsylvanians</td>\n<td><a href=\"http://www.welcomingcenter.org\" rel=\"noopener\" target=\"_blank\">www.welcomingcenter.org</a></td>\n<td>Provides job placement, workforce development, and educational programs to immigrants and refugees in PA.</td>\n</tr>\n<tr>\n<td>Health Services</td>\n<td>Nationalities Service Center (NSC)</td>\n<td><a href=\"http://www.nscphila.org\" rel=\"noopener\" target=\"_blank\">www.nscphila.org</a></td>\n<td>Offers health and wellness services, including mental health support and medical case management for immigrants and refugees.</td>\n</tr>\n<tr>\n<td>Community Support</td>\n<td>HIAS Pennsylvania</td>\n<td><a href=\"http://www.hiaspa.org\" rel=\"noopener\" target=\"_blank\">www.hiaspa.org</a></td>\n<td>Provides legal services, resettlement assistance, and community integration programs for immigrants and refugees.</td>\n</tr>\n<tr>\n<td>Employment Services</td>\n<td>International Rescue Committee (IRC) in Philadelphia</td>\n<td><a href=\"http://www.rescue.org/united-states/philadelphia-pa\" rel=\"noopener\" target=\"_blank\">www.rescue.org/united-states/philadelphia-pa</a></td>\n<td>Offers job readiness training, employment placement, and economic empowerment programs for refugees and immigrants.</td>\n</tr>\n<tr>\n<td>Youth and Education</td>\n<td>The Pennsylvania Migrant Education Program</td>\n<td><a href=\"http://www.center-school.org/mep\" rel=\"noopener\" target=\"_blank\">www.center-school.org/mep</a></td>\n<td>Provides educational programs and advocacy to support migrant youth and their families in achieving educational success.</td>\n</tr>\n<tr>\n<td>Cultural Integration</td>\n<td>Global Pittsburgh</td>\n<td><a href=\"http://www.globalpittsburgh.org\" rel=\"noopener\" target=\"_blank\">www.globalpittsburgh.org</a></td>\n<td>Engages and enriches the community through international connections, cultures, and social programs for immigrants.</td>\n</tr>\n</tbody></table>"
+  }
+ ],
+ "excerpt": "A curated list of trusted Pennsylvania organizations offering legal, health, education, and community support for immigrants and refugees.",
+ "seoDescription": "Community resources for immigrants and refugees in Pennsylvania — legal aid, health services, education, employment, and cultural support organizations."
+}

@@ -1,0 +1,206 @@
+{
+ "slug": "cultural-integration-therapy",
+ "type": "specialty",
+ "title": "Cultural Integration Therapy",
+ "subheads": [
+  "Personalized Care",
+  "Highly Trained Staff",
+  "Addressing Cultural Stigma",
+  "Integration of Cultural Practices"
+ ],
+ "heroImage": "/images/library/Cultural-Integration-Therapy.jpg",
+ "heroImageAlt": "Cultural Integration",
+ "heroButton": null,
+ "intro": {
+  "heading": "Finding Your Place in American Culture",
+  "body": "<p><span>At Growth Journey Therapy, we recognize the intricate process of cultural integration that individuals, especially immigrants, undergo. Adapting to a new culture can be both exciting and daunting. Our Cultural Integration Therapy is designed to support you in this transition, helping you embrace your new environment while honoring your cultural identity.</span></p>",
+  "image": ""
+ },
+ "features": [
+  {
+   "title": "Overcoming language barriers and communications challenges",
+   "desc": ""
+  },
+  {
+   "title": "Adjusting to new social norms and expectations",
+   "desc": ""
+  },
+  {
+   "title": "Dealing with feelings of isolation",
+   "desc": ""
+  },
+  {
+   "title": "Feeling like you are betraying your cultures, homeland, and the people you trust",
+   "desc": ""
+  },
+  {
+   "title": "Feelings of homesickness and missing your trusted advisors",
+   "desc": ""
+  },
+  {
+   "title": "Culture Shock can be a significant source of stress and confusion",
+   "desc": ""
+  },
+  {
+   "title": "Preserving your own culture and identity while adopting new ones",
+   "desc": ""
+  },
+  {
+   "title": "Conflicts with coworkers, friends, and family",
+   "desc": ""
+  },
+  {
+   "title": "Shifts in roles due to a variety of issues like job, culture, and circumstance",
+   "desc": ""
+  },
+  {
+   "title": "Individualized Counseling",
+   "desc": "We offer personalized sessions focusing on your unique experiences and challenges in adapting to a new culture."
+  },
+  {
+   "title": "Family Integration Support",
+   "desc": "For those navigating cultural integration with families, we offer counseling that addresses the dynamics and challenges faced by all family members."
+  },
+  {
+   "title": "Strategies for Social Adaptation",
+   "desc": "We provide practical guidance and tools to navigate new social norms and customs, helping you build meaningful connections in your new community."
+  }
+ ],
+ "cta": null,
+ "excerpt": "Compassionate support for embracing a new culture while honoring the identity and roots you carry with you.",
+ "seoDescription": "Cultural Integration Therapy in Philadelphia helps immigrants and BIPOC individuals adapt to a new culture while honoring their identity. In English and Spanish.",
+ "blocks": [
+  {
+   "type": "hero",
+   "title": "Cultural Integration Therapy",
+   "subheads": [
+    "Personalized Care",
+    "Highly Trained Staff",
+    "Addressing Cultural Stigma",
+    "Integration of Cultural Practices"
+   ],
+   "button": {
+    "text": "Cultural Integration Therapy",
+    "href": "/consultation"
+   },
+   "image": "/images/library/Cultural-Integration-Therapy.jpg"
+  },
+  {
+   "type": "text",
+   "heading": "Finding Your Place in American Culture",
+   "body": "<p>\n<span>At Growth Journey Therapy, we recognize the\n                                    intricate process of cultural integration\n                                    that individuals, especially immigrants,\n                                    undergo. Adapting to a new culture can be\n                                    both exciting and daunting. Our Cultural\n                                    Integration Therapy is designed to support\n                                    you in this transition, helping you embrace\n                                    your new environment while honoring your\n                                    cultural identity.</span>\n</p>",
+   "headerOnly": false
+  },
+  {
+   "type": "image-text",
+   "image": "/images/library/Cultural-Integration-Therapy-body.jpg",
+   "imageSide": "left",
+   "heading": "Cultural Integration is a Process",
+   "body": "<p>\n                                As a nation built on immigration, America has\n                                always been a melting pot of different cultures\n                                and identities. However, despite its history,\n                                cultural integration in America for immigrants\n                                continues to be a topic of debate and\n                                discussion. While some see it as a natural and\n                                positive aspect of the country, others view it\n                                as a threat to the American way of life. In this\n                                blog post, we will explore the concept of\n                                cultural integration in America and its impact\n                                on immigrants. Firstly, it is important to\n                                understand what cultural integration means.\n                                Simply put, it is the process of merging\n                                different cultures into a cohesive and\n                                harmonious society. It involves the exchange of\n                                values, beliefs, customs, and traditions between\n                                different groups. Cultural integration requires\n                                mutual respect, understanding, and acceptance.\n                            </p><p>\n                                The challenges are what we work with at Growth\n                                Journey Therapy here in Philly.\n                            </p>"
+  },
+  {
+   "type": "text",
+   "heading": "Unique Issues",
+   "body": "",
+   "headerOnly": true
+  },
+  {
+   "type": "cards",
+   "columns": 3,
+   "hasDesc": false,
+   "cards": [
+    {
+     "title": "Overcoming language barriers and communications challenges",
+     "desc": ""
+    },
+    {
+     "title": "Adjusting to new social norms and expectations",
+     "desc": ""
+    },
+    {
+     "title": "Dealing with feelings of isolation",
+     "desc": ""
+    },
+    {
+     "title": "Feeling like you are betraying your cultures, homeland, and the people you trust",
+     "desc": ""
+    },
+    {
+     "title": "Feelings of homesickness and missing your trusted advisors",
+     "desc": ""
+    },
+    {
+     "title": "Culture Shock can be a significant source of stress and confusion",
+     "desc": ""
+    },
+    {
+     "title": "Preserving your own culture and identity while adopting new ones",
+     "desc": ""
+    },
+    {
+     "title": "Conflicts with coworkers, friends, and family",
+     "desc": ""
+    },
+    {
+     "title": "Shifts in roles due to a variety of issues like job, culture, and circumstance",
+     "desc": ""
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Our Therapeutic Approach",
+   "body": "",
+   "headerOnly": true
+  },
+  {
+   "type": "cards",
+   "columns": 3,
+   "hasDesc": true,
+   "cards": [
+    {
+     "title": "Individualized Counseling",
+     "desc": "We offer\n                                                                personalized\n                                                                sessions\n                                                                focusing on your\n                                                                unique\n                                                                experiences and\n                                                                challenges in\n                                                                adapting to a\n                                                                new culture."
+    },
+    {
+     "title": "Family Integration Support",
+     "desc": "For those\n                                                                navigating\n                                                                cultural\n                                                                integration with\n                                                                families, we\n                                                                offer counseling\n                                                                that addresses\n                                                                the dynamics and\n                                                                challenges faced\n                                                                by all family\n                                                                members."
+    },
+    {
+     "title": "Strategies for Social Adaptation",
+     "desc": "We provide practical guidance\n                                                and tools to navigate new social\n                                                norms and customs, helping you\n                                                build meaningful connections in\n                                                your new community."
+    }
+   ]
+  },
+  {
+   "type": "cards",
+   "columns": 2,
+   "hasDesc": true,
+   "cards": [
+    {
+     "title": "Identity and Self-Esteem Building",
+     "desc": "Our therapy\n                                                                focuses on\n                                                                strengthening\n                                                                your sense of\n                                                                self, ensuring\n                                                                that cultural\n                                                                adaptation does\n                                                                not mean losing\n                                                                your identity\n                                                                but enriching\n                                                                it."
+    },
+    {
+     "title": "Support in Overcoming Language Barriers",
+     "desc": "Our therapists\n                                                                are skilled in\n                                                                assisting\n                                                                clients to\n                                                                overcome\n                                                                communication\n                                                                hurdles,\n                                                                enhancing their\n                                                                confidence in\n                                                                social and\n                                                                professional\n                                                                settings. We\n                                                                will provide you\n                                                                with a list of\n                                                                resources to\n                                                                help your\n                                                                strengthen your\n                                                                English skills.\n                                                                We offer therapy\n                                                                in both English\n                                                                and Spanish."
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Empowering your Cultural Journey ​",
+   "body": "<p style=\"text-align: center\">\n                                            Our goal is to empower you to\n                                            confidently navigate your new\n                                            cultural environment while\n                                            maintaining a strong sense of your\n                                            own cultural identity. We understand\n                                            that cultural integration is a\n                                            journey of balance – one that\n                                            involves embracing new aspects of\n                                            life while respecting and retaining\n                                            your cultural roots.  Learning\n                                            to be multi-cultural is a process.\n                                        </p>",
+   "headerOnly": false
+  },
+  {
+   "type": "cta",
+   "heading": "Begin Your Integrated Cultural Journey Today",
+   "body": "<p style=\"text-align: center\">\n                                        Embracing a new culture is a significant\n                                        step in your life’s journey. At Growth\n                                        Journey Therapy, we are here to guide\n                                        and support you through every step of\n                                        this process. Let us help you find the\n                                        balance and confidence to thrive in your\n                                        new cultural landscape. Growth Journey\n                                        Therapy is the perfect place to start\n                                        your journey of cultural integration\n                                        with confidence.\n                                    </p>",
+   "button": {
+    "text": "Get Started",
+    "href": "/consultation"
+   }
+  }
+ ]
+}

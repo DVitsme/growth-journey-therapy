@@ -1,0 +1,54 @@
+{
+ "slug": "mission",
+ "type": "bespoke",
+ "title": "Mission",
+ "subheads": [],
+ "heroImage": "/images/library/nelsery-mission.jpg",
+ "heroImageAlt": "Mission",
+ "heroButton": null,
+ "intro": null,
+ "features": [],
+ "cta": null,
+ "blocks": [
+  {
+   "type": "text",
+   "heading": "Founders Vision",
+   "body": "<p>\n                            Nelsery’s story is one of determination and empathy.\n                            As an immigrant, she navigated the complex maze of\n                            adapting to a new culture while staying true to her\n                            roots. These experiences ignited a passion in\n                            Nelsery: to create a space where individuals,\n                            regardless of their cultural background or language,\n                            could find understanding, support, and effective\n                            therapy.\n                        </p>",
+   "button": null,
+   "headerOnly": false
+  },
+  {
+   "type": "image",
+   "src": "/images/library/nelsery-mission.jpg",
+   "alt": "",
+   "width": 980,
+   "height": 719
+  },
+  {
+   "type": "text",
+   "heading": "",
+   "body": "<p>\n                            Understanding the challenges faced by immigrants and\n                            marginalized communities in accessing mental health\n                            care, Nelsery established Growth Journey Therapy.\n                            Her vision was clear – to offer culturally aware\n                            therapy that was not only comprehensive but also\n                            accessible. She recognized the crucial need for\n                            services that were sensitive to the cultural nuances\n                            and languages of Pennsylvania’s diverse population.\n                        </p>",
+   "button": null,
+   "headerOnly": false
+  },
+  {
+   "type": "text",
+   "heading": "Our Mission",
+   "body": "<p>\n                            At Growth Journey Therapy, we provide culturally\n                            competent, trauma-informed psychotherapy for BIPOC\n                            women, adult children of immigrants, and\n                            multicultural families navigating intergenerational\n                            and identity-based challenges. Rooted in compassion\n                            and advocacy, our mission is to support healing from\n                            relational trauma, bridge cultural divides, and\n                            empower individuals to reclaim joy, authenticity,\n                            and ancestral connection—without losing sight of\n                            where they came from.\n                        </p><p>\n                            We believe in breaking cycles of intergenerational\n                            trauma, fostering self-understanding, and guiding\n                            transformative growth for lasting well-being across\n                            generations. We are committed to promoting a safe\n                            therapeutic atmosphere in which multiculturalism is\n                            celebrated, honored, and integrated into every step\n                            of the healing journey.\n                        </p>",
+   "button": null,
+   "headerOnly": false
+  },
+  {
+   "type": "text",
+   "heading": "",
+   "body": "",
+   "button": {
+    "text": "Start Your Journey",
+    "href": "/consultation"
+   },
+   "headerOnly": false
+  }
+ ],
+ "excerpt": "The story and mission behind Growth Journey Therapy—culturally affirming care born from lived immigrant experience.",
+ "seoDescription": "Learn the founder's vision and mission behind Growth Journey Therapy: culturally competent, trauma-informed care for BIPOC women, immigrants, and multicultural families."
+}

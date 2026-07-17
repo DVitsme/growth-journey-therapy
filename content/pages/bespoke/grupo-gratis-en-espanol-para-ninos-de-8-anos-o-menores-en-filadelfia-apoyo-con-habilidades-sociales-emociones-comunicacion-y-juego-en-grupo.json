@@ -1,0 +1,87 @@
+{
+ "slug": "grupo-gratis-en-espanol-para-ninos-de-8-anos-o-menores-en-filadelfia-apoyo-con-habilidades-sociales-emociones-comunicacion-y-juego-en-grupo",
+ "type": "bespoke",
+ "title": "Grupo Gratis en Español Para Niños",
+ "subheads": [],
+ "heroImage": "/images/library/Spanish-Speaking-Childrens-Engagement-Group.jpg",
+ "heroImageAlt": "Grupo de apoyo en español para niños en Growth Journey Therapy",
+ "heroButton": null,
+ "intro": null,
+ "features": [],
+ "cta": null,
+ "blocks": [
+  {
+   "type": "event-header",
+   "eyebrow": "GRATIS",
+   "title": "GRUPO GRATIS EN ESPAÑOL PARA NIÑOS",
+   "subtitle": "Para niños de 8 años o menores",
+   "logistics": "<p><strong>Cuándo:</strong> Viernes en persona de 5:00 a 6:30 p. m</p><p><strong>Fechas:</strong> Mayo 1, 8, 15, 22 y 29 de Mayo, y 5 de Junio de 2026</p><p><strong>Precio:</strong> Gratis</p><p><strong>Dónde: en Growth Journey</strong></p><p>2201 Pennsylvania Ave., Suite 101 Philadelphia, PA 19130</p>",
+   "image": "/images/library/Spanish-Speaking-Childrens-Engagement-Group.jpg",
+   "imageAlt": "Grupo Gratis en Español Para Niños"
+  },
+  {
+   "type": "text",
+   "heading": "Ofrecido en español por una terapeuta bilingüe",
+   "body": "",
+   "button": null
+  },
+  {
+   "type": "cards",
+   "columns": 2,
+   "hasDesc": false,
+   "cards": [
+    {
+     "title": "Aprender por medio del juego y actividades en grupo",
+     "desc": ""
+    },
+    {
+     "title": "Desarrollar habilidades sociales y hacer amistades",
+     "desc": ""
+    },
+    {
+     "title": "Fortalecer la comunicación, la confianza y la expresión personal",
+     "desc": ""
+    },
+    {
+     "title": "Aprender a manejar emociones fuertes y frustración",
+     "desc": ""
+    },
+    {
+     "title": "Participar en dibujo, juegos y actividades creativas",
+     "desc": ""
+    },
+    {
+     "title": "Practicar rutinas, escuchar y seguir instrucciones",
+     "desc": ""
+    },
+    {
+     "title": "Reforzar el aprendizaje temprano, incluyendo el abecedario y habilidades básicas",
+     "desc": ""
+    },
+    {
+     "title": "Recibir apoyo en un ambiente inclusivo para niños con diferencias de aprendizaje y necesidades del desarrollo",
+     "desc": ""
+    },
+    {
+     "title": "Participar en un espacio acogedor para niños con autismo o que reciben servicios de ABA",
+     "desc": ""
+    },
+    {
+     "title": "Practicar interacción con otros niños, trabajo en equipo y expresión emocional en un ambiente seguro",
+     "desc": ""
+    }
+   ],
+   "plain": true
+  },
+  {
+   "type": "cta",
+   "heading": "El grupo será facilitado por una terapeuta bilingüe de Growth Journey Abierto a clientes de NSC que hablen español y tengan 8 años o menos ¡Todos los estatus migratorios son bienvenidos!",
+   "body": "<p>Para registrarse, envíe un correo electrónico <a href=\"mailto:Growthjourney.therapy@gmail.com\">Growthjourney.therapy@gmail.com</a> o llame al <a href=\"tel:+12677138831\">267-713-8831</a></p>",
+   "button": null,
+   "boxed": true
+  }
+ ],
+ "excerpt": "Un grupo gratuito en español, guiado por una terapeuta bilingüe, donde los niños de 8 años o menos aprenden a través del juego, la comunicación y la conexión.",
+ "seoDescription": "Grupo gratis en español en Filadelfia para niños de 8 años o menos: habilidades sociales, emociones, comunicación y juego con una terapeuta bilingüe.",
+ "lang": "es"
+}

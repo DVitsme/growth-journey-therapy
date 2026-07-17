@@ -1,0 +1,85 @@
+{
+ "slug": "free-spanish-speaking-childrens-engagement-group-children-8-years-old-and-younger",
+ "type": "bespoke",
+ "title": "FREE Spanish-Speaking Children's Engagement Group",
+ "subheads": [],
+ "heroImage": "/images/library/Spanish-Speaking-Childrens-Engagement-Group.jpg",
+ "heroImageAlt": "Spanish-Speaking Children's Engagement Group",
+ "heroButton": null,
+ "intro": null,
+ "features": [],
+ "cta": null,
+ "blocks": [
+  {
+   "type": "event-header",
+   "eyebrow": "FREE",
+   "title": "Spanish-Speaking Children’s Engagement Group Children 8 years old and younger",
+   "logistics": "<p><strong>When:</strong> Fridays in person from 5-6:30pm</p><p><strong>Dates:</strong> May 1, 8, 15, 22, 29 and 6/5 2026</p><p><strong>Price:</strong> Free</p><p><strong>Where: In person at Growth Journey</strong></p><p>2201 Pennsylvania Ave., Suite 101 Philadelphia, PA 19130</p>",
+   "image": "/images/library/Spanish-Speaking-Childrens-Engagement-Group.jpg",
+   "imageAlt": "FREE Spanish-Speaking Children's Engagement Group"
+  },
+  {
+   "type": "text",
+   "heading": "Group will be conducted in Spanish with a bilingual therapist",
+   "body": "",
+   "button": null
+  },
+  {
+   "type": "cards",
+   "columns": 2,
+   "hasDesc": false,
+   "cards": [
+    {
+     "title": "Social skills development and making friends",
+     "desc": ""
+    },
+    {
+     "title": "Play-based learning and structured peer interaction",
+     "desc": ""
+    },
+    {
+     "title": "Emotional regulation and coping with big feelings",
+     "desc": ""
+    },
+    {
+     "title": "Building communication, confidence, and self-expression",
+     "desc": ""
+    },
+    {
+     "title": "Creative activities including drawing, games, and guided play",
+     "desc": ""
+    },
+    {
+     "title": "Learning routines, listening skills, and following directions",
+     "desc": ""
+    },
+    {
+     "title": "Psychoeducation through age-appropriate learning, including early ABCs and foundational skills",
+     "desc": ""
+    },
+    {
+     "title": "Support for children with learning differences and developmental needs",
+     "desc": ""
+    },
+    {
+     "title": "Welcoming children with autism and ABA-related support needs",
+     "desc": ""
+    },
+    {
+     "title": "Safe opportunities to practice peer engagement, teamwork, and emotional expression",
+     "desc": ""
+    }
+   ],
+   "plain": true
+  },
+  {
+   "type": "cta",
+   "heading": "Group will be facilitated by Growth Journey bilingual therapist",
+   "body": "<p>Open to all Spanish-speaking NSC clients who are 8 years old or younger<br />All immigration statuses are welcome!</p><p><strong>Register by emailing Gwen Soffer at <a href=\"mailto:gsoffer@nscphila.org\">gsoffer@nscphila.org</a></strong></p>",
+   "button": null,
+   "boxed": true
+  }
+ ],
+ "excerpt": "A free, play-based group for Spanish-speaking children 8 and younger to build social skills, confidence, and friendships with a bilingual therapist.",
+ "seoDescription": "Free Spanish-speaking children's engagement group for kids 8 and younger in Philadelphia. Play-based social, emotional, and communication skills with a bilingual therapist."
+}

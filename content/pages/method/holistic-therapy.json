@@ -1,0 +1,54 @@
+{
+ "slug": "holistic-therapy",
+ "type": "method",
+ "title": "Holistic Therapy",
+ "subheads": [],
+ "heroImage": "/images/library/holstic-therapy.jpg",
+ "heroImageAlt": "Holistic Therapy",
+ "heroButton": {
+  "text": "Start Your Journey",
+  "href": "/consultation"
+ },
+ "intro": {
+  "heading": "Embrace the Whole You with Holistic Therapy",
+  "body": "<p>Holistic Therapy is an integrative approach to treatment that addresses the individual as a whole, focusing on the mind, body, spirit, and emotions. This therapy recognizes that all these aspects of a person are interconnected and that achieving balance among them is crucial for true wellness and health. Our holistic therapy services are designed to help individuals find harmony and healing in every aspect of their lives.</p>",
+  "image": ""
+ },
+ "features": [
+  {
+   "title": "Mind-Body Connection",
+   "desc": "Understanding and addressing the ways in which emotional, mental, spiritual, and physical health are interconnected."
+  },
+  {
+   "title": "Personalized Care",
+   "desc": "Tailoring treatment to meet the unique needs and circumstances of each individual."
+  },
+  {
+   "title": "Natural and Integrative",
+   "desc": "Utilizing a range of therapies including mindfulness, meditation, yoga, and nutrition to support overall well-being."
+  },
+  {
+   "title": "Emphasis on Self-Discovery",
+   "desc": "Encouraging individuals to explore and understand themselves deeply, fostering personal growth and self-awareness."
+  },
+  {
+   "title": "Enhances Well-Being",
+   "desc": "By addressing all aspects of the self, holistic therapy promotes comprehensive health and wellness."
+  },
+  {
+   "title": "Balances Mind and Body",
+   "desc": "It fosters harmony between the mind and body, leading to improved physical health and mental clarity."
+  }
+ ],
+ "cta": {
+  "heading": "Holistic Therapy is ideal for individuals seeking a comprehensive approach to healing. It's particularly beneficial for those who feel disconnected, are dealing with chronic stress or illness, or are seeking to deepen their understanding of themselves.",
+  "body": "Your therapist will carefully explain and tailor treatment methods in your plan, ensuring they align with your specific needs and therapeutic goals.",
+  "button": {
+   "text": "Get Started",
+   "href": "/consultation"
+  },
+  "image": ""
+ },
+ "excerpt": "A whole-person approach to healing that brings your mind, body, spirit, and emotions into balance.",
+ "seoDescription": "Holistic Therapy in Philadelphia integrates mind, body, spirit, and emotions to support whole-person healing, balance, and lasting well-being."
+}

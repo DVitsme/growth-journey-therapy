@@ -1,0 +1,2 @@
+/2023/05/02/que-es-la-deprivacion-cultural-2/ -> 301 -> /blog/que-es-la-deprivacion-cultural (merged dup ES post)
+/specialties/burn-out-work-life-balance-2/ -> 301 -> /specialties/burn-out-work-life-balance (old nav linked the -2 dup)

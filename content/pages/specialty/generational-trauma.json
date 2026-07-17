@@ -1,0 +1,136 @@
+{
+ "slug": "generational-trauma",
+ "type": "specialty",
+ "title": "Generational Trauma",
+ "subheads": [
+  "Healing from the Past –",
+  "The Weight of Experiences"
+ ],
+ "heroImage": "/images/library/Generational-Trauma-1.jpg",
+ "heroImageAlt": "Generational",
+ "heroButton": null,
+ "intro": {
+  "heading": "More than just Sadness",
+  "body": "At Growth Journey Therapy, we recognize the profound impact of generational trauma on individuals and families. This type of trauma, passed down from one generation to the next, can have deep-rooted effects on emotional well-being, relationships, and overall quality of life. Our aim is to help clients understand and heal from the legacy of such trauma.",
+  "image": ""
+ },
+ "features": [
+  {
+   "title": "Historical events like war, genocide, or slavery",
+   "desc": ""
+  },
+  {
+   "title": "Pre-Migration trauma - such as violence",
+   "desc": ""
+  },
+  {
+   "title": "Family patterns of abuse, neglect, or dysfunction",
+   "desc": ""
+  },
+  {
+   "title": "Cultural or systemic oppression",
+   "desc": ""
+  },
+  {
+   "title": "Migration trauma - hardships and dangers of your journey",
+   "desc": ""
+  },
+  {
+   "title": "Unexplained anxiety, depression, or emtional issues",
+   "desc": ""
+  },
+  {
+   "title": "Patterns of dysfunctional relationships or behaviors",
+   "desc": ""
+  },
+  {
+   "title": "Chronic health problems or mental health disorders",
+   "desc": ""
+  },
+  {
+   "title": "Family separation and pressure",
+   "desc": ""
+  },
+  {
+   "title": "Difficulty with attachment or trust in relationships",
+   "desc": ""
+  }
+ ],
+ "cta": null,
+ "excerpt": "Understand and heal from the legacy of trauma passed down through your family, and gently begin to break the cycle for yourself and future generations.",
+ "seoDescription": "Compassionate therapy for generational and intergenerational trauma in Philadelphia. Understand its causes, recognize the symptoms, and begin healing.",
+ "blocks": [
+  {
+   "type": "hero",
+   "title": "Generational Trauma",
+   "subheads": [
+    "Healing from the Past –",
+    "The Weight of Experiences"
+   ],
+   "button": {
+    "text": "Begin the Journey",
+    "href": "/consultation"
+   },
+   "image": "/images/library/Generational-Trauma-1.jpg"
+  },
+  {
+   "type": "text",
+   "heading": "More than just Sadness",
+   "body": "",
+   "headerOnly": true
+  },
+  {
+   "type": "image-text",
+   "image": "/images/library/generational.jpg",
+   "imageSide": "left",
+   "heading": "Understanding Generational Trauma",
+   "body": "<p>Generational trauma, also known as intergenerational or transgenerational trauma, refers to the psychological effects that are passed down from one generation to the next among families who have experienced significant traumatic events. This type of trauma can stem from a variety of sources, including war, genocide, displacement, severe economic hardship, or other forms of violence and loss. The trauma experienced by one generation can affect parenting styles, emotional responses, and behavioral patterns, which can then be transmitted to subsequent generations, even if those later generations have not experienced the trauma directly.</p><p>The transmission of generational trauma can occur through several mechanisms, including the direct communication of traumatic experiences to children, the modeling of trauma-influenced behaviors and coping strategies, and even through epigenetic changes that affect how genes are expressed in response to stress. Children and grandchildren of those who have directly experienced trauma may therefore exhibit symptoms and behaviors related to the original traumatic events, such as anxiety, depression, or difficulties in forming secure attachments, without having firsthand knowledge of these events.</p><p>Understanding and addressing generational trauma requires a nuanced approach that considers both the psychological and the social components of trauma transmission. Therapy and support for individuals and families dealing with generational trauma often involve exploring family history, recognizing patterns of behavior, and developing new coping mechanisms to heal from past hurts and prevent the further transmission of trauma to future generations.</p>"
+  },
+  {
+   "type": "text",
+   "heading": "Causes and Symptoms",
+   "body": "",
+   "headerOnly": true
+  },
+  {
+   "type": "cards",
+   "columns": 3,
+   "hasDesc": false,
+   "cards": [
+    {
+     "title": "Historical events like war, genocide, or slavery",
+     "desc": ""
+    },
+    {
+     "title": "Pre-Migration trauma – such as violence",
+     "desc": ""
+    },
+    {
+     "title": "Family patterns of abuse, neglect, or dysfunction",
+     "desc": ""
+    },
+    {
+     "title": "Unexplained anxiety, depression, or emtional issues",
+     "desc": ""
+    },
+    {
+     "title": "Patterns of dysfunctional relationships or behaviors",
+     "desc": ""
+    },
+    {
+     "title": "Chronic health problems or mental health disorders",
+     "desc": ""
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "heading": "Begin the Journey of Healing and Empowerment",
+   "body": "<p><span>Our goal is to not only help you understand and process the effects of generational trauma but also to empower you to break the cycle. Healing from generational trauma involves creating new, healthy patterns for yourself and potentially for future generations.</span></p>",
+   "button": {
+    "text": "Get Started",
+    "href": "/consultation"
+   }
+  }
+ ]
+}
