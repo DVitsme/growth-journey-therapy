@@ -14,7 +14,7 @@ export function MethodTemplate({ doc, bodyHtml }: { doc: MethodDoc; bodyHtml?: s
             fill
             priority
             sizes="100vw"
-            className="object-cover object-left md:object-[left_center]"
+            className="object-cover object-[left_top]"
           />
         )}
         <div className="absolute inset-y-0 right-0 flex w-full flex-col items-center justify-center bg-green/95 px-8 py-12 text-center md:w-[58%] md:bg-green md:[clip-path:polygon(16%_0,100%_0,100%_100%,0_100%)] md:pl-[16%]">

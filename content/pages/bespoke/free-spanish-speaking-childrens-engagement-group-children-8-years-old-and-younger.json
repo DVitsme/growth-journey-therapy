@@ -19,65 +19,33 @@
    "imageAlt": "FREE Spanish-Speaking Children's Engagement Group"
   },
   {
-   "type": "text",
+   "type": "event-features",
    "heading": "Group will be conducted in Spanish with a bilingual therapist",
-   "body": "",
-   "button": null
-  },
-  {
-   "type": "cards",
-   "columns": 2,
-   "hasDesc": false,
-   "cards": [
-    {
-     "title": "Social skills development and making friends",
-     "desc": ""
-    },
-    {
-     "title": "Play-based learning and structured peer interaction",
-     "desc": ""
-    },
-    {
-     "title": "Emotional regulation and coping with big feelings",
-     "desc": ""
-    },
-    {
-     "title": "Building communication, confidence, and self-expression",
-     "desc": ""
-    },
-    {
-     "title": "Creative activities including drawing, games, and guided play",
-     "desc": ""
-    },
-    {
-     "title": "Learning routines, listening skills, and following directions",
-     "desc": ""
-    },
-    {
-     "title": "Psychoeducation through age-appropriate learning, including early ABCs and foundational skills",
-     "desc": ""
-    },
-    {
-     "title": "Support for children with learning differences and developmental needs",
-     "desc": ""
-    },
-    {
-     "title": "Welcoming children with autism and ABA-related support needs",
-     "desc": ""
-    },
-    {
-     "title": "Safe opportunities to practice peer engagement, teamwork, and emotional expression",
-     "desc": ""
-    }
+   "items": [
+    "Social skills development and making friends",
+    "Play-based learning and structured peer interaction",
+    "Emotional regulation and coping with big feelings",
+    "Building communication, confidence, and self-expression",
+    "Creative activities including drawing, games, and guided play",
+    "Learning routines, listening skills, and following directions",
+    "Psychoeducation through age-appropriate learning, including early ABCs and foundational skills",
+    "Support for children with learning differences and developmental needs",
+    "Welcoming children with autism and ABA-related support needs",
+    "Safe opportunities to practice peer engagement, teamwork, and emotional expression"
    ],
-   "plain": true
+   "accentAbove": "/images/library/event-coordinator-14.png",
+   "accentBelow": "/images/library/event-coordinator-20.png"
   },
   {
    "type": "cta",
    "heading": "Group will be facilitated by Growth Journey bilingual therapist",
    "body": "<p>Open to all Spanish-speaking NSC clients who are 8 years old or younger<br />All immigration statuses are welcome!</p><p><strong>Register by emailing Gwen Soffer at <a href=\"mailto:gsoffer@nscphila.org\">gsoffer@nscphila.org</a></strong></p>",
    "button": null,
-   "boxed": true
+   "boxed": true,
+   "accents": [
+    "/images/library/event-coordinator-4.png",
+    "/images/library/event-coordinator-2.png"
+   ]
   }
  ],
  "excerpt": "A free, play-based group for Spanish-speaking children 8 and younger to build social skills, confidence, and friendships with a bilingual therapist.",

@@ -19,65 +19,33 @@
    "imageAlt": "FREE Spanish-Speaking Caregiver Support Group for Caregivers of Children 0-8 years old (includes prenatal)"
   },
   {
-   "type": "text",
+   "type": "event-features",
    "heading": "Group will be conducted in Spanish with a bilingual therapist",
-   "body": "",
-   "button": null
-  },
-  {
-   "type": "cards",
-   "columns": 2,
-   "hasDesc": false,
-   "cards": [
-    {
-     "title": "Parenting support and practical guidance for new and expecting caregivers",
-     "desc": ""
-    },
-    {
-     "title": "Pregnancy and postpartum emotional support",
-     "desc": ""
-    },
-    {
-     "title": "Caregiver stress, anxiety, sadness, and overwhelm",
-     "desc": ""
-    },
-    {
-     "title": "Understanding young children’s emotional and behavioral development",
-     "desc": ""
-    },
-    {
-     "title": "Communication and connection between caregivers and children",
-     "desc": ""
-    },
-    {
-     "title": "Managing tantrums, big feelings, and challenging behaviors",
-     "desc": ""
-    },
-    {
-     "title": "Healthy routines, coping skills, and emotional regulation at home",
-     "desc": ""
-    },
-    {
-     "title": "Screen time, tablets, cell phones and setting technology boundaries",
-     "desc": ""
-    },
-    {
-     "title": "Helping children stay engaged in play and daily routines when less reliance on internet based distractions",
-     "desc": ""
-    },
-    {
-     "title": "Building support and connection with other caregivers.",
-     "desc": ""
-    }
+   "items": [
+    "Parenting support and practical guidance for new and expecting caregivers",
+    "Pregnancy and postpartum emotional support",
+    "Caregiver stress, anxiety, sadness, and overwhelm",
+    "Understanding young children’s emotional and behavioral development",
+    "Communication and connection between caregivers and children",
+    "Managing tantrums, big feelings, and challenging behaviors",
+    "Healthy routines, coping skills, and emotional regulation at home",
+    "Screen time, tablets, cell phones and setting technology boundaries",
+    "Helping children stay engaged in play and daily routines when less reliance on internet based distractions",
+    "Building support and connection with other caregivers."
    ],
-   "plain": true
+   "accentAbove": "/images/library/event-coordinator-14.png",
+   "accentBelow": "/images/library/event-coordinator-20.png"
   },
   {
    "type": "cta",
    "heading": "Group will be facilitated by GROWTH JOURNEY bilingual therapist",
    "body": "<p>Open to all Spanish-speaking NSC clients who are caregivers of children 0-8 years old<br />All immigration statuses are welcome!</p><p><strong>Register by emailing Gwen Soffer at <a href=\"mailto:gsoffer@nscphila.org\">gsoffer@nscphila.org</a></strong></p>",
    "button": null,
-   "boxed": true
+   "boxed": true,
+   "accents": [
+    "/images/library/event-coordinator-4.png",
+    "/images/library/event-coordinator-2.png"
+   ]
   }
  ],
  "excerpt": "A free, welcoming support group for Spanish-speaking caregivers of young children — from pregnancy through age 8 — facilitated by a bilingual Growth Journey therapist.",

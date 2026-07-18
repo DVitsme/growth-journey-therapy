@@ -124,9 +124,9 @@ export function CareersForm() {
           <input name="address" required maxLength={200} autoComplete="street-address" className={INPUT} />
         </label>
 
+        {/* No visible label: the disabled placeholder option carries the field name. */}
         <label className={BOX}>
-          <span className={LABEL}>Employment Desired *</span>
-          <select name="employment" required defaultValue="" className={`${INPUT} cursor-pointer`}>
+          <select name="employment" required aria-label="Employment Desired" defaultValue="" className={`${INPUT} cursor-pointer`}>
             <option value="" disabled>
               Employment Desired *
             </option>

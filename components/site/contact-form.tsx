@@ -191,11 +191,13 @@ export function ContactForm({ locale }: { locale: "en" | "es" }) {
           <input name="phone" type="tel" maxLength={40} autoComplete="tel" className={INPUT} />
         </label>
 
-        {/* Original "Are You Interested in..." select — her service names, original order. */}
+        {/* Original "Are You Interested in..." select — her service names, original order.
+            No visible label: the disabled placeholder option carries the field name. */}
         <label className={BOX}>
-          <span className={LABEL}>{t.interest}</span>
-          <select name="interest" defaultValue="" className={`${INPUT} cursor-pointer`}>
-            <option value="">{t.interest}</option>
+          <select name="interest" aria-label={t.interest} defaultValue="" className={`${INPUT} cursor-pointer`}>
+            <option value="" disabled>
+              {t.interest}
+            </option>
             {INTERESTS.map((v) => (
               <option key={v} value={v}>
                 {v}

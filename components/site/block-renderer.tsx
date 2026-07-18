@@ -21,8 +21,12 @@ export type Block =
   /** Either a flat `items` list or two-plus `groups` rendered side-by-side with their own headings (the FAQ page's Insurance/CARE columns). */
   | { type: "faq"; heading: string; items?: QA[]; groups?: { title: string; items: QA[] }[] }
   | { type: "table"; heading: string; html: string }
-  /** `boxed` = the original's outlined-box CTA (bordered card on the page background, not a full-bleed band). */
-  | { type: "cta"; heading: string; body: string; button?: Btn; boxed?: boolean }
+  /** `boxed` = the original's outlined-box CTA (bordered card on the page background, not a full-bleed band).
+   *  `accents` = the event template's decorative corner graphics flanking the box. */
+  | { type: "cta"; heading: string; body: string; button?: Btn; boxed?: boolean; accents?: string[] }
+  /** The event template's features section: oversized display heading (with decorative accents)
+   *  in the LEFT column, the topic list as a 2-col hairline grid in the RIGHT column. */
+  | { type: "event-features"; heading: string; items: string[]; accentAbove?: string; accentBelow?: string }
   /** The original /groups "ledger": thumbnail | heading+body | bottom-aligned button, hairline between rows. */
   | { type: "rows"; rows: { image?: string; heading: string; body: string; button?: Btn }[] }
   /** The group-event masthead: eyebrow above a dark page title, then logistics beside the event flyer. */
@@ -48,7 +52,7 @@ export function BlockRenderer({ blocks, heroImage }: { blocks: Block[]; heroImag
             const img = b.image === "__HERO_BG__" || !b.image ? heroImage : b.image;
             return (
               <section key={i} className="relative isolate m-4 overflow-hidden rounded-2xl bg-green md:m-12">
-                {img && <Image src={img} alt={b.title} fill priority sizes="100vw" className="object-cover object-left" />}
+                {img && <Image src={img} alt={b.title} fill priority sizes="100vw" className="object-cover object-[left_top]" />}
                 {/* Panel stays in-flow (ml-auto, min-height) so long titles grow the section instead of clipping. */}
                 <div className="relative flex min-h-[340px] w-full flex-col items-center justify-center bg-green/85 px-8 py-14 text-center md:ml-auto md:min-h-[420px] md:w-[52%] md:bg-green/90 md:px-12">
                   <h1 className="text-2xl leading-tight text-white md:text-3xl lg:text-4xl">{b.title}</h1>
@@ -254,14 +258,27 @@ export function BlockRenderer({ blocks, heroImage }: { blocks: Block[]; heroImag
               </section>
             );
           case "cta":
-            // Outlined-box treatment (the event pages): bordered card on the page background.
+            // Outlined-box treatment (the event pages): bordered card on the page background,
+            // register line emphasized in brand green, decorative corner accents like the original.
             if (b.boxed) {
               return (
                 <section key={i} className="bg-paper py-12 md:py-16">
-                  <div className="container-page">
+                  <div className="container-page relative">
+                    {b.accents?.[0] && (
+                      <Image src={b.accents[0]} alt="" width={90} height={90} aria-hidden
+                        className="pointer-events-none absolute -top-6 left-2 hidden w-16 md:block lg:w-20" />
+                    )}
+                    {b.accents?.[1] && (
+                      <Image src={b.accents[1]} alt="" width={90} height={90} aria-hidden
+                        className="pointer-events-none absolute -bottom-6 right-2 hidden w-16 md:block lg:w-20" />
+                    )}
                     <div className="mx-auto max-w-4xl rounded-xl border border-line px-7 py-12 text-center md:px-12">
-                      {b.heading && <h2 className="text-2xl leading-snug md:text-3xl">{b.heading}</h2>}
-                      {b.body && <div className="mt-6 [&_a]:font-semibold [&_a]:text-green"><Prose html={b.body} center /></div>}
+                      {b.heading && <h2 className="text-2xl leading-snug md:text-3xl lg:text-4xl">{b.heading}</h2>}
+                      {b.body && (
+                        <div className="mt-6 [&_a]:font-semibold [&_a]:text-green [&_p:last-child]:mt-4 [&_p:last-child]:text-xl [&_p:last-child]:font-semibold [&_p:last-child]:!text-green [&_p:last-child_strong]:!text-green">
+                          <Prose html={b.body} center />
+                        </div>
+                      )}
                       {b.button?.text && <Button href={b.button.href} variant="solid" size="lg" className="mt-8">{b.button.text}</Button>}
                     </div>
                   </div>
@@ -304,6 +321,31 @@ export function BlockRenderer({ blocks, heroImage }: { blocks: Block[]; heroImag
                       </div>
                     </div>
                   ))}
+                </div>
+              </section>
+            );
+          case "event-features":
+            // Original event template: display heading (with accent graphics) in the LEFT column,
+            // the 10 topics as a 2-col hairline grid in the RIGHT column.
+            return (
+              <section key={i} className="bg-paper py-12 md:py-16">
+                <div className="container-page grid items-start gap-10 md:grid-cols-[2fr_3fr] md:gap-14">
+                  <div>
+                    {b.accentAbove && (
+                      <Image src={b.accentAbove} alt="" width={70} height={70} aria-hidden className="mb-4 w-12" />
+                    )}
+                    <h2 className="text-3xl leading-tight md:text-4xl lg:text-5xl">{b.heading}</h2>
+                    {b.accentBelow && (
+                      <Image src={b.accentBelow} alt="" width={300} height={151} aria-hidden className="mt-6 w-48 max-w-full" />
+                    )}
+                  </div>
+                  <div className="grid gap-x-12 sm:grid-cols-2">
+                    {b.items.map((item, j) => (
+                      <p key={j} className={`border-b border-line px-1 py-5 text-lg leading-snug text-ink ${j % 2 === 0 ? "font-semibold" : ""}`}>
+                        {item}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               </section>
             );
