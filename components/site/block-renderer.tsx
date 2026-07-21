@@ -119,6 +119,7 @@ export function BlockRenderer({ blocks, heroImage }: { blocks: Block[]; heroImag
                     {b.card ? (
                       <>
                         <h2 className="text-3xl md:text-4xl">{b.card.name}</h2>
+                        {b.card.credentials && <p className="mt-2 text-lg font-semibold text-ink-soft">{b.card.credentials}</p>}
                         {b.card.title && <p className="mt-3 text-xl font-medium text-green">{b.card.title}</p>}
                         {b.card.languages && <p className="mt-1.5 text-lg text-terracotta">{b.card.languages}</p>}
                         <div className="mt-5 h-px w-16 bg-gold" />
