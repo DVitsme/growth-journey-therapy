@@ -62,8 +62,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entries.push({ url: loc(`/specialties/${slug}`), changeFrequency: "monthly", priority: 0.7 });
   }
 
-  // 4) Bespoke top-level pages (mirror app/[slug]: exclude "team", which has its own route).
-  for (const slug of getTopLevelSlugs().filter((s) => s !== "team")) {
+  // 4) Bespoke top-level pages (mirror app/[slug]). Exclude "team" and "groups": both render
+  //    via app/[slug] but are already listed above as section routes — list each once.
+  for (const slug of getTopLevelSlugs().filter((s) => s !== "team" && s !== "groups")) {
     entries.push({ url: loc(`/${slug}`), changeFrequency: "monthly", priority: 0.6 });
   }
 

@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 import { LEGACY_REDIRECTS } from "./lib/legacy-redirects";
+import { SITE_PHASE } from "./lib/site";
 
 const nextConfig: NextConfig = {
   images: {
@@ -30,6 +31,17 @@ const nextConfig: NextConfig = {
       { source: "/:y(\\d{4})/:m(\\d{2})/:d(\\d{2})/:rest*", destination: "/api/gone" },
       { source: "/category/:rest*", destination: "/api/gone" },
       { source: "/author/:rest*", destination: "/api/gone" },
+    ];
+  },
+
+  // "cleanup" phase only: keep every page OUT of the search index (crawl-but-noindex) while
+  // Google re-crawls to see the 301s/410s and de-indexes the old hacked spam. The crawl
+  // itself stays allowed (robots.ts), so the cleanup works. Removed automatically at launch
+  // (SITE_PHASE = "live"). Uses X-Robots-Tag (HTTP header) so it can't be overridden per-page.
+  async headers() {
+    if (SITE_PHASE !== "cleanup") return [];
+    return [
+      { source: "/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, follow" }] },
     ];
   },
 };
