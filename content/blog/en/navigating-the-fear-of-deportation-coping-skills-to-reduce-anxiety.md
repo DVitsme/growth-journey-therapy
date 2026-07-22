@@ -1,18 +1,27 @@
 ---
-title: "Navigating the Fear of Deportation: Coping Skills to Reduce Anxiety"
-slug: "navigating-the-fear-of-deportation-coping-skills-to-reduce-anxiety"
-date: "2026-03-03"
-lang: "en"
-excerpt: "Living with fear of deportation can create chronic anxiety and stress. Learn grounding tools, coping strategies, and when therapy may help support your mental health."
-categories: ["self-identity"]
-author: growth-journey-therapy
+title: 'Navigating the Fear of Deportation: Coping Skills to Reduce Anxiety'
+slug: navigating-the-fear-of-deportation-coping-skills-to-reduce-anxiety
+date: '2026-03-03'
+lang: en
+excerpt: >-
+  Living with fear of deportation can create chronic anxiety and stress. Learn
+  grounding tools, coping strategies, and when therapy may help support your
+  mental health.
+categories:
+  - immigration
+author: karla-recalde
 draft: false
-coverImage: "/images/blog/navigating-the-fear-of-deportation-coping-skills-to-reduce-anxiety/cover.jpg"
-coverImageAlt: "Navigating the Fear of Deportation: Coping Skills to Reduce Anxiety"
+coverImage: >-
+  /images/blog/navigating-the-fear-of-deportation-coping-skills-to-reduce-anxiety/cover.jpg
+coverImageAlt: 'Navigating the Fear of Deportation: Coping Skills to Reduce Anxiety'
 seo:
-  description: "Living with fear of deportation can create chronic anxiety and stress. Learn grounding tools, coping strategies, and when therapy may help support your mental health."
-source: "live-rest-api"
-originalUrl: "https://growthjourneytherapy.com/2026/03/03/navigating-the-fear-of-deportation-coping-skills-to-reduce-anxiety/"
+  description: >-
+    Living with fear of deportation can create chronic anxiety and stress. Learn
+    grounding tools, coping strategies, and when therapy may help support your
+    mental health.
+source: live-rest-api
+originalUrl: >-
+  https://growthjourneytherapy.com/2026/03/03/navigating-the-fear-of-deportation-coping-skills-to-reduce-anxiety/
 ---
 
 In today’s political and social context, undocumented adults are faced with daily anxiety about their future and the possibility of being forcibly separated from their families. The stress of potential deportation is not only a political or legal issue – it can become a serious mental health concern, affecting sleep, mood, concentration, relationships, and overall well-being.Research suggests that living under the chronic threat of deportation can function like a “toxic stressor,” keeping the body in a prolonged state of high alert. Over time, this can take a real toll on the nervous system and the psychological well-being of individuals, families, and entire communities.

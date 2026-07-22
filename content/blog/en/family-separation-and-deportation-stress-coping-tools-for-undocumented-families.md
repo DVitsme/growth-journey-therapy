@@ -1,18 +1,32 @@
 ---
-title: "Family Separation and Deportation Stress: Coping Tools for Undocumented Families"
-slug: "family-separation-and-deportation-stress-coping-tools-for-undocumented-families"
-date: "2026-03-12"
-lang: "en"
-excerpt: "Family separation and deportation stress can create chronic anxiety and trauma responses in undocumented families. Learn grounding tools, routines, and support strategies."
-categories: ["stress"]
-author: growth-journey-therapy
+title: >-
+  Family Separation and Deportation Stress: Coping Tools for Undocumented
+  Families
+slug: >-
+  family-separation-and-deportation-stress-coping-tools-for-undocumented-families
+date: '2026-03-12'
+lang: en
+excerpt: >-
+  Family separation and deportation stress can create chronic anxiety and trauma
+  responses in undocumented families. Learn grounding tools, routines, and
+  support strategies.
+categories:
+  - immigration
+author: karla-recalde
 draft: false
-coverImage: "/images/blog/family-separation-and-deportation-stress-coping-tools-for-undocumented-families/cover.jpg"
-coverImageAlt: "Family Separation and Deportation Stress: Coping Tools for Undocumented Families"
+coverImage: >-
+  /images/blog/family-separation-and-deportation-stress-coping-tools-for-undocumented-families/cover.jpg
+coverImageAlt: >-
+  Family Separation and Deportation Stress: Coping Tools for Undocumented
+  Families
 seo:
-  description: "Family separation and deportation stress can create chronic anxiety and trauma responses in undocumented families. Learn grounding tools, routines, and support strategies."
-source: "live-rest-api"
-originalUrl: "https://growthjourneytherapy.com/2026/03/12/family-separation-and-deportation-stress-coping-tools-for-undocumented-families/"
+  description: >-
+    Family separation and deportation stress can create chronic anxiety and
+    trauma responses in undocumented families. Learn grounding tools, routines,
+    and support strategies.
+source: live-rest-api
+originalUrl: >-
+  https://growthjourneytherapy.com/2026/03/12/family-separation-and-deportation-stress-coping-tools-for-undocumented-families/
 ---
 
 For undocumented families, the threat of deportation can be a daily reality that reshapes the psyche and the home. Family separation can create a unique form of mental health distress, characterized by chronic anticipatory anxiety and the possibility of sudden, traumatic separation. Understanding this experience through both biological and emotional lenses can help families strengthen resilience in an environment where safety may feel conditional.

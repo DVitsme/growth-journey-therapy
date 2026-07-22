@@ -29,6 +29,7 @@ function memberBlock(p: Person): Block {
       ...(p.credentials ? { credentials: p.credentials } : {}),
       languages: p.languages.join(" / "),
       objectPosition: p.objectPosition,
+      href: `/team/${p.slug}`,
     },
   };
 }

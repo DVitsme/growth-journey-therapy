@@ -1,18 +1,32 @@
 ---
-title: "Sourcing Calm from the Outdoors: How Nature Helps Regulate a Stressed Nervous System"
-slug: "sourcing-calm-from-the-outdoors-how-nature-helps-regulate-a-stressed-nervous-system"
-date: "2026-03-06"
-lang: "en"
-excerpt: "Feeling on edge or overwhelmed? Learn gentle, nature-based grounding practices to help regulate a stressed nervous system—without adding more to your to-do list."
-categories: ["stress"]
-author: growth-journey-therapy
+title: >-
+  Sourcing Calm from the Outdoors: How Nature Helps Regulate a Stressed Nervous
+  System
+slug: >-
+  sourcing-calm-from-the-outdoors-how-nature-helps-regulate-a-stressed-nervous-system
+date: '2026-03-06'
+lang: en
+excerpt: >-
+  Feeling on edge or overwhelmed? Learn gentle, nature-based grounding practices
+  to help regulate a stressed nervous system—without adding more to your to-do
+  list.
+categories:
+  - stress
+author: vivian
 draft: false
-coverImage: "/images/blog/sourcing-calm-from-the-outdoors-how-nature-helps-regulate-a-stressed-nervous-system/cover.jpg"
-coverImageAlt: "Sourcing Calm from the Outdoors: How Nature Helps Regulate a Stressed Nervous System"
+coverImage: >-
+  /images/blog/sourcing-calm-from-the-outdoors-how-nature-helps-regulate-a-stressed-nervous-system/cover.jpg
+coverImageAlt: >-
+  Sourcing Calm from the Outdoors: How Nature Helps Regulate a Stressed Nervous
+  System
 seo:
-  description: "Feeling on edge or overwhelmed? Learn gentle, nature-based grounding practices to help regulate a stressed nervous system—without adding more to your to-do list."
-source: "live-rest-api"
-originalUrl: "https://growthjourneytherapy.com/2026/03/06/https-growthjourneytherapy-com-2026-03-06-sourcing-calm-from-the-outdoors-how-nature-helps-regulate-a-stressed-nervous-system/"
+  description: >-
+    Feeling on edge or overwhelmed? Learn gentle, nature-based grounding
+    practices to help regulate a stressed nervous system — without adding more
+    to your to-do list.
+source: live-rest-api
+originalUrl: >-
+  https://growthjourneytherapy.com/2026/03/06/https-growthjourneytherapy-com-2026-03-06-sourcing-calm-from-the-outdoors-how-nature-helps-regulate-a-stressed-nervous-system/
 ---
 
 ## When your nervous system is stuck “on”

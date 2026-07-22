@@ -9,6 +9,8 @@ export type TeamCard = {
   languages?: string;
   /** CSS object-position for framing the headshot inside the fixed card, e.g. "50% 20%". */
   objectPosition?: string;
+  /** Profile-page link for the member's name (set on the /team grid). */
+  href?: string;
 };
 
 /**

@@ -98,6 +98,11 @@ const CATEGORY_LABELS: Record<string, string> = {
   psychology: "Psychology",
   psicologia: "Psicología",
   "trauma-recovery": "Trauma Recovery",
+  burnout: "Burnout & Stress",
+  grief: "Grief & Loss",
+  immigration: "Immigration & Family",
+  relationships: "Relationships",
+  boundaries: "Boundaries",
   uncategorized: "Reflections",
 };
 

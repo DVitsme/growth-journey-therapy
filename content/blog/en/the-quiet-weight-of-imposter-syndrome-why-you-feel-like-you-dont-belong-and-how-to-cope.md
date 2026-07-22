@@ -1,18 +1,32 @@
 ---
-title: "The Quiet Weight of Imposter Syndrome: Why You Feel Like You Don’t Belong (and How to Cope)"
-slug: "the-quiet-weight-of-imposter-syndrome-why-you-feel-like-you-dont-belong-and-how-to-cope"
-date: "2026-03-06"
-lang: "en"
-excerpt: "Imposter syndrome can make high-achieving women feel like they don’t belong. Learn signs of imposter syndrome and practical coping strategies to build confidence and reduce anxiety."
-categories: ["self-identity"]
-author: growth-journey-therapy
+title: >-
+  The Quiet Weight of Imposter Syndrome: Why You Feel Like You Don’t Belong (and
+  How to Cope)
+slug: >-
+  the-quiet-weight-of-imposter-syndrome-why-you-feel-like-you-dont-belong-and-how-to-cope
+date: '2026-03-06'
+lang: en
+excerpt: >-
+  Imposter syndrome can make high-achieving women feel like they don’t belong.
+  Learn signs of imposter syndrome and practical coping strategies to build
+  confidence and reduce anxiety.
+categories:
+  - self-identity
+author: christina-holiday
 draft: false
-coverImage: "/images/blog/the-quiet-weight-of-imposter-syndrome-why-you-feel-like-you-dont-belong-and-how-to-cope/cover.jpg"
-coverImageAlt: "The Quiet Weight of Imposter Syndrome: Why You Feel Like You Don’t Belong (and How to Cope)"
+coverImage: >-
+  /images/blog/the-quiet-weight-of-imposter-syndrome-why-you-feel-like-you-dont-belong-and-how-to-cope/cover.jpg
+coverImageAlt: >-
+  The Quiet Weight of Imposter Syndrome: Why You Feel Like You Don’t Belong (and
+  How to Cope)
 seo:
-  description: "Imposter syndrome can make high-achieving women feel like they don’t belong. Learn signs of imposter syndrome and practical coping strategies to build confidence and reduce anxiety."
-source: "live-rest-api"
-originalUrl: "https://growthjourneytherapy.com/2026/03/06/the-quiet-weight-of-imposter-syndrome-why-you-feel-like-you-dont-belong-and-how-to-cope/"
+  description: >-
+    Imposter syndrome can make high-achieving women feel like they don't belong.
+    Learn signs of imposter syndrome and practical coping strategies to build
+    confidence and reduce anxiety.
+source: live-rest-api
+originalUrl: >-
+  https://growthjourneytherapy.com/2026/03/06/the-quiet-weight-of-imposter-syndrome-why-you-feel-like-you-dont-belong-and-how-to-cope/
 ---
 
 In my work as a therapist, I hear some version of this often: *“I feel like I don’t really belong here,”* or *“If people knew the real me, they’d see I’m not as capable as they think.”* These thoughts frequently come from women who are doing well by any external measure, yet feel uneasy accepting their success.

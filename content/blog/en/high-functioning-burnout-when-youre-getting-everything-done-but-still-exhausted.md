@@ -1,18 +1,29 @@
 ---
-title: "High-Functioning Burnout: When You’re Getting Everything Done but Still Exhausted"
-slug: "high-functioning-burnout-when-youre-getting-everything-done-but-still-exhausted"
-date: "2026-04-01"
-lang: "en"
-excerpt: "Feeling exhausted while still getting everything done? Learn signs of high-functioning burnout and five practical ways to start recovering today."
-categories: ["stress"]
-author: growth-journey-therapy
+title: >-
+  High-Functioning Burnout: When You’re Getting Everything Done but Still
+  Exhausted
+slug: >-
+  high-functioning-burnout-when-youre-getting-everything-done-but-still-exhausted
+date: '2026-04-01'
+lang: en
+excerpt: >-
+  Feeling exhausted while still getting everything done? Learn signs of
+  high-functioning burnout and five practical ways to start recovering today.
+categories:
+  - burnout
+author: christina-holiday
 draft: false
-coverImage: "/images/blog/high-functioning-burnout-when-youre-getting-everything-done-but-still-exhausted/cover.jpg"
-coverImageAlt: "exhausted at desk"
+coverImage: >-
+  /images/blog/high-functioning-burnout-when-youre-getting-everything-done-but-still-exhausted/cover.jpg
+coverImageAlt: exhausted at desk
 seo:
-  description: "Feeling exhausted while still getting everything done? Learn signs of high-functioning burnout and five practical ways to start recovering today."
-source: "live-rest-api"
-originalUrl: "https://growthjourneytherapy.com/2026/04/01/high-functioning-burnout-when-youre-getting-everything-done-but-still-exhausted/"
+  description: >-
+    Feeling exhausted even while getting everything done? Learn signs of
+    high-functioning burnout and five practical ways to recover without quitting
+    your life.
+source: live-rest-api
+originalUrl: >-
+  https://growthjourneytherapy.com/2026/04/01/high-functioning-burnout-when-youre-getting-everything-done-but-still-exhausted/
 ---
 
 You’re getting everything done.

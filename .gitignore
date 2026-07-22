@@ -65,3 +65,10 @@ _pipeline/
 
 # session resume notes (contains SSH details)
 .claude-resume.md
+
+# raw brief images in the blog inbox (processed covers live in public/images/blog)
+content/blog/_inbox/**/*.jpg
+content/blog/_inbox/**/*.jpeg
+content/blog/_inbox/**/*.png
+content/blog/_inbox/**/*.gif
+content/blog/_inbox/**/*.webp

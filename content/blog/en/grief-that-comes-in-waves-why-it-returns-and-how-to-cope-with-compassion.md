@@ -1,18 +1,26 @@
 ---
-title: "Grief That Comes in Waves: Why It Returns (and How to Cope with Compassion)"
-slug: "grief-that-comes-in-waves-why-it-returns-and-how-to-cope-with-compassion"
-date: "2026-03-06"
-lang: "en"
-excerpt: "Grief often comes in waves—especially around anniversaries, holidays, and reminders. Learn grief triggers, coping strategies, and when to seek support."
-categories: ["stress"]
-author: growth-journey-therapy
+title: 'Grief That Comes in Waves: Why It Returns (and How to Cope with Compassion)'
+slug: grief-that-comes-in-waves-why-it-returns-and-how-to-cope-with-compassion
+date: '2026-03-06'
+lang: en
+excerpt: >-
+  Grief often comes in waves—especially around anniversaries, holidays, and
+  reminders. Learn grief triggers, coping strategies, and when to seek support.
+categories:
+  - grief
+author: gina-rawashdeh
 draft: false
-coverImage: "/images/blog/grief-that-comes-in-waves-why-it-returns-and-how-to-cope-with-compassion/cover.jpg"
-coverImageAlt: "Grief That Comes in Waves: Why It Returns (and How to Cope with Compassion)"
+coverImage: >-
+  /images/blog/grief-that-comes-in-waves-why-it-returns-and-how-to-cope-with-compassion/cover.jpg
+coverImageAlt: 'Grief That Comes in Waves: Why It Returns (and How to Cope with Compassion)'
 seo:
-  description: "Grief often comes in waves—especially around anniversaries, holidays, and reminders. Learn grief triggers, coping strategies, and when to seek support."
-source: "live-rest-api"
-originalUrl: "https://growthjourneytherapy.com/2026/03/06/grief-that-comes-in-waves-why-it-returns-and-how-to-cope-with-compassion/"
+  description: >-
+    Grief often comes in waves — especially around anniversaries, holidays, and
+    reminders. Learn grief triggers, coping strategies, and when to seek
+    support.
+source: live-rest-api
+originalUrl: >-
+  https://growthjourneytherapy.com/2026/03/06/grief-that-comes-in-waves-why-it-returns-and-how-to-cope-with-compassion/
 ---
 
 Grief affects more than emotions. It affects the body too. Many people notice changes in sleep, concentration, appetite, and energy. If you feel exhausted, distracted, or unmotivated, it does not mean you are “not coping well.” These can be normal grief responses and signs your nervous system is adjusting to loss.

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { splitExpandableBio } from "@/lib/expandable-bio";
@@ -118,7 +119,18 @@ export function BlockRenderer({ blocks, heroImage }: { blocks: Block[]; heroImag
                   <div>
                     {b.card ? (
                       <>
-                        <h2 className="text-3xl md:text-4xl">{b.card.name}</h2>
+                        <h2 className="text-3xl md:text-4xl">
+                          {b.card.href ? (
+                            <Link
+                              href={b.card.href}
+                              className="underline-offset-4 transition-colors hover:text-green-deep hover:underline"
+                            >
+                              {b.card.name}
+                            </Link>
+                          ) : (
+                            b.card.name
+                          )}
+                        </h2>
                         {b.card.credentials && <p className="mt-2 text-lg font-semibold text-ink-soft">{b.card.credentials}</p>}
                         {b.card.title && <p className="mt-3 text-xl font-medium text-green">{b.card.title}</p>}
                         {b.card.languages && <p className="mt-1.5 text-lg text-terracotta">{b.card.languages}</p>}

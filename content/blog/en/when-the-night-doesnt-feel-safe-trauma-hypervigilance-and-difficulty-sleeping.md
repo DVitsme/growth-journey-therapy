@@ -1,18 +1,31 @@
 ---
-title: "When the Night Doesn’t Feel Safe: Trauma, Hypervigilance, and Difficulty Sleeping"
-slug: "when-the-night-doesnt-feel-safe-trauma-hypervigilance-and-difficulty-sleeping"
-date: "2026-03-06"
-lang: "en"
-excerpt: "Nighttime hypervigilance can make it hard to sleep after trauma. Learn trauma-informed sleep tips and grounding practices to calm your nervous system."
-categories: ["stress"]
-author: growth-journey-therapy
+title: >-
+  When the Night Doesn’t Feel Safe: Trauma, Hypervigilance, and Difficulty
+  Sleeping
+slug: when-the-night-doesnt-feel-safe-trauma-hypervigilance-and-difficulty-sleeping
+date: '2026-03-06'
+lang: en
+excerpt: >-
+  Nighttime hypervigilance can make it hard to sleep after trauma. Learn
+  trauma-informed sleep tips and grounding practices to calm your nervous
+  system.
+categories:
+  - trauma-recovery
+author: gina-rawashdeh
 draft: false
-coverImage: "/images/blog/when-the-night-doesnt-feel-safe-trauma-hypervigilance-and-difficulty-sleeping/cover.jpg"
-coverImageAlt: "When the Night Doesn’t Feel Safe: Trauma, Hypervigilance, and Difficulty Sleeping"
+coverImage: >-
+  /images/blog/when-the-night-doesnt-feel-safe-trauma-hypervigilance-and-difficulty-sleeping/cover.jpg
+coverImageAlt: >-
+  When the Night Doesn’t Feel Safe: Trauma, Hypervigilance, and Difficulty
+  Sleeping
 seo:
-  description: "Nighttime hypervigilance can make it hard to sleep after trauma. Learn trauma-informed sleep tips and grounding practices to calm your nervous system."
-source: "live-rest-api"
-originalUrl: "https://growthjourneytherapy.com/2026/03/06/when-the-night-doesnt-feel-safe-trauma-hypervigilance-and-difficulty-sleeping/"
+  description: >-
+    Nighttime hypervigilance can make it hard to sleep after trauma. Learn
+    trauma-informed sleep tips and grounding practices to calm your nervous
+    system.
+source: live-rest-api
+originalUrl: >-
+  https://growthjourneytherapy.com/2026/03/06/when-the-night-doesnt-feel-safe-trauma-hypervigilance-and-difficulty-sleeping/
 ---
 
 For many people, nighttime is supposed to be the most peaceful part of the day. The lights are off, the world is quieter, and the body is meant to soften into rest.

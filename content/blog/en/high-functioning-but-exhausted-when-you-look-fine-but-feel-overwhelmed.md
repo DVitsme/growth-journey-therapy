@@ -1,18 +1,27 @@
 ---
-title: "High-Functioning but Exhausted: When You Look Fine but Feel Overwhelmed"
-slug: "high-functioning-but-exhausted-when-you-look-fine-but-feel-overwhelmed"
-date: "2026-03-12"
-lang: "en"
-excerpt: "Feeling high-functioning but exhausted? Learn signs of hidden burnout, why your nervous system stays in “go mode,” and practical ways to feel less overwhelmed."
-categories: ["stress"]
-author: growth-journey-therapy
+title: 'High-Functioning but Exhausted: When You Look Fine but Feel Overwhelmed'
+slug: high-functioning-but-exhausted-when-you-look-fine-but-feel-overwhelmed
+date: '2026-03-12'
+lang: en
+excerpt: >-
+  Feeling high-functioning but exhausted? Learn signs of hidden burnout, why
+  your nervous system stays in “go mode,” and practical ways to feel less
+  overwhelmed.
+categories:
+  - burnout
+author: gina-rawashdeh
 draft: false
-coverImage: "/images/blog/high-functioning-but-exhausted-when-you-look-fine-but-feel-overwhelmed/cover.jpg"
-coverImageAlt: "High-Functioning but Exhausted: When You Look Fine but Feel Overwhelmed"
+coverImage: >-
+  /images/blog/high-functioning-but-exhausted-when-you-look-fine-but-feel-overwhelmed/cover.jpg
+coverImageAlt: 'High-Functioning but Exhausted: When You Look Fine but Feel Overwhelmed'
 seo:
-  description: "Feeling high-functioning but exhausted? Learn signs of hidden burnout, why your nervous system stays in “go mode,” and practical ways to feel less overwhelmed."
-source: "live-rest-api"
-originalUrl: "https://growthjourneytherapy.com/2026/03/12/high-functioning-but-exhausted-when-you-look-fine-but-feel-overwhelmed/"
+  description: >-
+    Feeling high-functioning but exhausted? Learn signs of hidden burnout, why
+    your nervous system stays in "go mode," and practical ways to feel less
+    overwhelmed.
+source: live-rest-api
+originalUrl: >-
+  https://growthjourneytherapy.com/2026/03/12/high-functioning-but-exhausted-when-you-look-fine-but-feel-overwhelmed/
 ---
 
 Many people who come to therapy say something similar in the first session:

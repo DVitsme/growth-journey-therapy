@@ -1,18 +1,26 @@
 ---
-title: "Why Am I Lonely Even Though I Have Friends?"
-slug: "why-am-i-lonely-even-though-i-have-friends"
-date: "2026-03-12"
-lang: "en"
-excerpt: "Feeling lonely even though you have friends is more common than you think. Learn why it happens, how trauma and culture affect connection, and practical steps to build deeper relationships."
-categories: ["self-identity"]
-author: growth-journey-therapy
+title: Why Am I Lonely Even Though I Have Friends?
+slug: why-am-i-lonely-even-though-i-have-friends
+date: '2026-03-12'
+lang: en
+excerpt: >-
+  Feeling lonely even though you have friends is more common than you think.
+  Learn why it happens, how trauma and culture affect connection, and practical
+  steps to build deeper relationships.
+categories:
+  - relationships
+author: vivian
 draft: false
-coverImage: "/images/blog/why-am-i-lonely-even-though-i-have-friends/cover.jpg"
-coverImageAlt: "Why Am I Lonely Even Though I Have Friends?"
+coverImage: /images/blog/why-am-i-lonely-even-though-i-have-friends/cover.jpg
+coverImageAlt: Why Am I Lonely Even Though I Have Friends?
 seo:
-  description: "Feeling lonely even though you have friends is more common than you think. Learn why it happens, how trauma and culture affect connection, and practical steps to build deeper relationships."
-source: "live-rest-api"
-originalUrl: "https://growthjourneytherapy.com/2026/03/12/why-am-i-lonely-even-though-i-have-friends/"
+  description: >-
+    Feeling lonely even though you have friends is more common than you think.
+    Learn why it happens, how trauma and culture affect connection, and
+    practical steps to build deeper relationships.
+source: live-rest-api
+originalUrl: >-
+  https://growthjourneytherapy.com/2026/03/12/why-am-i-lonely-even-though-i-have-friends/
 ---
 
 If you have group chats, weekend plans, and people who care about you, but you still feel alone, you’re not broken. You’re human.
