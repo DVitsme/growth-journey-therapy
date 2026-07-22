@@ -5,7 +5,7 @@ date: "2023-11-10"
 lang: "en"
 excerpt: "Previously we have talked about the commitment that parents have with their children’s education, but there is a very important part that we cannot leave…"
 categories: []
-author: "Growth Journey Therapy"
+author: raisa-roa-luna
 draft: false
 translationKey: "your-turn-committed-students"
 source: "wayback-html"

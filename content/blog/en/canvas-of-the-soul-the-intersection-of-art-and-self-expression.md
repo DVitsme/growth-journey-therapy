@@ -5,7 +5,7 @@ date: "2024-03-12"
 lang: "en"
 excerpt: "Art has long been a mirror reflecting the myriad facets of human experience, emotions, and thought. It transcends mere aesthetic appeal, embedding itself…"
 categories: ["self-identity"]
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 coverImage: "/images/blog/canvas-of-the-soul-the-intersection-of-art-and-self-expression/cover.jpg"
 coverImageAlt: "Canvas of the Soul: The Intersection of Art and Self-Expression"

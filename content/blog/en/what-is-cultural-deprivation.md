@@ -5,7 +5,7 @@ date: "2023-05-03"
 lang: "en"
 excerpt: "This you need to know. Change is often difficult for all family members. A move, a new job, a change of school make it necessary to adapt to this new reality…"
 categories: ["psychology"]
-author: "Growth Journey Therapy"
+author: raisa-roa-luna
 draft: false
 translationKey: "what-is-cultural-deprivation"
 source: "wayback-rss-2023-05-09"

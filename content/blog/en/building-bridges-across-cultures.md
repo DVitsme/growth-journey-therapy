@@ -5,7 +5,7 @@ date: "2024-09-07"
 lang: "en"
 excerpt: "In the journey of migration, families often find themselves at the crossroads of old traditions and new beginnings. The transition from a familiar homeland to…"
 categories: []
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 source: "wayback-html"
 originalUrl: "https://growthjourneytherapy.com/building-bridges-across-cultures-navigating-family-dynamics-as-immigrants/"

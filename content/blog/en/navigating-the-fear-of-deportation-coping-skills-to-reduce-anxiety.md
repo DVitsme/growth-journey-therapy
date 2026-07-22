@@ -5,7 +5,7 @@ date: "2026-03-03"
 lang: "en"
 excerpt: "Living with fear of deportation can create chronic anxiety and stress. Learn grounding tools, coping strategies, and when therapy may help support your mental health."
 categories: ["self-identity"]
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 coverImage: "/images/blog/navigating-the-fear-of-deportation-coping-skills-to-reduce-anxiety/cover.jpg"
 coverImageAlt: "Navigating the Fear of Deportation: Coping Skills to Reduce Anxiety"

@@ -5,7 +5,7 @@ date: "2026-03-12"
 lang: "en"
 excerpt: "Feeling high-functioning but exhausted? Learn signs of hidden burnout, why your nervous system stays in “go mode,” and practical ways to feel less overwhelmed."
 categories: ["stress"]
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 coverImage: "/images/blog/high-functioning-but-exhausted-when-you-look-fine-but-feel-overwhelmed/cover.jpg"
 coverImageAlt: "High-Functioning but Exhausted: When You Look Fine but Feel Overwhelmed"

@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import { getPersonSlugs } from "./team";
 
 export { renderMarkdown } from "./markdown";
 
@@ -46,13 +47,32 @@ function readAll(): Post[] {
       });
     }
   }
+  assertKnownAuthors(posts);
   return posts;
+}
+
+/** Fail the build if any post references an author with no `content/team/<slug>.md`. */
+function assertKnownAuthors(posts: Post[]): void {
+  const known = new Set(getPersonSlugs());
+  for (const p of posts) {
+    if (!p.author || !known.has(p.author)) {
+      throw new Error(
+        `[blog] Post "${p.slug}" (${p.lang}) references unknown author "${p.author}". ` +
+          `Add content/team/${p.author}.md or fix the post's frontmatter.`,
+      );
+    }
+  }
 }
 
 export function getAllPosts(): Post[] {
   return readAll()
     .filter((p) => !p.draft)
     .sort((a, b) => b.date.localeCompare(a.date));
+}
+
+/** Published posts authored by a given team/person slug, newest first. */
+export function getPostsByAuthor(slug: string): Post[] {
+  return getAllPosts().filter((p) => p.author === slug);
 }
 
 export function getPostSlugs(): string[] {
@@ -77,6 +97,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   philadelphia: "Philadelphia",
   psychology: "Psychology",
   psicologia: "Psicología",
+  "trauma-recovery": "Trauma Recovery",
   uncategorized: "Reflections",
 };
 

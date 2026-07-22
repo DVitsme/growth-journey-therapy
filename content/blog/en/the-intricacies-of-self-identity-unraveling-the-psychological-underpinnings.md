@@ -5,7 +5,7 @@ date: "2024-10-11"
 lang: "en"
 excerpt: "In the quest to understand the essence of what makes us who we are, the study of self-identity emerges as a captivating subject that intertwines the realms of…"
 categories: ["self-identity"]
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 coverImage: "/images/blog/the-intricacies-of-self-identity-unraveling-the-psychological-underpinnings/cover.jpg"
 coverImageAlt: "The Intricacies of Self-Identity: Unraveling the Psychological Underpinnings"

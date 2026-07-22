@@ -5,7 +5,7 @@ date: "2026-03-06"
 lang: "en"
 excerpt: "Grief often comes in waves—especially around anniversaries, holidays, and reminders. Learn grief triggers, coping strategies, and when to seek support."
 categories: ["stress"]
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 coverImage: "/images/blog/grief-that-comes-in-waves-why-it-returns-and-how-to-cope-with-compassion/cover.jpg"
 coverImageAlt: "Grief That Comes in Waves: Why It Returns (and How to Cope with Compassion)"

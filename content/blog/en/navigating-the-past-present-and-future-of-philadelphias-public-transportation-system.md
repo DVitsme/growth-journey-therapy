@@ -5,7 +5,7 @@ date: "2024-03-12"
 lang: "en"
 excerpt: "Philadelphia, a city teeming with history, culture, and an ever-evolving urban landscape, offers a vibrant public transportation system that stands as the…"
 categories: []
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 source: "wayback-html"
 originalUrl: "https://growthjourneytherapy.com/navigating-the-past-present-and-future-of-philadelphias-public-transportation-system/"

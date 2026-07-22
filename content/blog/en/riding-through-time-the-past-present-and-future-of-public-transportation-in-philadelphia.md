@@ -5,7 +5,7 @@ date: "2024-03-12"
 lang: "en"
 excerpt: "Philadelphia, a city steeped in history and brimming with cultural vibrancy, offers an intricate tapestry of experiences that draw visitors and residents alike…"
 categories: ["philadelphia"]
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 coverImage: "/images/blog/riding-through-time-the-past-present-and-future-of-public-transportation-in-philadelphia/cover.jpg"
 coverImageAlt: "Riding Through Time: The Past, Present, and Future of Public Transportation in Philadelphia"

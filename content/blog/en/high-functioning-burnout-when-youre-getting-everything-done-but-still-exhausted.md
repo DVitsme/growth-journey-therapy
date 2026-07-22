@@ -5,7 +5,7 @@ date: "2026-04-01"
 lang: "en"
 excerpt: "Feeling exhausted while still getting everything done? Learn signs of high-functioning burnout and five practical ways to start recovering today."
 categories: ["stress"]
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 coverImage: "/images/blog/high-functioning-burnout-when-youre-getting-everything-done-but-still-exhausted/cover.jpg"
 coverImageAlt: "exhausted at desk"

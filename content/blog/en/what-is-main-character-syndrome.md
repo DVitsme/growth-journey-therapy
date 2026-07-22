@@ -5,7 +5,7 @@ date: "2024-01-11"
 lang: "en"
 excerpt: "Understanding Main Character Syndrome: A Psychological Phenomenon In the realm of psychology, there are countless phenomena that shed light on the intricacies…"
 categories: []
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 source: "wayback-html"
 originalUrl: "https://growthjourneytherapy.com/what-is-main-character-syndrome/"

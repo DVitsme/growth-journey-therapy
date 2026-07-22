@@ -5,7 +5,7 @@ date: "2023-11-10"
 lang: "es"
 excerpt: "Anteriormente hemos hablado del compromiso que tienen los padres con la educación de sus hijos, pero hay una parte muy importante que no podemos dejar de lado…"
 categories: []
-author: "Growth Journey Therapy"
+author: raisa-roa-luna
 draft: false
 translationKey: "your-turn-committed-students"
 source: "wayback-html"

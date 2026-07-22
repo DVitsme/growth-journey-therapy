@@ -5,7 +5,7 @@ date: "2024-03-12"
 lang: "en"
 excerpt: "Philadelphia, a city teeming with history, innovation, and artistic flair, stands as a beacon of cultural richness in the United States. At the heart of this…"
 categories: []
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 source: "wayback-html"
 originalUrl: "https://growthjourneytherapy.com/?p=3530"

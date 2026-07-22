@@ -7,7 +7,11 @@ import { BlockRenderer } from "@/components/site/block-renderer";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return getTopLevelSlugs().map((slug) => ({ slug }));
+  // /team has its own data-driven route (app/team/page.tsx) built from content/team/;
+  // exclude it here so both don't resolve to the same path.
+  return getTopLevelSlugs()
+    .filter((s) => s !== "team")
+    .map((slug) => ({ slug }));
 }
 
 export async function generateMetadata(props: PageProps<"/[slug]">): Promise<Metadata> {

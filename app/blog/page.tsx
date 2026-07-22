@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { PageHero } from "@/components/site/page-hero";
 import { getAllPosts, categoryLabel, formatDate } from "@/lib/blog";
+import { getPerson, authorHref } from "@/lib/team";
+import { AuthorBylineCompact } from "@/components/site/author-byline";
 
 export const dynamicParams = false;
 
@@ -26,7 +28,9 @@ export default function BlogIndex() {
       <section className="bg-paper py-16">
         <div className="container-page">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post) => (
+            {posts.map((post) => {
+              const author = getPerson(post.author);
+              return (
               <article
                 key={post.slug}
                 className="group flex flex-col overflow-hidden rounded-xl border border-line bg-card shadow-sm transition-shadow hover:shadow-md"
@@ -63,6 +67,11 @@ export default function BlogIndex() {
                     </Link>
                   </h2>
                   <p className="mt-3 flex-1 text-base leading-relaxed text-ink-soft" lang={post.lang === "es" ? "es" : undefined}>{post.excerpt}</p>
+                  {author && (
+                    <div className="mt-4">
+                      <AuthorBylineCompact author={author} href={authorHref(author)} />
+                    </div>
+                  )}
                   <div className="mt-5 flex items-center justify-between text-sm">
                     <time dateTime={post.date} className="text-ink-soft">
                       {formatDate(post.date, post.lang)}
@@ -73,7 +82,8 @@ export default function BlogIndex() {
                   </div>
                 </div>
               </article>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

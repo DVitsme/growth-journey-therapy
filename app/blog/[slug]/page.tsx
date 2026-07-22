@@ -4,6 +4,11 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { getPost, getPostSlugs, getTranslation, renderMarkdown, categoryLabel, formatDate } from "@/lib/blog";
+import { resolveAuthor, authorHref } from "@/lib/team";
+import { AuthorByline } from "@/components/site/author-byline";
+import { JsonLd } from "@/components/site/json-ld";
+import { blogPostingGraph } from "@/lib/structured-data";
+import { SITE_URL } from "@/lib/site";
 
 export const dynamicParams = false;
 
@@ -17,9 +22,12 @@ export async function generateMetadata(props: PageProps<"/blog/[slug]">): Promis
   if (!post) return {};
   const description = post.seo?.description ?? post.excerpt;
   const translation = getTranslation(post);
+  const author = resolveAuthor(post.author, post.lang);
+  const authorUrl = author ? `${SITE_URL}${authorHref(author)}` : undefined;
   return {
     title: post.title,
     description,
+    authors: author ? [{ name: author.name, url: authorUrl }] : undefined,
     alternates: {
       canonical: `/blog/${post.slug}`,
       languages: translation
@@ -31,6 +39,8 @@ export async function generateMetadata(props: PageProps<"/blog/[slug]">): Promis
       title: post.title,
       description,
       publishedTime: post.date,
+      modifiedTime: post.date,
+      authors: authorUrl ? [authorUrl] : undefined,
       locale: post.lang === "es" ? "es_ES" : "en_US",
       images: post.coverImage ? [{ url: post.coverImage }] : undefined,
     },
@@ -44,9 +54,11 @@ export default async function BlogPost(props: PageProps<"/blog/[slug]">) {
 
   const html = await renderMarkdown(post.content);
   const translation = getTranslation(post);
+  const author = resolveAuthor(post.author, post.lang);
 
   return (
     <article className="bg-paper pb-20" lang={post.lang === "es" ? "es" : undefined}>
+      {author && <JsonLd data={blogPostingGraph(post, author)} />}
       <header className="border-b border-line bg-cream">
         <div className="container-page max-w-3xl py-14">
           <Link href="/blog" className="btn-label inline-flex items-center gap-1.5 text-green hover:text-green-deep">
@@ -59,6 +71,11 @@ export default async function BlogPost(props: PageProps<"/blog/[slug]">) {
             {post.lang === "es" && <span className="rounded-full bg-panel px-2 py-0.5 text-sm">Español</span>}
           </div>
           <h1 className="mt-3 text-3xl leading-tight md:text-4xl">{post.title}</h1>
+          {author && (
+            <div className="mt-6">
+              <AuthorByline author={author} href={authorHref(author)} />
+            </div>
+          )}
           {translation && (
             <p className="mt-4 text-sm text-ink-soft">
               {post.lang === "en" ? "También disponible en " : "Also available in "}

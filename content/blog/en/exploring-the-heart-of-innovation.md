@@ -5,7 +5,7 @@ date: "2024-09-09"
 lang: "en"
 excerpt: "Philadelphia, a city steeped in the rich tapestry of American history, stands as a beacon of innovation, resilience, and historical significance. Known…"
 categories: []
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 source: "wayback-html"
 originalUrl: "https://growthjourneytherapy.com/exploring-the-heart-of-innovation-philadelphias-legacy-of-pioneering-moments/"

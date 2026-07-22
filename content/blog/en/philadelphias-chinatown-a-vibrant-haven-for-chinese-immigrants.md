@@ -5,7 +5,7 @@ date: "2024-10-11"
 lang: "en"
 excerpt: "Nestled within the vibrant streets of Philadelphia lies a neighborhood that pulses with the heart and soul of its Chinese immigrant community. This enclave…"
 categories: ["philadelphia"]
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 coverImage: "/images/blog/philadelphias-chinatown-a-vibrant-haven-for-chinese-immigrants/cover.jpg"
 coverImageAlt: "Philadelphia’s Chinatown: A Vibrant Haven for Chinese Immigrants"

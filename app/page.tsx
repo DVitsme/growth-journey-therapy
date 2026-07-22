@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Phone, CalendarCheck, HeartHandshake, Sprout } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { JsonLd } from "@/components/site/json-ld";
+import { homeGraph } from "@/lib/structured-data";
 
 const JOURNEY = [
   { icon: Phone, title: "Phone Consultation", copy: "A free first call to see if we're the right fit for you." },
@@ -12,6 +14,7 @@ const JOURNEY = [
 export default function Home() {
   return (
     <>
+      <JsonLd data={homeGraph()} />
       {/* ── Hero ── */}
       <section className="relative m-6 overflow-hidden rounded-2xl bg-sage md:m-12">
         {/* Desktop/tablet: full-bleed composite image with headline overlaid on the sage right side */}

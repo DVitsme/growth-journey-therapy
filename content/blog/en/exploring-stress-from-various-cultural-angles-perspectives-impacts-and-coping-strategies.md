@@ -5,7 +5,7 @@ date: "2024-03-12"
 lang: "en"
 excerpt: "In a world that is increasingly interconnected yet culturally diverse, the concept of stress transcends geographical boundaries, manifesting in both universal…"
 categories: []
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 source: "wayback-html"
 originalUrl: "https://growthjourneytherapy.com/?p=3500"

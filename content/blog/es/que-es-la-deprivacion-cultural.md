@@ -6,7 +6,7 @@ lang: "es"
 translationKey: "what-is-cultural-deprivation"
 excerpt: "Esto lo tienes que saber. Los cambios suelen ser difíciles para todos los miembros de la familia. Una mudanza, un nuevo trabajo, un cambio de escuela hacen…"
 categories: ["psicologia"]
-author: "Growth Journey Therapy"
+author: raisa-roa-luna
 draft: false
 source: "wayback-rss-2023-05-09"
 originalUrl: "https://growthjourneytherapy.com/2023/05/01/que-es-la-deprivacion-cultural/"

@@ -5,7 +5,7 @@ date: "2026-04-10"
 lang: "en"
 excerpt: "Stuck in a procrastination loop and feeling unmotivated? Learn why overwhelm and burnout make it hard to start, plus five therapeutic tips to take action."
 categories: ["stress"]
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 coverImage: "/images/blog/stuck-in-a-procrastination-loop-how-to-take-action-without-motivation/cover.jpeg"
 coverImageAlt: "Stuck in a Procrastination Loop How to Take Action Without Motivation"

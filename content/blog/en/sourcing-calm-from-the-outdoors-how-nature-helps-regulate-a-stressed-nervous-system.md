@@ -5,7 +5,7 @@ date: "2026-03-06"
 lang: "en"
 excerpt: "Feeling on edge or overwhelmed? Learn gentle, nature-based grounding practices to help regulate a stressed nervous system—without adding more to your to-do list."
 categories: ["stress"]
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 coverImage: "/images/blog/sourcing-calm-from-the-outdoors-how-nature-helps-regulate-a-stressed-nervous-system/cover.jpg"
 coverImageAlt: "Sourcing Calm from the Outdoors: How Nature Helps Regulate a Stressed Nervous System"

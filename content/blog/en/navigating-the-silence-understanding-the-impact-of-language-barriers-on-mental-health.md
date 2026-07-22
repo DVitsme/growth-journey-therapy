@@ -5,7 +5,7 @@ date: "2024-10-11"
 lang: "en"
 excerpt: "In an increasingly interconnected world, the ability to communicate effectively stands as a cornerstone of human interaction. Yet, for many individuals…"
 categories: ["stress"]
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 coverImage: "/images/blog/navigating-the-silence-understanding-the-impact-of-language-barriers-on-mental-health/cover.jpg"
 coverImageAlt: "Navigating the Silence: Understanding the Impact of Language Barriers on Mental Health"

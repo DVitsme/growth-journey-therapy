@@ -5,7 +5,7 @@ date: "2024-03-12"
 lang: "en"
 excerpt: "In the ever-evolving landscape of human identity, the concepts of gender identity and self-expression stand out as pivotal elements in the understanding of…"
 categories: ["self-identity"]
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 coverImage: "/images/blog/navigating-gender-identity-and-self-expression-a-journey-beyond-societal-norms/cover.jpg"
 coverImageAlt: "Navigating Gender Identity and Self-Expression: A Journey Beyond Societal Norms"

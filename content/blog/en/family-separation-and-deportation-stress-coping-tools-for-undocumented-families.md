@@ -5,7 +5,7 @@ date: "2026-03-12"
 lang: "en"
 excerpt: "Family separation and deportation stress can create chronic anxiety and trauma responses in undocumented families. Learn grounding tools, routines, and support strategies."
 categories: ["stress"]
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 coverImage: "/images/blog/family-separation-and-deportation-stress-coping-tools-for-undocumented-families/cover.jpg"
 coverImageAlt: "Family Separation and Deportation Stress: Coping Tools for Undocumented Families"

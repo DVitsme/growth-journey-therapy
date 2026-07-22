@@ -5,7 +5,7 @@ date: "2026-03-12"
 lang: "en"
 excerpt: "Feeling lonely even though you have friends is more common than you think. Learn why it happens, how trauma and culture affect connection, and practical steps to build deeper relationships."
 categories: ["self-identity"]
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 coverImage: "/images/blog/why-am-i-lonely-even-though-i-have-friends/cover.jpg"
 coverImageAlt: "Why Am I Lonely Even Though I Have Friends?"

@@ -5,7 +5,7 @@ date: "2026-03-06"
 lang: "en"
 excerpt: "Imposter syndrome can make high-achieving women feel like they don’t belong. Learn signs of imposter syndrome and practical coping strategies to build confidence and reduce anxiety."
 categories: ["self-identity"]
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 coverImage: "/images/blog/the-quiet-weight-of-imposter-syndrome-why-you-feel-like-you-dont-belong-and-how-to-cope/cover.jpg"
 coverImageAlt: "The Quiet Weight of Imposter Syndrome: Why You Feel Like You Don’t Belong (and How to Cope)"

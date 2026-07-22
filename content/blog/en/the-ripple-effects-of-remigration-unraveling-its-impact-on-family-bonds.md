@@ -5,7 +5,7 @@ date: "2024-03-12"
 lang: "en"
 excerpt: "In an ever-globalizing world, the phenomenon of remigration—returning to one’s country of origin after having migrated away—presents a complex tapestry of…"
 categories: ["family-life"]
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 coverImage: "/images/blog/the-ripple-effects-of-remigration-unraveling-its-impact-on-family-bonds/cover.jpg"
 coverImageAlt: "The Ripple Effects of Remigration: Unraveling Its Impact on Family Bonds"

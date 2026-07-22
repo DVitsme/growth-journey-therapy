@@ -5,7 +5,7 @@ date: "2024-10-11"
 lang: "en"
 excerpt: "In an ever-globalizing world, the quest for personal growth has increasingly intersected with the exploration of cultural identity. As individuals embark on…"
 categories: ["self-identity"]
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 coverImage: "/images/blog/exploring-the-interplay-of-cultural-identity-and-personal-growth-a-journey-of-self-discovery-and-development/cover.png"
 coverImageAlt: "Exploring the Interplay of Cultural Identity and Personal Growth: A Journey of Self-Discovery and Development"

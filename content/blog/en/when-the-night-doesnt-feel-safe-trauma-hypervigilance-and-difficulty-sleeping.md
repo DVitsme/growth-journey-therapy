@@ -5,7 +5,7 @@ date: "2026-03-06"
 lang: "en"
 excerpt: "Nighttime hypervigilance can make it hard to sleep after trauma. Learn trauma-informed sleep tips and grounding practices to calm your nervous system."
 categories: ["stress"]
-author: "Growth Journey Therapy"
+author: growth-journey-therapy
 draft: false
 coverImage: "/images/blog/when-the-night-doesnt-feel-safe-trauma-hypervigilance-and-difficulty-sleeping/cover.jpg"
 coverImageAlt: "When the Night Doesn’t Feel Safe: Trauma, Hypervigilance, and Difficulty Sleeping"
