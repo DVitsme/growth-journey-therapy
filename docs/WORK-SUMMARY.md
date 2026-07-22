@@ -26,7 +26,7 @@ improving accessibility, search/SEO recovery, email reliability, and long-term m
   **30 blog posts** (28 EN + 2 ES), **13** therapy-method pages, **7** specialty pages, and **25** core pages.
 - **7 clinicians** given individual profile pages, bylines, and search-engine structured data.
 - **20 legacy URLs preserved** with permanent redirects so existing Google rankings and links aren't lost.
-- **Full XML sitemap (80 pages)** generated for search engines, auto-kept in sync with the site's content.
+- **Full XML sitemap (78 pages)** generated for search engines, auto-kept in sync with the site's content.
 - **DNS + email migrated with zero downtime** — Google Workspace (Gmail) and Resend kept working throughout.
 - **~20 documentation files** produced (forensics, migration, architecture, SEO, DNS) for a clean handoff.
 
@@ -112,7 +112,7 @@ identified real deliverability issues (things that can quietly send legitimate e
 **Status:** ✅ DNS + email cutover complete and verified. 🟡 Queued: turn on proper DMARC (via
 Cloudflare's free dashboard tool — no report-email clutter) and optionally repair the Google DKIM key.
 
-## 6. Search / SEO recovery & reputation cleanup  ✅ (deployed; full effect at launch)
+## 6. Search / SEO recovery & reputation cleanup  ✅ (redirects/410s + cleanup mode LIVE; full public launch pending)
 
 **What we did**
 - Added **permanent (301) redirects** from the practice's old blog URLs to the new ones, so existing
@@ -121,19 +121,29 @@ Cloudflare's free dashboard tool — no report-email clutter) and optionally rep
   them — actively cleaning up the domain's search reputation.
 - Prepared a **domain-reputation runbook** and a full list of spam URLs for Google Search Console's
   removal tool. Files: `docs/seo/REDIRECTS.md`, `docs/seo/DOMAIN-REPUTATION-RUNBOOK.md`.
-- Built a **complete XML sitemap** (`/sitemap.xml`, 80 pages — every blog post, therapist profile,
+- Built a **complete XML sitemap** (`/sitemap.xml`, 78 pages — every blog post, therapist profile,
   service page, and core page, with real last-modified dates on posts) so search engines can discover
   and index the whole site efficiently. It's generated from the site's own content, so it stays accurate
   automatically as pages change. File: `app/sitemap.ts`.
+- Set up a **safe, staged search-visibility gate** (`app/robots.ts`, one setting). Three modes —
+  **blocked** (fully hidden), **cleanup** (Google may crawl to clear the spam, but the real pages carry a
+  site-wide "noindex" so they stay out of results), and **live** (fully public). We turned on **cleanup
+  mode**, so the casino-spam de-indexing is **actively running now** — weeks before the public launch —
+  while the real pages stay private until sign-off. Launch = flip the one setting to "live."
+- **AI-crawler policy:** AI *search* engines (ChatGPT Search, Perplexity, Claude, Google AI) stay allowed
+  so the practice can appear in AI answers. Cloudflare's built-in "Content Signals" additionally **blocks
+  AI *training* scrapers** (GPTBot, Google-Extended, CCBot, etc.) — free protection for the clinicians'
+  original writing, at no cost to discoverability. (Keep-or-disable is the client's call.)
 
 **Why it matters:** we protect the value of the practice's real content in search *and* work to erase
 the spam that the hack left behind in Google.
 
-**Status:** ✅ Redirects + 410s deployed live. ✅ XML sitemap built + verified (80 URLs; not yet
-deployed). 🔜 The sitemap and the spam removal both take full effect at launch, when the site is opened
-to search engines (Google has to re-crawl to see the "gone" signals and read the sitemap) + a Search
-Console removal request. 🟡 Minor open item: the sitemap currently lists a placeholder profile for a
-former team member (Vivian) — to be excluded when that person's content is cleaned up.
+**Status:** ✅ Redirects + 410s deployed live. ✅ XML sitemap (78 URLs) deployed. ✅ **Cleanup mode is
+LIVE** — Google can now re-crawl and de-index the casino-spam (previously blocked), while the real pages
+stay out of results via `noindex`. So the reputation cleanup is **actively running now**, not waiting for
+launch. 🔜 At full launch we flip the gate to "live" (drop the noindex, advertise the sitemap) + submit
+the Search Console removals. Timing: de-indexing ~1,042 URLs is gradual (days–weeks); Search Console's
+Removals tool gives an instant ~6-month suppression in the meantime.
 
 ## 7. Content, authorship & structured data  ✅
 
@@ -209,13 +219,16 @@ than a fragile page builder.
 
 These are the remaining go-live items (tracked internally):
 
-- 🔜 **Public launch flip** — the new site is built and serving on the domain, but is currently **hidden
-  from search engines on purpose** until final sign-off. Launch = allow search indexing.
+- 🔜 **Public launch flip** — the site is serving on the domain and is now in **cleanup mode** (crawled
+  for spam-removal, but real pages "noindexed" so they're not yet in results). Launch = flip the gate to
+  "live" (drop the noindex, advertise the sitemap) once you're ready to be publicly findable.
 - 🟡 **Decommission the old hacked Bluehost/WordPress** and rotate all related passwords.
 - 🟡 **Turn on DMARC** (Cloudflare's free dashboard tool) + optional Google DKIM repair.
 - 🟡 **Final forms test** + intake/booking links pointed at the practice's real scheduling tool.
-- ✅ **XML sitemap** built (80 pages). 🟡 A few remaining SEO niceties (per-page Open Graph images;
-  optional EN/ES hreflang) and the decision on the Vivian placeholder profile.
+- ✅ **XML sitemap** built + deployed (78 pages; Vivian placeholder excluded).
+- 🟡 **AI-crawler decision** — keep Cloudflare's AI-training block (recommended; free, no discovery cost)
+  or disable it to allow all AI; optionally turn on Cloudflare's edge AI-bot blocking for real enforcement
+  (robots.txt is only advisory). 🟡 Plus a few SEO niceties (per-page Open Graph images; optional EN/ES hreflang).
 
 ---
 
