@@ -72,3 +72,6 @@ content/blog/_inbox/**/*.jpeg
 content/blog/_inbox/**/*.png
 content/blog/_inbox/**/*.gif
 content/blog/_inbox/**/*.webp
+
+# raw client DNS export (migration source data; kept local)
+docs/current-dns.html
