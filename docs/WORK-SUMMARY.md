@@ -215,20 +215,45 @@ than a fragile page builder.
 
 ---
 
-## What's still ahead (so the email sets expectations honestly)
+## Outstanding tasks — to complete go-live  🟡
 
-These are the remaining go-live items (tracked internally):
+> The dedicated action-item section for the email ("what's left / what we need from you"). The
+> technical build is done and the site + spam-cleanup are already live; these are the remaining
+> human, ops, and decision steps — most needing account access or a call on your side. Grouped by area.
 
-- 🔜 **Public launch flip** — the site is serving on the domain and is now in **cleanup mode** (crawled
-  for spam-removal, but real pages "noindexed" so they're not yet in results). Launch = flip the gate to
-  "live" (drop the noindex, advertise the sitemap) once you're ready to be publicly findable.
-- 🟡 **Decommission the old hacked Bluehost/WordPress** and rotate all related passwords.
-- 🟡 **Turn on DMARC** (Cloudflare's free dashboard tool) + optional Google DKIM repair.
-- 🟡 **Final forms test** + intake/booking links pointed at the practice's real scheduling tool.
-- ✅ **XML sitemap** built + deployed (78 pages; Vivian placeholder excluded).
-- 🟡 **AI-crawler decision** — keep Cloudflare's AI-training block (recommended; free, no discovery cost)
-  or disable it to allow all AI; optionally turn on Cloudflare's edge AI-bot blocking for real enforcement
-  (robots.txt is only advisory). 🟡 Plus a few SEO niceties (per-page Open Graph images; optional EN/ES hreflang).
+**Launch**
+- [ ] **Give the go-ahead to go fully public** — we flip the site from *cleanup* to *live* (drops the
+  "noindex", advertises the sitemap). One setting + redeploy, whenever you're ready to be findable in search.
+
+**Security close-out (highest priority)**
+- [ ] **Decommission the old hacked Bluehost / WordPress** and **rotate every password + 2FA** — cPanel/
+  Bluehost, WordPress admin, the database, Cloudflare, and Google Workspace. The old malware is
+  deactivated but not yet *removed*; this is the final containment step.
+
+**Email hardening**
+- [ ] **Turn on DMARC** — Cloudflare's free DMARC Management (dashboard; no report-email clutter).
+- [ ] **(Optional) Repair the Google DKIM key** — copy the full key from Google Admin → Gmail →
+  Authenticate email (the current one is truncated/broken; low urgency, doesn't block launch).
+
+**Forms & booking**
+- [ ] **Live form test** — submit the contact + careers forms as a real person and confirm they land in
+  the practice inbox.
+- [ ] **Real booking link** — provide the SimplePractice portal URL so the "Get Started" / intake buttons
+  point at it (currently placeholders).
+- [ ] **Sign off on the contact message field** — how much detail it should collect, given privacy/PHI.
+
+**Search / AI**
+- [ ] **Google Search Console** — verify the domain property; we then submit the sitemap + the spam-URL
+  removals (instant ~6-month suppression while the 410s de-index permanently).
+- [ ] **AI-crawler decision** — keep Cloudflare's AI-training block (recommended) or disable it to allow
+  all AI; optionally enable Cloudflare's edge AI-bot enforcement (robots.txt is advisory only).
+- [ ] **(Nice-to-have) SEO polish** — per-page social-share (Open Graph) images; optional EN/ES hreflang.
+
+**Content sign-offs**
+- [ ] **Vivian's 2 blog posts** — decide how to credit them now that she's left, so her placeholder
+  profile can be fully removed.
+- [ ] **Two original-site quirks** — keep or fix: the insurance page's duplicate paragraph, and the
+  culturally-informed page's CTA heading (both were bugs on the original site, reproduced faithfully).
 
 ---
 
