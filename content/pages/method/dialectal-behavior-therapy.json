@@ -1,7 +1,7 @@
 {
  "slug": "dialectal-behavior-therapy",
  "type": "method",
- "title": "Dialectal Behavior Therapy",
+ "title": "Dialectical Behavior Therapy",
  "subheads": [
   "Enhances Emotional Regulation",
   "Reduces Self Harm",
@@ -9,7 +9,7 @@
   "Builds Resilience"
  ],
  "heroImage": "/images/library/Dialectal-Behavior-Therapyv3.jpg",
- "heroImageAlt": "Dialectal Behavior Therapy",
+ "heroImageAlt": "Dialectical Behavior Therapy",
  "heroButton": {
   "text": "Start Your Journey",
   "href": "/consultation"

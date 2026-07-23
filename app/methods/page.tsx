@@ -14,7 +14,7 @@ const TILES: { label: string; slug: string }[] = [
   { label: "Acceptance and Commitment Therapy", slug: "acceptance-and-commitment-therapy" },
   { label: "Internal Family Systems Therapy", slug: "internal-family-systems-therapy" },
   { label: "Mindfulness Based Therapy", slug: "mindfulness-based-therapy" },
-  { label: "Dialectal Behavior Therapy", slug: "dialectal-behavior-therapy" },
+  { label: "Dialectical Behavior Therapy", slug: "dialectal-behavior-therapy" },
   { label: "Gottman Method Therapy", slug: "gottman-method-therapy" },
   { label: "Group Therapy", slug: "group-therapy" },
   { label: "Culturally Informed Therapy", slug: "culturally-informed-therapy" },

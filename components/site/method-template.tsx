@@ -5,32 +5,68 @@ import type { MethodDoc } from "@/lib/method-content";
 export function MethodTemplate({ doc, bodyHtml }: { doc: MethodDoc; bodyHtml?: string }) {
   return (
     <>
-      {/* ── Hero: image behind, diagonal green panel with title/subheads/CTA on the right ── */}
-      <section className="relative isolate min-h-[360px] overflow-hidden bg-green md:min-h-[440px]">
+      {/* ── Hero: floating card (homepage pattern — m-6 md:m-12, rounded-2xl). The ENTIRE
+             photo is shown (object-contain, never cropped) over a blurred ambient fill of
+             itself; the solid green panel is IN FLOW so long content grows the card instead
+             of clipping (the old absolute panel cut off the CTA). The diagonal survives as
+             clip-path notches that reveal only the ambient backdrop — never the photo:
+             a fixed-run slope on the panel's leading edge (desktop) and a slanted top edge
+             (mobile). `isolate` keeps Safari clipping the rounded corners correctly. ── */}
+      <section className="relative isolate m-6 overflow-hidden rounded-2xl bg-green md:m-12">
         {doc.heroImage && (
-          <Image
-            src={doc.heroImage}
-            alt={doc.heroImageAlt}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-[left_top]"
-          />
+          <>
+            {/* Ambient fill: tiny blurred copy of the same photo (decorative only). */}
+            <Image
+              src={doc.heroImage}
+              alt=""
+              aria-hidden
+              fill
+              loading="eager"
+              sizes="256px"
+              className="scale-110 object-cover blur-2xl brightness-95"
+            />
+            {/* Brand tint so every page's ambient wash sits in the palette. */}
+            <div aria-hidden className="absolute inset-0 bg-green/15" />
+          </>
         )}
-        <div className="absolute inset-y-0 right-0 flex w-full flex-col items-center justify-center bg-green/95 px-8 py-12 text-center md:w-[58%] md:bg-green md:[clip-path:polygon(16%_0,100%_0,100%_100%,0_100%)] md:pl-[16%]">
-          <h1 className="text-3xl leading-tight text-white md:text-4xl lg:text-[2.75rem]">{doc.heroTitle ?? doc.title}</h1>
-          {doc.subheads.length > 0 && (
-            <div className="mt-4 space-y-1 text-on-green-soft">
-              {doc.subheads.map((s) => (
-                <p key={s} className="text-lg">{s}</p>
-              ))}
+
+        <div className="relative md:flex md:items-stretch">
+          {/* Photo pane — the whole image, contained + centered; stretches to row height. */}
+          {doc.heroImage && (
+            <div className="relative aspect-[3/2] md:aspect-auto md:flex-1">
+              <Image
+                src={doc.heroImage}
+                alt={doc.heroImageAlt}
+                fill
+                preload
+                sizes="(min-width: 768px) 45vw, calc(100vw - 3rem)"
+                className="object-contain p-3 [filter:drop-shadow(0_10px_24px_rgba(0,0,0,0.28))] md:p-5"
+              />
             </div>
           )}
-          {doc.heroButton?.text && (
-            <Button href={doc.heroButton.href} variant="solid" size="lg" className="mt-7 bg-sage-soft hover:bg-sage-soft/90">
-              {doc.heroButton.text}
-            </Button>
-          )}
+
+          {/* Green panel — in flow (defines the card height; CTA always keeps its bottom
+              padding). Clip-path notches reveal the ambient backdrop beside/above it. */}
+          <div className="on-green-surface relative flex flex-col items-center justify-center bg-green px-6 pt-16 pb-10 text-center [clip-path:polygon(0_2.5rem,100%_0,100%_100%,0_100%)] md:min-h-[23rem] md:w-[58%] md:py-14 md:pr-8 md:pl-[calc(var(--hero-run)+2rem)] md:[--hero-run:3rem] md:[clip-path:polygon(var(--hero-run)_0,100%_0,100%_100%,0_100%)] lg:pr-12 lg:pl-[calc(var(--hero-run)+3rem)] lg:[--hero-run:6rem]">
+            <h1 className="text-3xl leading-tight text-white md:text-4xl lg:text-[2.75rem]">{doc.heroTitle ?? doc.title}</h1>
+            {doc.subheads.length > 0 && (
+              <div className="mt-5 max-w-xl space-y-1 text-on-green-soft">
+                {doc.subheads.map((s) => (
+                  <p key={s} className="text-lg">{s}</p>
+                ))}
+              </div>
+            )}
+            {doc.heroButton?.text && (
+              <Button
+                href={doc.heroButton.href}
+                variant="solid"
+                size="lg"
+                className="mt-8 bg-on-green-soft text-green-deep hover:bg-white hover:text-green-deep"
+              >
+                {doc.heroButton.text}
+              </Button>
+            )}
+          </div>
         </div>
       </section>
 

@@ -20,7 +20,7 @@ export const NAV: NavItem[] = [
     children: [
       { label: "Acceptance and Commitment Therapy", href: "/methods/acceptance-and-commitment-therapy" },
       { label: "Cognitive Behavioral Therapy", href: "/methods/cognitive-behavioral-therapy" },
-      { label: "Dialectal Behavior Therapy", href: "/methods/dialectal-behavior-therapy" },
+      { label: "Dialectical Behavior Therapy", href: "/methods/dialectal-behavior-therapy" },
       { label: "Group Therapy", href: "/methods/group-therapy" },
       { label: "Gottman Method Therapy", href: "/methods/gottman-method-therapy" },
       { label: "Holistic Therapy", href: "/methods/holistic-therapy" },

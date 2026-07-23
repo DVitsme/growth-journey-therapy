@@ -156,6 +156,11 @@
     outline-offset: 2px;
     border-radius: 3px;
   }
+  /* On solid-green surfaces the green ring is invisible (1:1) — use white there.
+     Apply .on-green-surface to any green panel that contains links/buttons. */
+  .on-green-surface :is(a, button, [role="button"]):focus-visible {
+    outline-color: var(--paper);
+  }
 }
 
 @utility container-page {
