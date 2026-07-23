@@ -50,8 +50,10 @@ export function CareersForm() {
     };
   }, [scriptReady]);
 
+  // Reset the single-use token after any post-verification error ("invalid"
+  // excluded — validation precedes verification, so the token is unspent).
   useEffect(() => {
-    if (state.status === "error" && (state.error === "captcha" || state.error === "send-failed")) {
+    if (state.status === "error" && state.error !== "invalid") {
       if (widgetId.current) window.turnstile?.reset(widgetId.current);
       setToken("");
     }

@@ -1,8 +1,10 @@
 "use server";
 
-import { headers } from "next/headers";
 import { Resend } from "resend";
 import { careersSchema, EMPLOYMENT_LABELS } from "./schema";
+import { isLikelySpam, checkTurnstile } from "@/lib/forms/gates";
+import { sendWithRetry } from "@/lib/forms/reliable-send";
+import { handleSendFailure } from "@/lib/forms/failsafe";
 
 export type CareersState = {
   status: "idle" | "ok" | "error";
@@ -10,42 +12,27 @@ export type CareersState = {
   fieldErrors?: Record<string, string[] | undefined>;
 };
 
-async function verifyTurnstile(token: string, secret: string, ip: string | null): Promise<boolean> {
-  if (!token) return false;
-  try {
-    const form = new URLSearchParams({ secret, response: token });
-    if (ip) form.set("remoteip", ip);
-    const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
-      method: "POST",
-      headers: { "content-type": "application/x-www-form-urlencoded" },
-      body: form,
-    });
-    const data = (await res.json()) as { success?: boolean };
-    return Boolean(data.success);
-  } catch {
-    return false;
-  }
-}
-
 export async function submitApplication(_prev: CareersState, formData: FormData): Promise<CareersState> {
-  // spam gates
-  if ((formData.get("website") ?? "") !== "") return { status: "ok" };
-  const startedAt = Number(formData.get("startedAt"));
-  if (Number.isFinite(startedAt) && Date.now() - startedAt < 3000) return { status: "ok" };
+  // spam gates; silently drop bots
+  if (isLikelySpam(formData)) return { status: "ok" };
 
   const parsed = careersSchema.safeParse(Object.fromEntries(formData));
   if (!parsed.success) {
     return { status: "error", error: "invalid", fieldErrors: parsed.error.flatten().fieldErrors };
   }
   const d = parsed.data;
+  const failsafeData = {
+    name: d.name,
+    email: d.email,
+    phone: d.phone,
+    address: d.address,
+    employment: d.employment,
+    message: d.message || undefined,
+  };
 
-  const secret = process.env.TURNSTILE_SECRET_KEY;
-  if (secret) {
-    const h = await headers();
-    const ip = h.get("cf-connecting-ip") ?? h.get("x-forwarded-for");
-    const token = formData.get("cf-turnstile-response");
-    const ok = typeof token === "string" && (await verifyTurnstile(token, secret, ip));
-    if (!ok && process.env.NODE_ENV === "production") return { status: "error", error: "captcha" };
+  const turnstile = await checkTurnstile(formData);
+  if (turnstile === "fail" && process.env.NODE_ENV === "production") {
+    return { status: "error", error: "captcha" };
   }
 
   const apiKey = process.env.RESEND_API_KEY;
@@ -53,11 +40,17 @@ export async function submitApplication(_prev: CareersState, formData: FormData)
   const to = process.env.CONTACT_TO_EMAIL;
   if (!apiKey || !fromAddress || !to) {
     console.error("[careers] missing RESEND_API_KEY / CONTACT_FROM_EMAIL / CONTACT_TO_EMAIL");
-    return { status: "error", error: "not-configured" };
+    return handleSendFailure({
+      form: "careers",
+      reason: "not-configured",
+      data: failsafeData,
+      fallbackError: "not-configured",
+    });
   }
   const resend = new Resend(apiKey);
 
-  const { error } = await resend.emails.send({
+  const idempotencyKey = `careers/${crypto.randomUUID()}`;
+  const notification = {
     from: `Growth Journey Therapy <${fromAddress}>`,
     to,
     replyTo: d.email,
@@ -76,10 +69,32 @@ export async function submitApplication(_prev: CareersState, formData: FormData)
       "",
       "(The applicant was asked to email their resume and introduction separately.)",
     ].join("\n"),
-  });
-  if (error) {
-    console.error("[careers] send failed:", error);
-    return { status: "error", error: "send-failed" };
+  };
+
+  try {
+    const outcome = await sendWithRetry(resend, notification, idempotencyKey);
+    if (!outcome.ok) {
+      console.error(`[careers] send failed (${outcome.class}):`, outcome.error);
+      return handleSendFailure({
+        form: "careers",
+        reason: "send-failed",
+        data: failsafeData,
+        error: outcome.error,
+        fallbackError: "send-failed",
+        retry:
+          outcome.class === "fatal" ? undefined : { resend, payload: notification, idempotencyKey },
+      });
+    }
+  } catch (e) {
+    console.error("[careers] send threw:", e);
+    return handleSendFailure({
+      form: "careers",
+      reason: "send-threw",
+      data: failsafeData,
+      error: { message: String(e) },
+      fallbackError: "send-failed",
+    });
   }
+
   return { status: "ok" };
 }

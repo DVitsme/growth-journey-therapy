@@ -1,10 +1,12 @@
 "use server";
 
-import { headers } from "next/headers";
 import { Resend } from "resend";
 import { inquirySchema } from "./schema";
 import { InquiryConfirmation } from "@/emails/inquiry";
 import { SITE_URL } from "@/lib/site";
+import { isLikelySpam, checkTurnstile } from "@/lib/forms/gates";
+import { sendWithRetry } from "@/lib/forms/reliable-send";
+import { handleSendFailure } from "@/lib/forms/failsafe";
 
 export type ContactState = {
   status: "idle" | "ok" | "error";
@@ -13,30 +15,9 @@ export type ContactState = {
   fieldErrors?: Record<string, string[] | undefined>;
 };
 
-async function verifyTurnstile(token: string, secret: string, ip: string | null): Promise<boolean> {
-  if (!token) return false;
-  try {
-    const form = new URLSearchParams({ secret, response: token });
-    if (ip) form.set("remoteip", ip);
-    const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
-      method: "POST",
-      headers: { "content-type": "application/x-www-form-urlencoded" },
-      body: form,
-    });
-    const data = (await res.json()) as { success?: boolean };
-    return Boolean(data.success);
-  } catch {
-    return false;
-  }
-}
-
 export async function submitInquiry(_prev: ContactState, formData: FormData): Promise<ContactState> {
-  // --- spam gates (before anything expensive) ------------------------------
-  // 1. honeypot: a hidden field real users never fill
-  if ((formData.get("website") ?? "") !== "") return { status: "ok" }; // silently drop
-  // 2. timing: humans take more than ~3s to complete the form
-  const startedAt = Number(formData.get("startedAt"));
-  if (Number.isFinite(startedAt) && Date.now() - startedAt < 3000) return { status: "ok" };
+  // --- spam gates (before anything expensive); silently drop bots ----------
+  if (isLikelySpam(formData)) return { status: "ok" };
 
   // --- validate ------------------------------------------------------------
   const parsed = inquirySchema.safeParse(Object.fromEntries(formData));
@@ -44,34 +25,45 @@ export async function submitInquiry(_prev: ContactState, formData: FormData): Pr
     return { status: "error", error: "invalid", fieldErrors: parsed.error.flatten().fieldErrors };
   }
   const d = parsed.data;
+  const name = `${d.firstName} ${d.lastName}`.trim();
+  // Failsafe record: the full parsed submission (client-approved capture scope).
+  const failsafeData = {
+    name,
+    email: d.email,
+    phone: d.phone || undefined,
+    interest: d.interest || undefined,
+    locale: d.locale,
+    message: d.message,
+  };
 
   // --- Turnstile (strict in prod; in dev, log-and-allow so the flow stays testable) ---
-  const secret = process.env.TURNSTILE_SECRET_KEY;
-  if (secret) {
-    const h = await headers();
-    const ip = h.get("cf-connecting-ip") ?? h.get("x-forwarded-for");
-    const token = formData.get("cf-turnstile-response");
-    const ok = typeof token === "string" && (await verifyTurnstile(token, secret, ip));
-    if (!ok && process.env.NODE_ENV === "production") {
-      return { status: "error", error: "captcha" };
-    }
+  const turnstile = await checkTurnstile(formData);
+  if (turnstile === "fail" && process.env.NODE_ENV === "production") {
+    return { status: "error", error: "captcha" };
   }
 
-  // --- send ----------------------------------------------------------------
+  // --- config guard: a misconfigured mailer must not lose the lead ---------
   const apiKey = process.env.RESEND_API_KEY;
   const fromAddress = process.env.CONTACT_FROM_EMAIL;
   const to = process.env.CONTACT_TO_EMAIL;
   if (!apiKey || !fromAddress || !to) {
     console.error("[contact] missing RESEND_API_KEY / CONTACT_FROM_EMAIL / CONTACT_TO_EMAIL");
-    return { status: "error", error: "not-configured" };
+    return handleSendFailure({
+      form: "contact",
+      reason: "not-configured",
+      data: failsafeData,
+      fallbackError: "not-configured",
+    });
   }
   const resend = new Resend(apiKey);
   const from = `Growth Journey Therapy <${fromAddress}>`;
-  const name = `${d.firstName} ${d.lastName}`.trim();
 
-  // 1) Notification to the practice — critical; fail the request if it doesn't send.
+  // 1) Notification to the practice — the critical send. Retried with an
+  //    idempotency key (no double-sends); on failure the submission is captured
+  //    to the R2 failsafe + alerted, and background retries re-deliver.
   //    (The visitor's message goes ONLY here — never echoed into the auto-reply.)
-  const { error } = await resend.emails.send({
+  const idempotencyKey = `contact/${crypto.randomUUID()}`;
+  const notification = {
     from,
     to,
     replyTo: d.email,
@@ -88,10 +80,34 @@ export async function submitInquiry(_prev: ContactState, formData: FormData): Pr
       "Message:",
       d.message,
     ].join("\n"),
-  });
-  if (error) {
-    console.error("[contact] notification send failed:", error);
-    return { status: "error", error: "send-failed" };
+  };
+
+  try {
+    const outcome = await sendWithRetry(resend, notification, idempotencyKey);
+    if (!outcome.ok) {
+      console.error(`[contact] notification send failed (${outcome.class}):`, outcome.error);
+      return handleSendFailure({
+        form: "contact",
+        reason: "send-failed",
+        data: failsafeData,
+        error: outcome.error,
+        fallbackError: "send-failed",
+        // Only retryable/deferred failures get background re-delivery.
+        retry:
+          outcome.class === "fatal" ? undefined : { resend, payload: notification, idempotencyKey },
+      });
+    }
+  } catch (e) {
+    // The SDK shouldn't throw for text sends — this is defense so an exception
+    // can never unmount the form (app/error.tsx) and destroy the typed data.
+    console.error("[contact] notification send threw:", e);
+    return handleSendFailure({
+      form: "contact",
+      reason: "send-threw",
+      data: failsafeData,
+      error: { message: String(e) },
+      fallbackError: "send-failed",
+    });
   }
 
   // 2) Confirmation to the visitor — best-effort; a failure here must not lose the lead.

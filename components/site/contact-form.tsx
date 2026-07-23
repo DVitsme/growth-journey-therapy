@@ -107,9 +107,11 @@ export function ContactForm({ locale }: { locale: "en" | "es" }) {
     };
   }, [scriptReady, locale]);
 
-  // The token is consumed once verified — after a captcha/send error, reset for a clean retry.
+  // The token is consumed once verified — after any post-verification error
+  // (captcha/send-failed/not-configured/…), reset for a clean retry. "invalid"
+  // is excluded: validation runs before verification, so the token is unspent.
   useEffect(() => {
-    if (state.status === "error" && (state.error === "captcha" || state.error === "send-failed")) {
+    if (state.status === "error" && state.error !== "invalid") {
       if (widgetId.current) window.turnstile?.reset(widgetId.current);
       setToken("");
     }
