@@ -185,8 +185,16 @@ preserved in both languages.
 **Why it matters:** prospective clients and applicants can reach the practice reliably, without the
 form becoming a spam magnet, and with care taken around sensitive information.
 
-**Status:** ✅ Built and functional in production. 🟡 Remaining: one real human end-to-end submit test,
-and a sign-off on how much detail the contact message field should collect.
+- Added a **lead-loss failsafe** (2026‑07‑23): if the email service ever fails at the moment someone
+  submits a form, the submission is automatically retried, then **captured to durable storage**
+  (monthly-organized, auto-deleted after 14 days) and an alert goes out — so a prospective client's
+  message can no longer be silently lost. The visitor still sees a normal "thank you" when their
+  lead is safely captured.
+
+**Status:** ✅ Built and functional in production, failsafe deployed. 🟡 Remaining: one real human
+end-to-end submit test; a sign-off on the contact message field AND on the failsafe's brief storage
+(wording ready in `docs/CONTACT-FAILSAFE.md`); connect an alert webhook + verify the backup email
+channel.
 
 ## 10. Design fidelity & a reusable design system  ✅
 
