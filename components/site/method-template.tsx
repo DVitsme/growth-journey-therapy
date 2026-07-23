@@ -47,7 +47,7 @@ export function MethodTemplate({ doc, bodyHtml }: { doc: MethodDoc; bodyHtml?: s
 
           {/* Green panel — in flow (defines the card height; CTA always keeps its bottom
               padding). Clip-path notches reveal the ambient backdrop beside/above it. */}
-          <div className="on-green-surface relative flex flex-col items-center justify-center bg-green px-6 pt-16 pb-10 text-center [clip-path:polygon(0_2.5rem,100%_0,100%_100%,0_100%)] md:min-h-[23rem] md:w-[58%] md:py-14 md:pr-8 md:pl-[calc(var(--hero-run)+2rem)] md:[--hero-run:3rem] md:[clip-path:polygon(var(--hero-run)_0,100%_0,100%_100%,0_100%)] lg:pr-12 lg:pl-[calc(var(--hero-run)+3rem)] lg:[--hero-run:6rem]">
+          <div className="on-green-surface relative flex flex-col items-center justify-center bg-green px-6 pt-14 pb-10 text-center [clip-path:polygon(0_1.25rem,100%_0,100%_100%,0_100%)] md:min-h-[23rem] md:w-[58%] md:py-14 md:pr-8 md:pl-[calc(var(--hero-run)+2rem)] md:[--hero-run:2rem] md:[clip-path:polygon(var(--hero-run)_0,100%_0,100%_100%,0_100%)] lg:pr-12 lg:pl-[calc(var(--hero-run)+3rem)] lg:[--hero-run:2.5rem]">
             <h1 className="text-3xl leading-tight text-white md:text-4xl lg:text-[2.75rem]">{doc.heroTitle ?? doc.title}</h1>
             {doc.subheads.length > 0 && (
               <div className="mt-5 max-w-xl space-y-1 text-on-green-soft">
