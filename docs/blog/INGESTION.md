@@ -66,6 +66,16 @@ published.
   direct download** — it needs their API — so its images can't be self-hosted via `curl`; prefer
   **Pexels** and **Wikimedia Commons (CC0)**, which download cleanly. Vet candidates by eye before
   choosing.)*
+  - **Pexels search pages are behind a Cloudflare challenge** as of 2026-07 — `curl` gets a "Just a
+    moment…" interstitial. **WebFetch passes through**: fetch `https://www.pexels.com/search/<query>/`
+    and ask it to list the `/photo/…-<id>/` URLs, then download the file directly (this is *not*
+    challenged): `https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=2600`.
+    Openverse's API works but mostly returns museum/Wikimedia stock — poor fit for this site.
+  - **Crop for two crops at once.** The hero is `aspect-[16/7]` and the index card `aspect-[3/2]`,
+    both `object-cover` **center** with no `object-position` override. Store **16:9 @ 1920×1080** —
+    it survives both (the hero trims ~11% off the top and bottom, the card ~8% off each side). Pick
+    a frame whose subject sits in the middle band, and simulate both crops with `sharp` before
+    committing. A native 3:2 file loses 34% of its height in the hero and often decapitates the subject.
   - **Topic sensitivity matters.** For heavy subjects (trauma, grief, abuse), choose calming,
     grounding, hopeful imagery — never anything depicting distress or the event itself. Present
     2–3 vetted options for sign-off rather than auto-picking.
@@ -81,5 +91,9 @@ published.
 | Archived brief | `content/blog/_inbox/_processed/<slug>/` |
 
 ## Changelog
+- **2026-07-27** — Ingested *Why Do I Take Everything So Personally? Understanding Rejection
+  Sensitivity* (author Gina Rawashdeh, category Relationships). No client image — cover sourced from
+  Pexels. Image-sourcing notes updated: Pexels search now needs WebFetch, and covers should be stored
+  16:9 so the 16:7 hero and 3:2 card crops both work.
 - **2026-07-22** — Workflow established; inbox moved to `content/blog/_inbox/`. First post ingested:
   *What to Expect After a Traumatic Assault* (author Karla Recalde, category Trauma Recovery).
