@@ -112,7 +112,7 @@ identified real deliverability issues (things that can quietly send legitimate e
 **Status:** ✅ DNS + email cutover complete and verified. 🟡 Queued: turn on proper DMARC (via
 Cloudflare's free dashboard tool — no report-email clutter) and optionally repair the Google DKIM key.
 
-## 6. Search / SEO recovery & reputation cleanup  ✅ (redirects/410s + cleanup mode LIVE; full public launch pending)
+## 6. Search / SEO recovery & reputation cleanup  ✅ (redirects/410s live; **site fully public since 2026-07-27**)
 
 **What we did**
 - Added **permanent (301) redirects** from the practice's old blog URLs to the new ones, so existing
@@ -138,12 +138,18 @@ Cloudflare's free dashboard tool — no report-email clutter) and optionally rep
 **Why it matters:** we protect the value of the practice's real content in search *and* work to erase
 the spam that the hack left behind in Google.
 
-**Status:** ✅ Redirects + 410s deployed live. ✅ XML sitemap (78 URLs) deployed. ✅ **Cleanup mode is
-LIVE** — Google can now re-crawl and de-index the casino-spam (previously blocked), while the real pages
-stay out of results via `noindex`. So the reputation cleanup is **actively running now**, not waiting for
-launch. 🔜 At full launch we flip the gate to "live" (drop the noindex, advertise the sitemap) + submit
-the Search Console removals. Timing: de-indexing ~1,042 URLs is gradual (days–weeks); Search Console's
-Removals tool gives an instant ~6-month suppression in the meantime.
+**Status:** ✅ Redirects + 410s deployed live. ✅ XML sitemap (79 URLs) deployed. ✅ **LAUNCHED —
+the gate is set to `live` (2026-07-27)**: the site-wide `noindex` is gone, `robots.txt` allows crawling
+and advertises the sitemap. The site is fully public and indexable. Cleanup mode ran from the DNS cutover
+(2026-07-22) through launch — 5 days of Google re-crawling the spam with the real pages held back — and
+the 410/301 layer is unaffected by the flip, so spam de-indexing continues.
+
+Verified at launch: 0 `noindex` headers across 24 requests (8 pages × 3) on apex + www; spam URL → 410;
+legacy post URL → 301 → `/blog/<slug>`; `robots.txt` advertises the sitemap.
+
+🔜 Remaining SEO step: **submit the Search Console removals** (`docs/seo/DOMAIN-REPUTATION-RUNBOOK.md`
+Step 3) and swap the old `sitemap_index.xml` for the new `sitemap.xml`. Timing: de-indexing ~1,042 URLs
+is gradual (days–weeks); the Removals tool gives an instant ~6-month suppression in the meantime.
 
 ## 7. Content, authorship & structured data  ✅
 
@@ -230,13 +236,17 @@ than a fragile page builder.
 > human, ops, and decision steps — most needing account access or a call on your side. Grouped by area.
 
 **Launch**
-- [ ] **Give the go-ahead to go fully public** — we flip the site from *cleanup* to *live* (drops the
-  "noindex", advertises the sitemap). One setting + redeploy, whenever you're ready to be findable in search.
+- [x] **Go fully public** — ✅ **DONE 2026-07-27.** Gate flipped *cleanup* → *live*: site-wide `noindex`
+  dropped, `robots.txt` allows crawling and advertises the sitemap. The site is findable in search.
+- [ ] **Submit the Search Console removals** — the one SEO step left; see
+  `docs/seo/DOMAIN-REPUTATION-RUNBOOK.md` Step 3 (needs the Google account that owns the property).
 
 **Security close-out (highest priority)**
-- [ ] **Decommission the old hacked Bluehost / WordPress** and **rotate every password + 2FA** — cPanel/
-  Bluehost, WordPress admin, the database, Cloudflare, and Google Workspace. The old malware is
-  deactivated but not yet *removed*; this is the final containment step.
+- [x] **Decommission the old hacked Bluehost / WordPress** — ✅ **DONE 2026-07-27** (client confirmed;
+  hosting cancelled and billing stopped). The malware is gone with the box.
+- [ ] **Rotate every password + 2FA** — cPanel/Bluehost (whatever account survives the cancellation),
+  WordPress admin, the database, Cloudflare, and Google Workspace. Still open: decommissioning the host
+  removes the malware, but any credential it may have exposed is still valid wherever it's reused.
 
 **Email hardening**
 - [ ] **Turn on DMARC** — Cloudflare's free DMARC Management (dashboard; no report-email clutter).
