@@ -12,7 +12,7 @@ excerpt: >-
   support strategies.
 categories:
   - immigration
-author: karla-recalde
+author: karla-martin
 draft: false
 coverImage: >-
   /images/blog/family-separation-and-deportation-stress-coping-tools-for-undocumented-families/cover.jpg

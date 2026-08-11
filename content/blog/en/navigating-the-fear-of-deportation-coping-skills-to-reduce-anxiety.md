@@ -9,7 +9,7 @@ excerpt: >-
   mental health.
 categories:
   - immigration
-author: karla-recalde
+author: karla-martin
 draft: false
 coverImage: >-
   /images/blog/navigating-the-fear-of-deportation-coping-skills-to-reduce-anxiety/cover.jpg

@@ -287,3 +287,6 @@ SEO / E-E-A-T:
   30+ structure/honesty assertions pass (entity `@id` linkage incl. same person `@id` across EN/ES,
   name-only authors, no fabricated credentials, content-matched NAP). `tsc` + build green.
   **✅ Author build complete (Phases 1–5).**
+
+---
+**Correction 2026-08-10:** the three blog posts previously attributed to `karla-recalde` (deportation-anxiety, family-separation, traumatic-assault) were written by former intern **Karla Martin** — reattributed per Nelsery. New guest-author file: `content/team/karla-martin.md` (`teamMember: false`). Karla Recalde remains on the team roster; she authored none of the live posts.

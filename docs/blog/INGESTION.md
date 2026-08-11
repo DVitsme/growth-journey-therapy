@@ -97,3 +97,6 @@ published.
   16:9 so the 16:7 hero and 3:2 card crops both work.
 - **2026-07-22** — Workflow established; inbox moved to `content/blog/_inbox/`. First post ingested:
   *What to Expect After a Traumatic Assault* (author Karla Recalde, category Trauma Recovery).
+
+---
+**Correction 2026-08-10:** the traumatic-assault post (and the two deportation-topic posts) were ingested with author `karla-recalde`; actual author is former intern Karla Martin. Fixed in post frontmatter + `content/team/karla-martin.md` per Nelsery.

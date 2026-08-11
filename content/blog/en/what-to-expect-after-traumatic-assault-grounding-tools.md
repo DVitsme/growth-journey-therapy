@@ -5,7 +5,7 @@ date: "2026-07-22"
 lang: "en"
 excerpt: "After a traumatic assault, it's common to feel numb, on edge, or have trouble sleeping. Learn common trauma responses and grounding tools to feel steadier."
 categories: ["trauma-recovery"]
-author: karla-recalde
+author: karla-martin
 draft: false
 coverImage: "/images/blog/what-to-expect-after-traumatic-assault-grounding-tools/cover.jpg"
 coverImageAlt: "A gentle dirt path winding forward through a bright green summer forest"
