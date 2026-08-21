@@ -1,10 +1,11 @@
 "use client";
 
-import { useActionState, useEffect, useRef, useState } from "react";
+import { useActionState, useEffect, useRef } from "react";
 import Script from "next/script";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { submitInquiry, type ContactState } from "@/lib/contact/action";
+import { useTurnstile, TURNSTILE_SRC } from "./use-turnstile";
 import { INTERESTS } from "@/lib/contact/schema";
 
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
@@ -26,10 +27,13 @@ const copy = {
     consent: "I agree to be contacted using the information I provided above.",
     submit: "Submit",
     sending: "Sending…",
+    verifying: "Verifying…",
+    needsCheck: "Still checking your browser. One moment, your message will send on its own.",
     successTitle: "Thank you for reaching out!",
     successBody: "Someone will be in touch soon at the email or phone number you provided.",
     errInvalid: "Please check the highlighted fields and try again.",
-    errCaptcha: "Please complete the verification just below, then submit.",
+    errCaptcha:
+      "We could not verify your browser, so your message did not send. Please try once more, or call us at (267) 713-8831 and we will take your details.",
     errSend: "Something went wrong sending your message. Please try again, or call us directly.",
     protected: "Protected by Cloudflare Turnstile.",
     optional: "optional",
@@ -50,10 +54,13 @@ const copy = {
     consent: "Autorizo que me contacten usando la información que proporcioné.",
     submit: "Enviar",
     sending: "Enviando…",
+    verifying: "Verificando…",
+    needsCheck: "Estamos verificando tu navegador. Un momento, tu mensaje se enviará solo.",
     successTitle: "¡Gracias por comunicarte!",
     successBody: "Alguien se pondrá en contacto contigo pronto al correo o teléfono que proporcionaste.",
     errInvalid: "Revisa los campos marcados e inténtalo de nuevo.",
-    errCaptcha: "Completa la verificación a continuación y luego envía.",
+    errCaptcha:
+      "No pudimos verificar tu navegador, así que tu mensaje no se envió. Inténtalo una vez más o llámanos al (267) 713-8831 y tomaremos tus datos.",
     errSend: "Hubo un problema al enviar tu mensaje. Inténtalo de nuevo o llámanos directamente.",
     protected: "Protegido por Cloudflare Turnstile.",
     optional: "opcional",
@@ -71,51 +78,19 @@ export function ContactForm({ locale }: { locale: "en" | "es" }) {
   // Hidden-input values are written imperatively via refs (not React state): the timestamp
   // avoids an SSR/CSR hydration mismatch, and the Turnstile token never needs to be in render.
   const startedRef = useRef<HTMLInputElement>(null);
-  const tokenRef = useRef<HTMLInputElement>(null);
-  const setToken = (tk: string) => {
-    if (tokenRef.current) tokenRef.current.value = tk;
-  };
   useEffect(() => {
     if (startedRef.current) startedRef.current.value = String(Date.now());
   }, []);
 
-  // Cloudflare Turnstile — explicit render so we can reset the (single-use) token after a
-  // failed send. The token rides into the Server Action via the hidden input below.
-  const [scriptReady, setScriptReady] = useState(false);
-  const widgetEl = useRef<HTMLDivElement>(null);
-  const widgetId = useRef<string | null>(null);
-
-  useEffect(() => {
-    if (!TURNSTILE_SITE_KEY || !scriptReady) return;
-    const el = widgetEl.current;
-    if (!window.turnstile || !el || widgetId.current) return;
-    widgetId.current = window.turnstile.render(el, {
-      sitekey: TURNSTILE_SITE_KEY,
-      theme: "light",
-      language: locale,
-      callback: setToken,
-      "expired-callback": () => setToken(""),
-      "error-callback": () => setToken(""),
-    });
-    return () => {
-      try {
-        if (widgetId.current) window.turnstile?.remove(widgetId.current);
-      } catch {
-        /* widget DOM already gone */
-      }
-      widgetId.current = null;
-    };
-  }, [scriptReady, locale]);
+  const { boxRef, tokenRef, formRef, mountWidget, onSubmit, resetWidget, waiting, needsCheck } =
+    useTurnstile({ siteKey: TURNSTILE_SITE_KEY, action: "contact-form", language: locale });
 
   // The token is consumed once verified — after any post-verification error
   // (captcha/send-failed/not-configured/…), reset for a clean retry. "invalid"
   // is excluded: validation runs before verification, so the token is unspent.
   useEffect(() => {
-    if (state.status === "error" && state.error !== "invalid") {
-      if (widgetId.current) window.turnstile?.reset(widgetId.current);
-      setToken("");
-    }
-  }, [state]);
+    if (state.status === "error" && state.error !== "invalid") resetWidget();
+  }, [state, resetWidget]);
 
   if (state.status === "ok") {
     return (
@@ -142,9 +117,12 @@ export function ContactForm({ locale }: { locale: "en" | "es" }) {
     <>
       {TURNSTILE_SITE_KEY && (
         <Script
-          src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+          src={TURNSTILE_SRC}
           strategy="afterInteractive"
-          onLoad={() => setScriptReady(true)}
+          // onReady fires on load AND on every subsequent mount; onLoad may not,
+          // since next/script caches by src. Robustness, not a proven fix — see
+          // the honest-limit note in use-turnstile.ts.
+          onReady={mountWidget}
         />
       )}
 
@@ -158,7 +136,7 @@ export function ContactForm({ locale }: { locale: "en" | "es" }) {
         </p>
       </div>
 
-      <form action={formAction} noValidate className="space-y-4">
+      <form ref={formRef} action={formAction} onSubmit={onSubmit} noValidate className="space-y-4">
         <input type="hidden" name="locale" value={locale} />
         <input type="hidden" name="startedAt" ref={startedRef} defaultValue="" />
         <input type="hidden" name="cf-turnstile-response" ref={tokenRef} defaultValue="" />
@@ -225,7 +203,12 @@ export function ContactForm({ locale }: { locale: "en" | "es" }) {
           <span>{t.consent}</span>
         </label>
 
-        {TURNSTILE_SITE_KEY && <div ref={widgetEl} className="pt-1" />}
+        {TURNSTILE_SITE_KEY && <div ref={boxRef} className="pt-1" />}
+        {needsCheck && (
+          <p role="status" className="text-base font-semibold text-ink">
+            {t.needsCheck}
+          </p>
+        )}
 
         {errMsg && (
           <p role="alert" className="text-base font-medium text-terracotta">
@@ -234,8 +217,8 @@ export function ContactForm({ locale }: { locale: "en" | "es" }) {
         )}
 
         <div className="flex items-center gap-4 pt-1">
-          <Button type="submit" variant="outline" size="lg" disabled={pending}>
-            {pending ? t.sending : t.submit}
+          <Button type="submit" variant="outline" size="lg" disabled={pending || waiting}>
+            {pending ? t.sending : waiting ? t.verifying : t.submit}
           </Button>
           {TURNSTILE_SITE_KEY && <span className="text-xs text-ink-soft">{t.protected}</span>}
         </div>

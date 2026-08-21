@@ -1,10 +1,11 @@
 "use client";
 
-import { useActionState, useEffect, useRef, useState } from "react";
+import { useActionState, useEffect, useRef } from "react";
 import Script from "next/script";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { submitApplication, type CareersState } from "@/lib/careers/action";
+import { useTurnstile, TURNSTILE_SRC } from "./use-turnstile";
 import { EMPLOYMENT, EMPLOYMENT_LABELS } from "@/lib/careers/schema";
 
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
@@ -17,47 +18,19 @@ export function CareersForm() {
   const [state, formAction, pending] = useActionState<CareersState, FormData>(submitApplication, { status: "idle" });
 
   const startedRef = useRef<HTMLInputElement>(null);
-  const tokenRef = useRef<HTMLInputElement>(null);
-  const setToken = (tk: string) => {
-    if (tokenRef.current) tokenRef.current.value = tk;
-  };
+
   useEffect(() => {
     if (startedRef.current) startedRef.current.value = String(Date.now());
   }, []);
 
-  const [scriptReady, setScriptReady] = useState(false);
-  const widgetEl = useRef<HTMLDivElement>(null);
-  const widgetId = useRef<string | null>(null);
-
-  useEffect(() => {
-    if (!TURNSTILE_SITE_KEY || !scriptReady) return;
-    const el = widgetEl.current;
-    if (!window.turnstile || !el || widgetId.current) return;
-    widgetId.current = window.turnstile.render(el, {
-      sitekey: TURNSTILE_SITE_KEY,
-      theme: "light",
-      callback: setToken,
-      "expired-callback": () => setToken(""),
-      "error-callback": () => setToken(""),
-    });
-    return () => {
-      try {
-        if (widgetId.current) window.turnstile?.remove(widgetId.current);
-      } catch {
-        /* widget DOM already gone */
-      }
-      widgetId.current = null;
-    };
-  }, [scriptReady]);
+  const { boxRef, tokenRef, formRef, mountWidget, onSubmit, resetWidget, waiting, needsCheck } =
+    useTurnstile({ siteKey: TURNSTILE_SITE_KEY, action: "careers-form" });
 
   // Reset the single-use token after any post-verification error ("invalid"
   // excluded — validation precedes verification, so the token is unspent).
   useEffect(() => {
-    if (state.status === "error" && state.error !== "invalid") {
-      if (widgetId.current) window.turnstile?.reset(widgetId.current);
-      setToken("");
-    }
-  }, [state]);
+    if (state.status === "error" && state.error !== "invalid") resetWidget();
+  }, [state, resetWidget]);
 
   if (state.status === "ok") {
     return (
@@ -77,7 +50,7 @@ export function CareersForm() {
   const errMsg =
     state.status === "error"
       ? state.error === "captcha"
-        ? "Please complete the verification just below, then submit."
+        ? "We could not verify your browser, so your application did not send. Please try once more, or call us at (267) 713-8831."
         : state.error === "invalid"
           ? "Please check the highlighted fields and try again."
           : "Something went wrong sending your application. Please try again, or email us directly."
@@ -87,13 +60,14 @@ export function CareersForm() {
     <>
       {TURNSTILE_SITE_KEY && (
         <Script
-          src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+          src={TURNSTILE_SRC}
           strategy="afterInteractive"
-          onLoad={() => setScriptReady(true)}
+          // onReady, NOT onLoad — see components/site/use-turnstile.ts
+          onReady={mountWidget}
         />
       )}
 
-      <form action={formAction} noValidate className="space-y-4">
+      <form ref={formRef} action={formAction} onSubmit={onSubmit} noValidate className="space-y-4">
         <input type="hidden" name="startedAt" ref={startedRef} defaultValue="" />
         <input type="hidden" name="cf-turnstile-response" ref={tokenRef} defaultValue="" />
         <div aria-hidden className="absolute -left-[9999px] top-0 h-0 w-0 overflow-hidden" tabIndex={-1}>
@@ -151,7 +125,12 @@ export function CareersForm() {
           />
         </label>
 
-        {TURNSTILE_SITE_KEY && <div ref={widgetEl} className="pt-1" />}
+        {TURNSTILE_SITE_KEY && <div ref={boxRef} className="pt-1" />}
+        {needsCheck && (
+          <p role="status" className="text-base font-semibold text-ink">
+            Still checking your browser. One moment, your application will send on its own.
+          </p>
+        )}
 
         {errMsg && (
           <p role="alert" className="text-base font-medium text-terracotta">
@@ -160,8 +139,8 @@ export function CareersForm() {
         )}
 
         <div className="flex items-center gap-4 pt-1">
-          <Button type="submit" variant="solid" size="lg" disabled={pending}>
-            {pending ? "Sending…" : "Submit"}
+          <Button type="submit" variant="solid" size="lg" disabled={pending || waiting}>
+            {pending ? "Sending…" : waiting ? "Verifying…" : "Submit"}
           </Button>
           {TURNSTILE_SITE_KEY && <span className="text-xs text-ink-soft">Protected by Cloudflare Turnstile.</span>}
         </div>
