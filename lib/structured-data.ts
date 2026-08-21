@@ -49,7 +49,12 @@ function organizationNode() {
     },
     image: { "@id": LOGO_ID },
     telephone: SITE.phoneHref.replace("tel:", ""),
-    email: SITE.email,
+    // `email` deliberately omitted. Schema.org does not require it for
+    // Organization/MedicalBusiness and Google does not use it for any rich result,
+    // but a labelled JSON-LD field is the single most machine-readable form an
+    // address can take — a harvester needs no parsing heuristics at all. The
+    // address stays reachable in the footer (mailto: + visible text), which is what
+    // real visitors use. See the 2026-08-21 exposure audit.
     address: {
       "@type": "PostalAddress",
       streetAddress: SITE.address.street,
