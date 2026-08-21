@@ -31,7 +31,14 @@ export const inquirySchema = z.object({
   lastName: z.string().trim().min(1, "required").max(100),
   email: z.email("invalid").max(200),
   phone: z.string().trim().max(40),
-  interest: z.enum(INTERESTS).or(z.literal("")),
+  // `.optional()` is load-bearing. The placeholder <option value="" disabled> is
+  // selected by default, and per the HTML form-data algorithm a select contributes
+  // an entry only for an option that is selected AND NOT disabled — so an untouched
+  // dropdown submits NO `interest` key at all, not "". Without .optional() zod saw
+  // `undefined` and rejected the whole submission, which meant every visitor who
+  // ignored this optional dropdown got "Please check the highlighted fields and try
+  // again" with nothing visibly wrong and no label on the select to hint at it.
+  interest: z.enum(INTERESTS).or(z.literal("")).optional(),
   message: z.string().trim().min(1, "required").max(2000),
   consent: z.literal("on"), // "you may contact me at the info above"
   locale: z.enum(["en", "es"]),
