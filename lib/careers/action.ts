@@ -10,15 +10,45 @@ export type CareersState = {
   status: "idle" | "ok" | "error";
   error?: string;
   fieldErrors?: Record<string, string[] | undefined>;
+  /**
+   * What the applicant typed, echoed back on every failure so the form can refill
+   * itself. React 19 resets uncontrolled fields once a `<form action>` submission
+   * completes — pass OR fail — so without this a validation error wiped the whole
+   * application and the applicant had to retype an address and a free-text answer
+   * to fix one dropdown. Telling someone what is wrong is not a fix if the cost of
+   * acting on it is starting over.
+   */
+  values?: Record<string, string>;
 };
+
+/** Raw strings straight off the FormData, so this still works when parsing failed. */
+function submittedValues(formData: FormData): Record<string, string> {
+  const raw = (k: string) => {
+    const v = formData.get(k);
+    return typeof v === "string" ? v : "";
+  };
+  return {
+    name: raw("name"),
+    email: raw("email"),
+    phone: raw("phone"),
+    address: raw("address"),
+    employment: raw("employment"),
+    message: raw("message"),
+  };
+}
 
 export async function submitApplication(_prev: CareersState, formData: FormData): Promise<CareersState> {
   // spam gates; silently drop bots
   if (isLikelySpam(formData)) return { status: "ok" };
 
+  const values = submittedValues(formData);
+  /** Every failure path routes through this, so no return can forget to refill the form. */
+  const keep = (o: { status: "ok" } | { status: "error"; error: string }): CareersState =>
+    o.status === "ok" ? o : { ...o, values };
+
   const parsed = careersSchema.safeParse(Object.fromEntries(formData));
   if (!parsed.success) {
-    return { status: "error", error: "invalid", fieldErrors: parsed.error.flatten().fieldErrors };
+    return { status: "error", error: "invalid", fieldErrors: parsed.error.flatten().fieldErrors, values };
   }
   const d = parsed.data;
   const failsafeData = {
@@ -38,12 +68,14 @@ export async function submitApplication(_prev: CareersState, formData: FormData)
     // browsers, 80 solved, so ~23% produce no token and every one of them used to
     // be turned away leaving no row, no email and no log line.
     console.error("[careers] turnstile refused — capturing the submission rather than discarding it");
-    return handleSendFailure({
-      form: "careers",
-      reason: "turnstile-refused",
-      data: failsafeData,
-      fallbackError: "captcha",
-    });
+    return keep(
+      await handleSendFailure({
+        form: "careers",
+        reason: "turnstile-refused",
+        data: failsafeData,
+        fallbackError: "captcha",
+      }),
+    );
   }
 
   const apiKey = process.env.RESEND_API_KEY;
@@ -51,12 +83,14 @@ export async function submitApplication(_prev: CareersState, formData: FormData)
   const to = process.env.CONTACT_TO_EMAIL;
   if (!apiKey || !fromAddress || !to) {
     console.error("[careers] missing RESEND_API_KEY / CONTACT_FROM_EMAIL / CONTACT_TO_EMAIL");
-    return handleSendFailure({
-      form: "careers",
-      reason: "not-configured",
-      data: failsafeData,
-      fallbackError: "not-configured",
-    });
+    return keep(
+      await handleSendFailure({
+        form: "careers",
+        reason: "not-configured",
+        data: failsafeData,
+        fallbackError: "not-configured",
+      }),
+    );
   }
   const resend = new Resend(apiKey);
 
@@ -86,25 +120,29 @@ export async function submitApplication(_prev: CareersState, formData: FormData)
     const outcome = await sendWithRetry(resend, notification, idempotencyKey);
     if (!outcome.ok) {
       console.error(`[careers] send failed (${outcome.class}):`, outcome.error);
-      return handleSendFailure({
-        form: "careers",
-        reason: "send-failed",
-        data: failsafeData,
-        error: outcome.error,
-        fallbackError: "send-failed",
-        retry:
-          outcome.class === "fatal" ? undefined : { resend, payload: notification, idempotencyKey },
-      });
+      return keep(
+        await handleSendFailure({
+          form: "careers",
+          reason: "send-failed",
+          data: failsafeData,
+          error: outcome.error,
+          fallbackError: "send-failed",
+          retry:
+            outcome.class === "fatal" ? undefined : { resend, payload: notification, idempotencyKey },
+        }),
+      );
     }
   } catch (e) {
     console.error("[careers] send threw:", e);
-    return handleSendFailure({
-      form: "careers",
-      reason: "send-threw",
-      data: failsafeData,
-      error: { message: String(e) },
-      fallbackError: "send-failed",
-    });
+    return keep(
+      await handleSendFailure({
+        form: "careers",
+        reason: "send-threw",
+        data: failsafeData,
+        error: { message: String(e) },
+        fallbackError: "send-failed",
+      }),
+    );
   }
 
   return { status: "ok" };

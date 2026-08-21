@@ -10,9 +10,50 @@ import { EMPLOYMENT, EMPLOYMENT_LABELS } from "@/lib/careers/schema";
 
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
-const BOX = "block rounded-md border border-line bg-card px-4 py-2 transition-colors focus-within:border-green";
+const BOX_BASE = "block rounded-md border bg-card px-4 py-2 transition-colors focus-within:border-green";
+
+/**
+ * Field-level validation messages.
+ *
+ * The action has always returned `fieldErrors` from zod's flatten(), and until now
+ * nothing rendered them: a failed validation produced only "Please check the
+ * highlighted fields and try again" with nothing highlighted. That is unactionable,
+ * and it was worst on `employment`, whose select has a disabled placeholder — per
+ * the HTML form-data algorithm an untouched select submits no key at all, so zod
+ * rejected the whole application and the applicant had no way to find out why.
+ *
+ * zod's raw strings are either terse ("required") or internal
+ * ("Invalid option: expected one of \"full-time\"|..."). Neither should ever reach
+ * a person, so they are mapped rather than printed.
+ */
+const FIELD_LABELS: Record<string, string> = {
+  name: "Name",
+  email: "Email Address",
+  phone: "Phone Number",
+  address: "Address",
+  employment: "Employment Desired",
+  message: "Additional information",
+};
+const FIELD_ORDER = ["name", "email", "phone", "address", "employment", "message"] as const;
+
+function humanFieldError(field: string, raw?: string): string | null {
+  if (!raw) return null;
+  if (field === "employment") return "Please choose an option.";
+  if (raw === "invalid") return "Please enter a valid email address.";
+  if (raw === "required") return `${FIELD_LABELS[field] ?? "This field"} is required.`;
+  return `Please check ${FIELD_LABELS[field] ?? "this field"}.`;
+}
 const LABEL = "block text-xs font-semibold uppercase tracking-wide text-ink-soft";
 const INPUT = "mt-0.5 w-full bg-transparent text-base text-ink outline-none placeholder:text-ink-soft/50";
+
+function FieldError({ id, message }: { id: string; message: string | null }) {
+  if (!message) return null;
+  return (
+    <p id={id} className="mt-1 text-sm font-medium text-terracotta">
+      {message}
+    </p>
+  );
+}
 
 export function CareersForm() {
   const [state, formAction, pending] = useActionState<CareersState, FormData>(submitApplication, { status: "idle" });
@@ -32,6 +73,31 @@ export function CareersForm() {
     if (state.status === "error" && state.error !== "invalid") resetWidget();
   }, [state, resetWidget]);
 
+  const fieldErrors = state.status === "error" ? state.fieldErrors : undefined;
+
+  // React 19 resets uncontrolled fields once a <form action> submission completes,
+  // pass OR fail, so a validation error used to wipe the entire application. Refill
+  // from the values the action echoes back. Runs before the focus effect below so
+  // the field is already populated when it receives focus.
+  useEffect(() => {
+    const vals = state.status === "error" ? state.values : undefined;
+    const form = formRef.current;
+    if (!vals || !form) return;
+    for (const [name, value] of Object.entries(vals)) {
+      if (!value) continue;
+      const el = form.querySelector(`[name="${name}"]`) as { value?: string } | null;
+      if (el && !el.value) el.value = value;
+    }
+  }, [state, formRef]);
+
+  // Send the applicant straight to the first thing that needs changing. Must sit
+  // above the success early-return: hooks cannot be called conditionally.
+  useEffect(() => {
+    const first = FIELD_ORDER.find((k) => fieldErrors?.[k]?.length);
+    if (!first) return;
+    formRef.current?.querySelector<HTMLElement>(`[name="${first}"]`)?.focus();
+  }, [fieldErrors, formRef]);
+
   if (state.status === "ok") {
     return (
       <div className="rounded-2xl border border-line bg-card px-7 py-12 text-center shadow-sm">
@@ -46,6 +112,10 @@ export function CareersForm() {
       </div>
     );
   }
+
+  const err = (k: string) => humanFieldError(k, fieldErrors?.[k]?.[0]);
+  const boxFor = (k: string) => `${BOX_BASE} ${err(k) ? "border-terracotta" : "border-line"}`;
+  const describedBy = (k: string) => (err(k) ? `err-${k}` : undefined);
 
   const errMsg =
     state.status === "error"
@@ -80,50 +150,112 @@ export function CareersForm() {
         {/* Field order + requiredness mirror the original form: Name+Email on one row,
             Phone, Address, Employment (must choose), optional additional info. */}
         <div className="grid gap-4 sm:grid-cols-2">
-          <label className={BOX}>
-            <span className={LABEL}>Name *</span>
-            <input name="name" required maxLength={100} autoComplete="name" className={INPUT} />
-          </label>
-          <label className={BOX}>
-            <span className={LABEL}>Email Address *</span>
-            <input name="email" type="email" required maxLength={200} autoComplete="email" className={INPUT} />
-          </label>
+          <div>
+            <label className={boxFor("name")}>
+              <span className={LABEL}>Name *</span>
+              <input
+                name="name"
+                required
+                maxLength={100}
+                autoComplete="name"
+                aria-invalid={!!err("name")}
+                aria-describedby={describedBy("name")}
+                className={INPUT}
+              />
+            </label>
+            <FieldError id="err-name" message={err("name")} />
+          </div>
+          <div>
+            <label className={boxFor("email")}>
+              <span className={LABEL}>Email Address *</span>
+              <input
+                name="email"
+                type="email"
+                required
+                maxLength={200}
+                autoComplete="email"
+                aria-invalid={!!err("email")}
+                aria-describedby={describedBy("email")}
+                className={INPUT}
+              />
+            </label>
+            <FieldError id="err-email" message={err("email")} />
+          </div>
         </div>
 
-        <label className={BOX}>
-          <span className={LABEL}>Phone Number *</span>
-          <input name="phone" type="tel" required maxLength={40} autoComplete="tel" className={INPUT} />
-        </label>
+        <div>
+          <label className={boxFor("phone")}>
+            <span className={LABEL}>Phone Number *</span>
+            <input
+              name="phone"
+              type="tel"
+              required
+              maxLength={40}
+              autoComplete="tel"
+              aria-invalid={!!err("phone")}
+              aria-describedby={describedBy("phone")}
+              className={INPUT}
+            />
+          </label>
+          <FieldError id="err-phone" message={err("phone")} />
+        </div>
 
-        <label className={BOX}>
-          <span className={LABEL}>Address *</span>
-          <input name="address" required maxLength={200} autoComplete="street-address" className={INPUT} />
-        </label>
+        <div>
+          <label className={boxFor("address")}>
+            <span className={LABEL}>Address *</span>
+            <input
+              name="address"
+              required
+              maxLength={200}
+              autoComplete="street-address"
+              aria-invalid={!!err("address")}
+              aria-describedby={describedBy("address")}
+              className={INPUT}
+            />
+          </label>
+          <FieldError id="err-address" message={err("address")} />
+        </div>
 
         {/* No visible label: the disabled placeholder option carries the field name. */}
-        <label className={BOX}>
-          <select name="employment" required aria-label="Employment Desired" defaultValue="" className={`${INPUT} cursor-pointer`}>
-            <option value="" disabled>
-              Employment Desired *
-            </option>
-            {EMPLOYMENT.map((id) => (
-              <option key={id} value={id}>
-                {EMPLOYMENT_LABELS[id]}
+        <div>
+          <label className={boxFor("employment")}>
+            <select
+              name="employment"
+              required
+              aria-label="Employment Desired"
+              defaultValue=""
+              aria-invalid={!!err("employment")}
+              aria-describedby={describedBy("employment")}
+              className={`${INPUT} cursor-pointer`}
+            >
+              <option value="" disabled>
+                Employment Desired *
               </option>
-            ))}
-          </select>
-        </label>
+              {EMPLOYMENT.map((id) => (
+                <option key={id} value={id}>
+                  {EMPLOYMENT_LABELS[id]}
+                </option>
+              ))}
+            </select>
+          </label>
+          <FieldError id="err-employment" message={err("employment")} />
+        </div>
 
-        <label className={BOX}>
-          <span className={LABEL}>Any additional information</span>
-          <textarea
-            name="message"
-            maxLength={3000}
-            rows={5}
-            placeholder="Share your language fluency, availability, clinical interests, and where you are in your licensure journey."
-            className={`${INPUT} resize-y`}
-          />
-        </label>
+        <div>
+          <label className={boxFor("message")}>
+            <span className={LABEL}>Any additional information</span>
+            <textarea
+              name="message"
+              maxLength={3000}
+              rows={5}
+              placeholder="Share your language fluency, availability, clinical interests, and where you are in your licensure journey."
+              aria-invalid={!!err("message")}
+              aria-describedby={describedBy("message")}
+              className={`${INPUT} resize-y`}
+            />
+          </label>
+          <FieldError id="err-message" message={err("message")} />
+        </div>
 
         {TURNSTILE_SITE_KEY && <div ref={boxRef} className="pt-1" />}
         {needsCheck && (
