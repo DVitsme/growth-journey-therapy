@@ -23,7 +23,7 @@ import { sendWithRetry, type ResendErrorLike, type SendOutcome } from "./reliabl
  * (module-top-level calls would run during build-time prerendering and throw).
  */
 
-export type FailsafeReason = "send-failed" | "send-threw" | "not-configured";
+export type FailsafeReason = "send-failed" | "send-threw" | "not-configured" | "turnstile-refused";
 
 export interface FailsafeEntry {
   form: "contact" | "careers";
@@ -95,10 +95,16 @@ export async function deleteSubmission(key: string): Promise<void> {
  * addresses are verified). Returns true if at least one channel delivered.
  */
 export async function sendFailsafeAlert(info: { form: string; reason: string; key: string }): Promise<boolean> {
+  const held =
+    `Held as "${info.key}". Cloudflare dashboard → R2 → gjt-form-failsafe. ` +
+    `Records auto-delete after 14 days.`;
   const text =
-    `growthjourneytherapy.com: a ${info.form} form submission could not be emailed ` +
-    `(${info.reason}) and is held in the failsafe bucket as "${info.key}". ` +
-    `Cloudflare dashboard → R2 → gjt-form-failsafe. Records auto-delete after 14 days.`;
+    info.reason === "turnstile-refused"
+      ? `growthjourneytherapy.com: a ${info.form} form submission was REFUSED by the spam ` +
+        `check and never reached the inbox. It may be a real person waiting for a reply — ` +
+        `treat it as real until it obviously is not. ${held}`
+      : `growthjourneytherapy.com: a ${info.form} form submission could not be emailed ` +
+        `(${info.reason}). ${held}`;
   let alerted = false;
 
   const webhook = process.env.ALERT_WEBHOOK_URL;

@@ -32,7 +32,18 @@ export async function submitApplication(_prev: CareersState, formData: FormData)
 
   const turnstile = await checkTurnstile(formData);
   if (turnstile === "fail" && process.env.NODE_ENV === "production") {
-    return { status: "error", error: "captcha" };
+    // ⚠️ A refusal must never discard what the visitor typed. `failsafeData` is
+    // assembled above the gates for exactly this reason — do not move this check
+    // above it. Measured 2026-08-21 on the live site: 104 challenges issued to real
+    // browsers, 80 solved, so ~23% produce no token and every one of them used to
+    // be turned away leaving no row, no email and no log line.
+    console.error("[careers] turnstile refused — capturing the submission rather than discarding it");
+    return handleSendFailure({
+      form: "careers",
+      reason: "turnstile-refused",
+      data: failsafeData,
+      fallbackError: "captcha",
+    });
   }
 
   const apiKey = process.env.RESEND_API_KEY;

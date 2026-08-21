@@ -27,7 +27,14 @@ export async function checkTurnstile(formData: FormData): Promise<TurnstileResul
   const secret = process.env.TURNSTILE_SECRET_KEY;
   if (!secret) return "unconfigured";
   const token = formData.get("cf-turnstile-response");
-  if (typeof token !== "string" || !token) return "fail";
+  if (typeof token !== "string" || !token) {
+    // The highest-signal diagnostic we have. No token means the widget never
+    // produced one (never mounted, or an unsolved challenge) — a broken-for-humans
+    // signal, not an attacker. Measured 2026-08-21: ~23% of challenged real
+    // browsers never solve. Capture-on-refusal: docs/CONTACT-FAILSAFE.md.
+    console.error("[turnstile] submission carried NO token — widget produced nothing");
+    return "fail";
+  }
   try {
     const h = await headers();
     const ip = h.get("cf-connecting-ip") ?? h.get("x-forwarded-for");
@@ -38,9 +45,15 @@ export async function checkTurnstile(formData: FormData): Promise<TurnstileResul
       headers: { "content-type": "application/x-www-form-urlencoded" },
       body: form,
     });
-    const data = (await res.json()) as { success?: boolean };
-    return data.success ? "pass" : "fail";
-  } catch {
+    const data = (await res.json()) as { success?: boolean; "error-codes"?: string[] };
+    if (data.success) return "pass";
+    console.error("[turnstile] siteverify rejected the token:", data["error-codes"] ?? []);
+    return "fail";
+  } catch (e) {
+    // NOTE: this also fails CLOSED when siteverify is simply unreachable, which
+    // turns a Cloudflare outage into "nobody can contact this practice". Splitting
+    // that case out is the next fix; it needs a richer return type than this.
+    console.error("[turnstile] siteverify unreachable, refusing:", e);
     return "fail";
   }
 }
