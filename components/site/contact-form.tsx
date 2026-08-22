@@ -37,6 +37,11 @@ const copy = {
     errSend: "Something went wrong sending your message. Please try again, or call us directly.",
     protected: "Protected by Cloudflare Turnstile.",
     optional: "optional",
+    fieldRequired: "{field} is required.",
+    fieldEmail: "Please enter a valid email address.",
+    fieldChoose: "Please choose an option.",
+    fieldConsent: "Please tick this box so we know we can contact you.",
+    fieldGeneric: "Please check this field.",
   },
   es: {
     disclaimerLead: "Por favor, no incluya información médica ni de salud mental en este formulario.",
@@ -64,10 +69,49 @@ const copy = {
     errSend: "Hubo un problema al enviar tu mensaje. Inténtalo de nuevo o llámanos directamente.",
     protected: "Protegido por Cloudflare Turnstile.",
     optional: "opcional",
+    fieldRequired: "El campo {field} es obligatorio.",
+    fieldEmail: "Introduce un correo electrónico válido.",
+    fieldChoose: "Elige una opción.",
+    fieldConsent: "Marca esta casilla para que sepamos que podemos contactarte.",
+    fieldGeneric: "Revisa este campo.",
   },
 } as const;
 
-const BOX = "block rounded-md border border-line bg-card px-4 py-2 transition-colors focus-within:border-green";
+const BOX_BASE = "block rounded-md border bg-card px-4 py-2 transition-colors focus-within:border-green";
+
+const FIELD_ORDER = ["firstName", "lastName", "email", "phone", "interest", "message", "consent"] as const;
+
+/**
+ * zod's raw strings are terse ("required") or internal (`Invalid input: expected "on"`
+ * for an unticked consent box). Neither should reach a person, so they are mapped —
+ * and mapped per locale, since this form is bilingual. Field names reuse the existing
+ * localised labels so the two can never drift apart.
+ */
+// `copy` is `as const`, so en and es have distinct literal types; accept either.
+function humanFieldError(
+  field: string,
+  raw: string | undefined,
+  t: (typeof copy)[keyof typeof copy],
+): string | null {
+  if (!raw) return null;
+  if (field === "consent") return t.fieldConsent;
+  if (field === "interest") return t.fieldChoose;
+  if (raw === "invalid") return t.fieldEmail;
+  if (raw === "required") {
+    const label = (t as unknown as Record<string, string>)[field];
+    return label ? t.fieldRequired.replace("{field}", label) : t.fieldGeneric;
+  }
+  return t.fieldGeneric;
+}
+
+function FieldError({ id, message }: { id: string; message: string | null }) {
+  if (!message) return null;
+  return (
+    <p id={id} className="mt-1 text-sm font-medium text-terracotta">
+      {message}
+    </p>
+  );
+}
 const LABEL = "block text-xs font-semibold uppercase tracking-wide text-ink-soft";
 const INPUT = "mt-0.5 w-full bg-transparent text-base text-ink outline-none placeholder:text-ink-soft/50";
 
@@ -84,6 +128,34 @@ export function ContactForm({ locale }: { locale: "en" | "es" }) {
 
   const { boxRef, tokenRef, formRef, mountWidget, onSubmit, resetWidget, waiting, needsCheck } =
     useTurnstile({ siteKey: TURNSTILE_SITE_KEY, action: "contact-form", language: locale });
+
+  const fieldErrors = state.status === "error" ? state.fieldErrors : undefined;
+
+  // React 19 resets uncontrolled fields once a <form action> submission completes,
+  // pass OR fail, so a validation error used to wipe the visitor's message. Refill
+  // from what the action echoes back. `consent` is a checkbox, so it restores via
+  // `checked`, not `value`.
+  useEffect(() => {
+    const vals = state.status === "error" ? state.values : undefined;
+    const form = formRef.current;
+    if (!vals || !form) return;
+    for (const [name, value] of Object.entries(vals)) {
+      if (!value) continue;
+      const el = form.querySelector(`[name="${name}"]`) as
+        | ({ value?: string; type?: string; checked?: boolean } | null);
+      if (!el) continue;
+      if (el.type === "checkbox") el.checked = value === "on";
+      else if (!el.value) el.value = value;
+    }
+  }, [state, formRef]);
+
+  // Send the visitor straight to the first thing that needs changing. Must sit above
+  // the success early-return: hooks cannot be called conditionally.
+  useEffect(() => {
+    const first = FIELD_ORDER.find((k) => fieldErrors?.[k]?.length);
+    if (!first) return;
+    formRef.current?.querySelector<HTMLElement>(`[name="${first}"]`)?.focus();
+  }, [fieldErrors, formRef]);
 
   // The token is consumed once verified — after any post-verification error
   // (captcha/send-failed/not-configured/…), reset for a clean retry. "invalid"
@@ -103,6 +175,10 @@ export function ContactForm({ locale }: { locale: "en" | "es" }) {
       </div>
     );
   }
+
+  const err = (k: string) => humanFieldError(k, fieldErrors?.[k]?.[0], t);
+  const boxFor = (k: string) => `${BOX_BASE} ${err(k) ? "border-terracotta" : "border-line"}`;
+  const describedBy = (k: string) => (err(k) ? `err-${k}` : undefined);
 
   const errMsg =
     state.status === "error"
@@ -149,59 +225,129 @@ export function ContactForm({ locale }: { locale: "en" | "es" }) {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
-          <label className={BOX}>
-            <span className={LABEL}>{t.firstName} *</span>
-            <input name="firstName" required maxLength={100} autoComplete="given-name" className={INPUT} />
-          </label>
-          <label className={BOX}>
-            <span className={LABEL}>{t.lastName} *</span>
-            <input name="lastName" required maxLength={100} autoComplete="family-name" className={INPUT} />
-          </label>
+          <div>
+            <label className={boxFor("firstName")}>
+              <span className={LABEL}>{t.firstName} *</span>
+              <input
+                name="firstName"
+                required
+                maxLength={100}
+                autoComplete="given-name"
+                aria-invalid={!!err("firstName")}
+                aria-describedby={describedBy("firstName")}
+                className={INPUT}
+              />
+            </label>
+            <FieldError id="err-firstName" message={err("firstName")} />
+          </div>
+          <div>
+            <label className={boxFor("lastName")}>
+              <span className={LABEL}>{t.lastName} *</span>
+              <input
+                name="lastName"
+                required
+                maxLength={100}
+                autoComplete="family-name"
+                aria-invalid={!!err("lastName")}
+                aria-describedby={describedBy("lastName")}
+                className={INPUT}
+              />
+            </label>
+            <FieldError id="err-lastName" message={err("lastName")} />
+          </div>
         </div>
 
-        <label className={BOX}>
-          <span className={LABEL}>{t.email} *</span>
-          <input name="email" type="email" required maxLength={200} autoComplete="email" className={INPUT} />
-        </label>
+        <div>
+          <label className={boxFor("email")}>
+            <span className={LABEL}>{t.email} *</span>
+            <input
+              name="email"
+              type="email"
+              required
+              maxLength={200}
+              autoComplete="email"
+              aria-invalid={!!err("email")}
+              aria-describedby={describedBy("email")}
+              className={INPUT}
+            />
+          </label>
+          <FieldError id="err-email" message={err("email")} />
+        </div>
 
-        <label className={BOX}>
-          <span className={LABEL}>
-            {t.phone} <span className="lowercase">({t.optional})</span>
-          </span>
-          <input name="phone" type="tel" maxLength={40} autoComplete="tel" className={INPUT} />
-        </label>
+        <div>
+          <label className={boxFor("phone")}>
+            <span className={LABEL}>
+              {t.phone} <span className="lowercase">({t.optional})</span>
+            </span>
+            <input
+              name="phone"
+              type="tel"
+              maxLength={40}
+              autoComplete="tel"
+              aria-invalid={!!err("phone")}
+              aria-describedby={describedBy("phone")}
+              className={INPUT}
+            />
+          </label>
+          <FieldError id="err-phone" message={err("phone")} />
+        </div>
 
         {/* Original "Are You Interested in..." select — her service names, original order.
             No visible label: the disabled placeholder option carries the field name. */}
-        <label className={BOX}>
-          <select name="interest" aria-label={t.interest} defaultValue="" className={`${INPUT} cursor-pointer`}>
-            <option value="" disabled>
-              {t.interest}
-            </option>
-            {INTERESTS.map((v) => (
-              <option key={v} value={v}>
-                {v}
+        <div>
+          <label className={boxFor("interest")}>
+            <select
+              name="interest"
+              aria-label={t.interest}
+              defaultValue=""
+              aria-invalid={!!err("interest")}
+              aria-describedby={describedBy("interest")}
+              className={`${INPUT} cursor-pointer`}
+            >
+              <option value="" disabled>
+                {t.interest}
               </option>
-            ))}
-          </select>
-        </label>
+              {INTERESTS.map((v) => (
+                <option key={v} value={v}>
+                  {v}
+                </option>
+              ))}
+            </select>
+          </label>
+          <FieldError id="err-interest" message={err("interest")} />
+        </div>
 
-        <label className={BOX}>
-          <span className={LABEL}>{t.message} *</span>
-          <textarea
-            name="message"
-            required
-            maxLength={2000}
-            rows={5}
-            placeholder={t.messageHint}
-            className={`${INPUT} resize-y`}
-          />
-        </label>
+        <div>
+          <label className={boxFor("message")}>
+            <span className={LABEL}>{t.message} *</span>
+            <textarea
+              name="message"
+              required
+              maxLength={2000}
+              rows={5}
+              placeholder={t.messageHint}
+              aria-invalid={!!err("message")}
+              aria-describedby={describedBy("message")}
+              className={`${INPUT} resize-y`}
+            />
+          </label>
+          <FieldError id="err-message" message={err("message")} />
+        </div>
 
-        <label className="flex items-start gap-3 pt-1 text-base text-ink-soft">
-          <input type="checkbox" name="consent" required className="mt-1.5 size-5 shrink-0 accent-green" />
-          <span>{t.consent}</span>
-        </label>
+        <div>
+          <label className="flex items-start gap-3 pt-1 text-base text-ink-soft">
+            <input
+              type="checkbox"
+              name="consent"
+              required
+              aria-invalid={!!err("consent")}
+              aria-describedby={describedBy("consent")}
+              className="mt-1.5 size-5 shrink-0 accent-green"
+            />
+            <span>{t.consent}</span>
+          </label>
+          <FieldError id="err-consent" message={err("consent")} />
+        </div>
 
         {TURNSTILE_SITE_KEY && <div ref={boxRef} className="pt-1" />}
         {needsCheck && (

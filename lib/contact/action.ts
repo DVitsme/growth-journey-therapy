@@ -13,16 +13,47 @@ export type ContactState = {
   /** "invalid" | "captcha" | "not-configured" | "send-failed" */
   error?: string;
   fieldErrors?: Record<string, string[] | undefined>;
+  /**
+   * What the visitor typed, echoed back on every failure so the form can refill
+   * itself. React 19 resets uncontrolled fields once a `<form action>` submission
+   * completes — pass OR fail — so without this a validation error wiped everything,
+   * including the message. On a therapy practice's contact form that message is
+   * often personal and written with effort; making someone retype it to fix a
+   * missed consent tick is how an inquiry gets abandoned.
+   */
+  values?: Record<string, string>;
 };
+
+/** Raw strings straight off the FormData, so this still works when parsing failed. */
+function submittedValues(formData: FormData): Record<string, string> {
+  const raw = (k: string) => {
+    const v = formData.get(k);
+    return typeof v === "string" ? v : "";
+  };
+  return {
+    firstName: raw("firstName"),
+    lastName: raw("lastName"),
+    email: raw("email"),
+    phone: raw("phone"),
+    interest: raw("interest"),
+    message: raw("message"),
+    consent: raw("consent"),
+  };
+}
 
 export async function submitInquiry(_prev: ContactState, formData: FormData): Promise<ContactState> {
   // --- spam gates (before anything expensive); silently drop bots ----------
   if (isLikelySpam(formData)) return { status: "ok" };
 
   // --- validate ------------------------------------------------------------
+  const values = submittedValues(formData);
+  /** Every failure path routes through this, so no return can forget to refill the form. */
+  const keep = (o: { status: "ok" } | { status: "error"; error: string }): ContactState =>
+    o.status === "ok" ? o : { ...o, values };
+
   const parsed = inquirySchema.safeParse(Object.fromEntries(formData));
   if (!parsed.success) {
-    return { status: "error", error: "invalid", fieldErrors: parsed.error.flatten().fieldErrors };
+    return { status: "error", error: "invalid", fieldErrors: parsed.error.flatten().fieldErrors, values };
   }
   const d = parsed.data;
   const name = `${d.firstName} ${d.lastName}`.trim();
@@ -45,12 +76,14 @@ export async function submitInquiry(_prev: ContactState, formData: FormData): Pr
     // browsers, 80 solved, so ~23% produce no token and every one of them used to
     // be turned away leaving no row, no email and no log line.
     console.error("[contact] turnstile refused — capturing the submission rather than discarding it");
-    return handleSendFailure({
+    return keep(
+      await handleSendFailure({
       form: "contact",
       reason: "turnstile-refused",
       data: failsafeData,
       fallbackError: "captcha",
-    });
+    }),
+    );
   }
 
   // --- config guard: a misconfigured mailer must not lose the lead ---------
@@ -59,12 +92,14 @@ export async function submitInquiry(_prev: ContactState, formData: FormData): Pr
   const to = process.env.CONTACT_TO_EMAIL;
   if (!apiKey || !fromAddress || !to) {
     console.error("[contact] missing RESEND_API_KEY / CONTACT_FROM_EMAIL / CONTACT_TO_EMAIL");
-    return handleSendFailure({
+    return keep(
+      await handleSendFailure({
       form: "contact",
       reason: "not-configured",
       data: failsafeData,
       fallbackError: "not-configured",
-    });
+    }),
+    );
   }
   const resend = new Resend(apiKey);
   const from = `Growth Journey Therapy <${fromAddress}>`;
@@ -97,7 +132,8 @@ export async function submitInquiry(_prev: ContactState, formData: FormData): Pr
     const outcome = await sendWithRetry(resend, notification, idempotencyKey);
     if (!outcome.ok) {
       console.error(`[contact] notification send failed (${outcome.class}):`, outcome.error);
-      return handleSendFailure({
+      return keep(
+        await handleSendFailure({
         form: "contact",
         reason: "send-failed",
         data: failsafeData,
@@ -106,19 +142,22 @@ export async function submitInquiry(_prev: ContactState, formData: FormData): Pr
         // Only retryable/deferred failures get background re-delivery.
         retry:
           outcome.class === "fatal" ? undefined : { resend, payload: notification, idempotencyKey },
-      });
+      }),
+      );
     }
   } catch (e) {
     // The SDK shouldn't throw for text sends — this is defense so an exception
     // can never unmount the form (app/error.tsx) and destroy the typed data.
     console.error("[contact] notification send threw:", e);
-    return handleSendFailure({
+    return keep(
+      await handleSendFailure({
       form: "contact",
       reason: "send-threw",
       data: failsafeData,
       error: { message: String(e) },
       fallbackError: "send-failed",
-    });
+    }),
+    );
   }
 
   // 2) Confirmation to the visitor — best-effort; a failure here must not lose the lead.
